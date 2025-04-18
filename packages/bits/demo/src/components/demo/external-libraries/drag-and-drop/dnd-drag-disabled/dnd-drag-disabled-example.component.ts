@@ -18,7 +18,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import { CdkDragDrop, moveItemInArray, CdkDropList, CdkDrag } from "@angular/cdk/drag-drop";
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
 
 class IListItem {
@@ -30,7 +31,7 @@ class IListItem {
     selector: "dnd-drag-disabled",
     templateUrl: "./dnd-drag-disabled-example.component.html",
     styleUrls: ["./dnd-drag-disabled-example.component.less"],
-    standalone: false
+    imports: [CdkDropList, NgFor, CdkDrag],
 })
 export class DndDragDisabledExampleComponent {
     public listItems: IListItem[] = [

@@ -30,8 +30,8 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [ToolbarItemComponent],
-            });
+    imports: [ToolbarItemComponent],
+});
             fixture = TestBed.createComponent(ToolbarItemComponent);
             fixture.detectChanges();
 

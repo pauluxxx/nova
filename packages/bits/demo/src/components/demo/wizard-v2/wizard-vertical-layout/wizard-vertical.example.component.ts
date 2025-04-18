@@ -18,10 +18,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgTemplateOutlet } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiWizardV2Module } from "../../../../../../src/lib/wizard-v2/wizard.module";
 @Component({
     selector: "nui-wizard-vertical-example",
     templateUrl: "./wizard-vertical.example.component.html",
-    standalone: false
+    imports: [NuiWizardV2Module, NgTemplateOutlet, NuiButtonModule],
 })
 export class WizardVerticalExampleComponent {}

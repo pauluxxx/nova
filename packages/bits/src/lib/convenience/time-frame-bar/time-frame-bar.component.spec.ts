@@ -54,7 +54,18 @@ import { NuiTooltipModule } from "../../tooltip/tooltip.module";
             </nui-quick-picker>
         </nui-time-frame-bar>
     `,
-    standalone: false
+    imports: [
+        NuiButtonModule,
+        NuiCommonModule,
+        NuiDatePickerModule,
+        NuiDialogModule,
+        NuiIconModule,
+        NuiPopoverModule,
+        NuiTimeFramePickerModule,
+        NuiTimePickerModule,
+        NuiTooltipModule,
+        TimeFrameBarComponent,
+    ],
 })
 class TestWrapperComponent implements OnInit {
     public minDate: Moment;
@@ -84,20 +95,20 @@ describe("convenience components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [
-                    NuiButtonModule,
-                    NuiCommonModule,
-                    NuiDatePickerModule,
-                    NuiDialogModule,
-                    NuiIconModule,
-                    NuiPopoverModule,
-                    NuiTimeFramePickerModule,
-                    NuiTimePickerModule,
-                    NuiTooltipModule,
-                ],
-                declarations: [TimeFrameBarComponent, TestWrapperComponent],
-                providers: [],
-            });
+    imports: [
+        NuiButtonModule,
+        NuiCommonModule,
+        NuiDatePickerModule,
+        NuiDialogModule,
+        NuiIconModule,
+        NuiPopoverModule,
+        NuiTimeFramePickerModule,
+        NuiTimePickerModule,
+        NuiTooltipModule,
+        TimeFrameBarComponent, TestWrapperComponent,
+    ],
+    providers: [],
+});
             fixture = TestBed.createComponent(TestWrapperComponent);
             component = fixture.debugElement.children[0].componentInstance;
             warningSpy = spyOnProperty(

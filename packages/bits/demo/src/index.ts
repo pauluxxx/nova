@@ -18,8 +18,24 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
+import { importProvidersFrom } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule, bootstrapApplication } from "@angular/platform-browser";
+import { provideAnimations } from "@angular/platform-browser/animations";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
-import { NuiDemoModule } from "./module";
 
-void platformBrowserDynamic().bootstrapModule(NuiDemoModule, {});
+import { NuiDocsModule } from "@nova-ui/bits";
+
+import { AppRoutingModule } from "./components/app/app-routing.module";
+import { AppComponent } from "./components/app/app.component";
+
+
+void bootstrapApplication(AppComponent, {
+    providers: [
+        importProvidersFrom(AppRoutingModule, BrowserModule, FormsModule, ReactiveFormsModule, NuiDocsModule),
+        provideHttpClient(withInterceptorsFromDi()),
+        provideAnimations(),
+    ],
+});

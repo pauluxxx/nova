@@ -31,7 +31,6 @@ import {
 
 @Component({
     template: `<div>Loren Ipsum</div>`,
-    standalone: false
 })
 class LayoutResizerTestingComponent implements AfterViewInit {
     constructor(public elRef: ElementRef) {}
@@ -50,12 +49,10 @@ describe("Components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    LayoutResizerTestingComponent,
-                    LayoutResizerComponent,
-                ],
-                providers: [ResizerDirective],
-            });
+    imports: [LayoutResizerTestingComponent,
+        LayoutResizerComponent],
+    providers: [ResizerDirective],
+});
             fixture = TestBed.createComponent(LayoutResizerComponent);
             resizerComponent = fixture.componentInstance;
 

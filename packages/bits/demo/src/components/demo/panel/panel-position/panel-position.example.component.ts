@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiPanelModule } from "../../../../../../src/lib/panel/panel.module";
+
 @Component({
     selector: "nui-panel-position-example",
     templateUrl: "./panel-position.example.component.html",
-    standalone: false
+    imports: [NuiPanelModule],
 })
 export class PanelPositionExampleComponent {}

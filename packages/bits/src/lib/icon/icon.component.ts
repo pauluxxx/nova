@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { LowerCasePipe, NgClass } from "@angular/common";
 import {
     ChangeDetectionStrategy,
     Component,
@@ -48,7 +49,7 @@ import { IconData, IconStatus } from "./types";
     },
     styleUrls: ["./icon.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NgClass, LowerCasePipe],
 })
 export class IconComponent implements OnChanges {
     public static SIZE_MAP: { [key: string]: string } = {

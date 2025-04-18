@@ -28,11 +28,17 @@ import { takeUntil } from "rxjs/operators";
 
 import { DialogService, NuiDialogRef, OverlayComponent } from "@nova-ui/bits";
 
+import { NuiCommonModule } from "../../../../../../src/common/common.module";
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiOverlayModule } from "../../../../../../src/lib/overlay/overlay.module";
+
 @Component({
     selector: "nui-custom-confirmation-inside-dialog",
     templateUrl: "./overlay-custom-confirmation-inside-dialog.component.html",
     styleUrls: ["./overlay-custom-confirmation-inside-dialog.component.less"],
-    standalone: false
+    imports: [NuiButtonModule, NuiCommonModule, NuiDialogModule, NuiOverlayModule, NuiIconModule],
 })
 export class CustomConfirmationInsideDialogComponent implements OnDestroy {
     public onDestroy$ = new Subject<void>();

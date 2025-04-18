@@ -28,13 +28,13 @@ import { NuiOverlayModule } from "../overlay/overlay.module";
 import { NuiSelectV2Module } from "../select-v2/select-v2.module";
 
 @NgModule({
-    declarations: [PopupComponent],
     imports: [
         CommonModule,
         PortalModule,
         NuiSelectV2Module,
         NuiCommonModule,
         NuiOverlayModule,
+        PopupComponent,
     ],
     exports: [PopupComponent],
 })

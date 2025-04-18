@@ -28,8 +28,7 @@ import { NuiCommonModule } from "../../common/common.module";
  * @ignore
  */
 @NgModule({
-    declarations: [CheckboxComponent, CheckboxGroupComponent],
-    imports: [NuiCommonModule],
+    imports: [NuiCommonModule, CheckboxComponent, CheckboxGroupComponent],
     exports: [CheckboxComponent, CheckboxGroupComponent],
     providers: [],
 })

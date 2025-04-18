@@ -77,13 +77,13 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [IconComponent],
-                providers: [
-                    NotificationService,
-                    ToastContainerService,
-                    ToastService,
-                ],
-            });
+    imports: [IconComponent],
+    providers: [
+        NotificationService,
+        ToastContainerService,
+        ToastService,
+    ],
+});
 
             toastService = TestBed.inject(ToastService);
 

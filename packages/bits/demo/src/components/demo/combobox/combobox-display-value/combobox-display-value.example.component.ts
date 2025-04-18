@@ -18,14 +18,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import { Component } from "@angular/core";
 
 import { ISelectChangedEvent } from "@nova-ui/bits";
 
+import { NuiSelectModule } from "../../../../../../src/lib/select/select.module";
+
 @Component({
     selector: "nui-combobox-display-value-example",
     templateUrl: "combobox-display-value.example.component.html",
-    standalone: false
+    imports: [NuiSelectModule, JsonPipe],
 })
 export class ComboboxDisplayValueExampleComponent {
     public dataset = {

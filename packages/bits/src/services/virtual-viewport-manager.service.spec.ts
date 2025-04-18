@@ -66,7 +66,7 @@ import { NuiRepeatModule } from "../lib/repeat/repeat.module";
         `,
     ],
     providers: [VirtualViewportManager],
-    standalone: false
+    imports: [ScrollingModule, NuiRepeatModule],
 })
 class ViewportInRepeatComponent implements AfterViewInit, OnDestroy {
     @ViewChild(RepeatComponent) public repeat: RepeatComponent;
@@ -122,10 +122,9 @@ describe("services >", () => {
 
         beforeEach(waitForAsync(() => {
             TestBed.configureTestingModule({
-                declarations: [ViewportInRepeatComponent, RepeatComponent],
-                imports: [ScrollingModule, NuiRepeatModule],
-                schemas: [NO_ERRORS_SCHEMA],
-            }).compileComponents();
+    imports: [ScrollingModule, NuiRepeatModule, ViewportInRepeatComponent, RepeatComponent],
+    schemas: [NO_ERRORS_SCHEMA],
+}).compileComponents();
 
             // component
             fixture = TestBed.createComponent(ViewportInRepeatComponent);

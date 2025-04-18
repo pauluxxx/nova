@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgTemplateOutlet, NgIf, NgStyle } from "@angular/common";
 import {
     AfterViewInit,
     Component,
@@ -27,6 +28,10 @@ import {
 
 import { ToastService, WizardHorizontalComponent } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+import { NuiWizardV2Module } from "../../../../../../src/lib/wizard-v2/wizard.module";
+
 interface IWizardStepData {
     title: string;
     templateRef: TemplateRef<string>;
@@ -35,7 +40,7 @@ interface IWizardStepData {
 @Component({
     selector: "nui-wizard-remove-step-example",
     templateUrl: "./wizard-remove-step.example.component.html",
-    standalone: false
+    imports: [NuiWizardV2Module, NgFor, NgTemplateOutlet, NgIf, NuiButtonModule, NgStyle, NuiTextboxModule],
 })
 export class WizardRemoveStepExampleComponent implements AfterViewInit {
     public steps: IWizardStepData[] = [];

@@ -20,9 +20,21 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { TextboxAreaExampleComponent } from "../textbox-area/textbox-area.example.component";
+import { TextboxBasicExampleComponent } from "../textbox-basic/textbox-basic.example.component";
+import { TextboxCustomBoxWidthExampleComponent } from "../textbox-custom-width/textbox-custom-width.example.component";
+import { TextboxDisabledExampleComponent } from "../textbox-disabled/textbox-disabled.example";
+import { TextboxGettingValueExampleComponent } from "../textbox-getting-value/textbox-getting-value.example.component";
+import { TextboxHintExampleComponent } from "../textbox-hint/textbox-hint.example.component";
+import { TextboxInfoExampleComponent } from "../textbox-info/textbox-info.example.component";
+import { TextboxPlaceholderExampleComponent } from "../textbox-placeholder/textbox-placeholder.example.component";
+import { TextboxReadonlyExampleComponent } from "../textbox-readonly/textbox-readonly.example.component";
+import { TextboxRequiredExampleComponent } from "../textbox-required/textbox-required.example.component";
+
 @Component({
     selector: "nui-textbox-docs-example",
     templateUrl: "./textbox-docs.example.component.html",
-    standalone: false
+    imports: [NuiDocsModule, TextboxBasicExampleComponent, TextboxPlaceholderExampleComponent, TextboxDisabledExampleComponent, TextboxReadonlyExampleComponent, TextboxRequiredExampleComponent, TextboxHintExampleComponent, TextboxInfoExampleComponent, TextboxAreaExampleComponent, TextboxCustomBoxWidthExampleComponent, TextboxGettingValueExampleComponent],
 })
 export class TextboxDocsExampleComponent {}

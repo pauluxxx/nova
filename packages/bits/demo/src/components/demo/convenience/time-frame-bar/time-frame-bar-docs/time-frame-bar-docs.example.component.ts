@@ -20,9 +20,14 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../../src/lib/message/message.module";
+import { TimeFrameBarBasicExampleComponent } from "../time-frame-bar-basic/time-frame-bar-basic.example.component";
+import { TimeFrameBarZoomExampleComponent } from "../time-frame-bar-zoom/time-frame-bar-zoom.example.component";
+
 @Component({
     selector: "nui-time-frame-bar-docs-example",
     templateUrl: "./time-frame-bar-docs.example.component.html",
-    standalone: false
+    imports: [NuiMessageModule, NuiDocsModule, TimeFrameBarBasicExampleComponent, TimeFrameBarZoomExampleComponent],
 })
 export class TimeFrameBarDocsExampleComponent {}

@@ -48,8 +48,6 @@ import { NuiTooltipModule } from "../tooltip/public-api";
         NuiIconModule,
         NuiPopoverModule,
         NuiTooltipModule,
-    ],
-    declarations: [
         WizardHorizontalComponent,
         WizardVerticalComponent,
         WizardStepHeaderComponent,
@@ -65,18 +63,14 @@ import { NuiTooltipModule } from "../tooltip/public-api";
     exports: [
         WizardHorizontalComponent,
         WizardVerticalComponent,
-
         WizardFooterComponent,
-
         WizardStepV2Component,
         WizardDirective,
         WizardStepLabelDirective,
-
         // next & previous directive to be applied on buttons in order to navigate
         // through the wizard steps
         WizardStepperNextDirective,
         WizardStepperPreviousDirective,
-
         WizardStepHeaderComponent,
         WizardStepFooterDirective,
     ],

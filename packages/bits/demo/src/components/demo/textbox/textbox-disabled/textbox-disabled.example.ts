@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+
 @Component({
     selector: "nui-textbox-disabled-example",
     templateUrl: "./textbox-disabled.example.component.html",
-    standalone: false
+    imports: [NuiTextboxModule],
 })
 export class TextboxDisabledExampleComponent {}

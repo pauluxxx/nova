@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgStyle } from "@angular/common";
 import { Component, OnDestroy, ViewChild } from "@angular/core";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
@@ -28,10 +29,14 @@ import {
     WizardStepComponent,
 } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+import { NuiWizardModule } from "../../../../../../src/lib/wizard/wizard.module";
+
 @Component({
     selector: "nui-wizard-dynamic-remove-example",
     templateUrl: "./wizard-dynamic-remove.example.component.html",
-    standalone: false
+    imports: [NuiWizardModule, NuiButtonModule, NgStyle, NuiTextboxModule],
 })
 export class WizardDynamicRemoveExampleComponent implements OnDestroy {
     @ViewChild("wizardComponent") wizardComponent: WizardComponent;

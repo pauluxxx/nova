@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { Component, Inject, OnInit } from "@angular/core";
 
 import {
@@ -28,10 +29,14 @@ import {
     ToastService,
 } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDividerModule } from "../../../../../../src/lib/divider/divider.module";
+import { NuiMessageModule } from "../../../../../../src/lib/message/message.module";
+
 @Component({
     selector: "nui-toast-events-example",
     templateUrl: "./toast-events.example.component.html",
-    standalone: false
+    imports: [NgIf, NuiMessageModule, NuiDividerModule, NuiButtonModule],
 })
 export class ToastEventsExampleComponent implements OnInit {
     public lastShown?: number;

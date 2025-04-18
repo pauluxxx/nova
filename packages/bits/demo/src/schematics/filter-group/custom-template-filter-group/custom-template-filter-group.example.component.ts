@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgFor } from "@angular/common";
 import { AfterViewInit, Component, Inject, OnDestroy } from "@angular/core";
 import _get from "lodash/get";
 import _isEmpty from "lodash/isEmpty";
@@ -29,7 +30,13 @@ import {
     LocalFilteringDataSource,
 } from "@nova-ui/bits";
 
+import { CustomTemplateFilterGroupCompositeComponent } from "./custom-template-filter-group.component";
+import { CustomTemplateFilterGroupsWrapperComponent } from "./filter-groups-wrapper/filter-groups-wrapper.component";
 import { IFilterGroupItem, IFilterGroupOption } from "./public-api";
+import { NuiIconModule } from "../../../../../src/lib/icon/icon.module";
+import { NuiImageModule } from "../../../../../src/lib/image/image.module";
+import { NuiPanelModule } from "../../../../../src/lib/panel/panel.module";
+import { NuiRepeatModule } from "../../../../../src/lib/repeat/repeat.module";
 
 interface ExampleItem {
     color: string;
@@ -67,7 +74,7 @@ const RANDOM_ARRAY = [
             useClass: LocalFilteringDataSource,
         },
     ],
-    standalone: false
+    imports: [NuiIconModule, NgIf, NuiImageModule, NuiPanelModule, CustomTemplateFilterGroupsWrapperComponent, NgFor, CustomTemplateFilterGroupCompositeComponent, NuiRepeatModule],
 })
 export class CustomTemplateFilterGroupExampleComponent
     implements AfterViewInit, OnDestroy

@@ -18,13 +18,11 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import {
-    CdkDragDrop,
-    copyArrayItem,
-    moveItemInArray,
-    transferArrayItem,
-} from "@angular/cdk/drag-drop";
+import { CdkDragDrop, copyArrayItem, moveItemInArray, transferArrayItem, CdkDropListGroup, CdkDropList, CdkDrag, CdkDragPlaceholder } from "@angular/cdk/drag-drop";
+import { NgFor, NgIf, AsyncPipe } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from "@angular/core";
+
+import { NuiDndModule } from "../../../../../../../src/lib/dnd/dnd.module";
 
 class Company {
     name: string;
@@ -60,7 +58,7 @@ const availableCompanies: Company[] = [
     templateUrl: "./dnd-dropzone-visual-example.component.html",
     styleUrls: ["./dnd-dropzone-visual-example.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CdkDropListGroup, CdkDropList, NgFor, CdkDrag, CdkDragPlaceholder, NuiDndModule, NgIf, AsyncPipe],
 })
 export class DndDropzoneVisualExampleComponent {
     public companies: Company[] = availableCompanies;

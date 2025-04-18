@@ -18,8 +18,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
 
 interface IExampleItem {
     id: string;
@@ -31,7 +35,7 @@ interface IExampleItem {
     selector: "nui-select-v2-customize-options-example",
     templateUrl: "select-v2-customize-options.example.component.html",
     host: { class: "select-container" },
-    standalone: false
+    imports: [NuiSelectV2Module, FormsModule, ReactiveFormsModule, NgFor, NuiIconModule, NgIf],
 })
 export class SelectV2CustomizeOptionsExampleComponent {
     public icons: string[] = ["check", "email", "execute"];

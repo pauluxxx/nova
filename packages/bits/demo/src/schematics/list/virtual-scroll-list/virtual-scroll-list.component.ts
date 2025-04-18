@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgFor, AsyncPipe, KeyValuePipe } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
@@ -55,6 +56,11 @@ import {
 import { IServer, IServerFilters } from "./types";
 import { RESULTS_PER_PAGE } from "./virtual-scroll-list-data";
 import { VirtualScrollListDataSource } from "./virtual-scroll-list-data-source.service";
+import { NuiBusyModule } from "../../../../../src/lib/busy/busy.module";
+import { NuiRepeatModule } from "../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../src/lib/search/search.module";
+import { NuiSorterModule } from "../../../../../src/lib/sorter/sorter.module";
+import { NuiSpinnerModule } from "../../../../../src/lib/spinner/spinner.module";
 
 @Component({
     selector: "app-virtual-scroll-list",
@@ -68,7 +74,7 @@ import { VirtualScrollListDataSource } from "./virtual-scroll-list-data-source.s
             useClass: VirtualScrollListDataSource,
         },
     ],
-    standalone: false
+    imports: [NuiBusyModule, NuiSpinnerModule, NuiSorterModule, NuiSearchModule, NgIf, NuiRepeatModule, NgFor, AsyncPipe, KeyValuePipe],
 })
 export class VirtualScrollListComponent
     implements OnInit, AfterViewInit, OnDestroy

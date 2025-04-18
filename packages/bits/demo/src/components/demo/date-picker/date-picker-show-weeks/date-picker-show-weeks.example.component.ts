@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDatePickerModule } from "../../../../../../src/lib/date-picker/date-picker.module";
+
 @Component({
     selector: "nui-date-picker-show-weeks-example",
     templateUrl: "./date-picker-show-weeks.example.component.html",
-    standalone: false
+    imports: [NuiDatePickerModule],
 })
 export class DatePickerShowWeeksExampleComponent {}

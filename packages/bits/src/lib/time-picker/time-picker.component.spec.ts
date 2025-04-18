@@ -68,39 +68,36 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [ReactiveFormsModule, FormsModule, NuiOverlayModule],
-                declarations: [
-                    CheckboxComponent,
-                    TimePickerComponent,
-                    IconComponent,
-                    MenuPopupComponent,
-                    MenuActionComponent,
-                    MenuItemComponent,
-                    MenuOptionComponent,
-                    MenuSwitchComponent,
-                    MenuLinkComponent,
-                    DividerComponent,
-                    PopupComponent,
-                    PopupToggleDirective,
-                    TextboxComponent,
-                    SpinnerComponent,
-                    ButtonComponent,
-                    SwitchComponent,
-                    PopoverComponent,
-                    FormFieldComponent,
-                    ValidationMessageComponent,
-                    TooltipDirective,
-                ],
-                providers: [
-                    UtilService,
-                    EdgeDetectionService,
-                    DomUtilService,
-                    FormBuilder,
-                    LoggerService,
-                    IconService,
-                    TimePickerKeyboardService,
-                ],
-            });
+    imports: [ReactiveFormsModule, FormsModule, NuiOverlayModule, CheckboxComponent,
+        TimePickerComponent,
+        IconComponent,
+        MenuPopupComponent,
+        MenuActionComponent,
+        MenuItemComponent,
+        MenuOptionComponent,
+        MenuSwitchComponent,
+        MenuLinkComponent,
+        DividerComponent,
+        PopupComponent,
+        PopupToggleDirective,
+        TextboxComponent,
+        SpinnerComponent,
+        ButtonComponent,
+        SwitchComponent,
+        PopoverComponent,
+        FormFieldComponent,
+        ValidationMessageComponent,
+        TooltipDirective],
+    providers: [
+        UtilService,
+        EdgeDetectionService,
+        DomUtilService,
+        FormBuilder,
+        LoggerService,
+        IconService,
+        TimePickerKeyboardService,
+    ],
+});
             fixture = TestBed.createComponent(TimePickerComponent);
             componentInstance = fixture.componentInstance;
             debugElement = fixture.debugElement;
@@ -284,15 +281,14 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [FormsModule, ReactiveFormsModule],
-                declarations: [TimePickerReactiveFormTestComponent],
-                providers: [
-                    ToastService,
-                    ToastContainerService,
-                    NotificationService,
-                ],
-                schemas: [NO_ERRORS_SCHEMA],
-            });
+    imports: [FormsModule, ReactiveFormsModule, TimePickerReactiveFormTestComponent],
+    providers: [
+        ToastService,
+        ToastContainerService,
+        NotificationService,
+    ],
+    schemas: [NO_ERRORS_SCHEMA],
+});
 
             fixture = TestBed.createComponent(
                 TimePickerReactiveFormTestComponent

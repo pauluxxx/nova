@@ -18,13 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import { ChangeDetectorRef, Component, Input } from "@angular/core";
+
+import { NuiContentModule } from "../../../../../../src/lib/content/content.module";
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiTabsModule } from "../../../../../../src/lib/tabgroup/tabs.module";
 
 @Component({
     selector: "nui-tab-heading-group-with-content-example",
     templateUrl: "./tab-heading-group-with-content.example.component.html",
     styleUrls: ["./tab-heading-group-with-content.example.component.less"],
-    standalone: false
+    imports: [NuiTabsModule, NgFor, NgIf, NuiIconModule, NuiContentModule],
 })
 export class TabHeadingGroupWithContentExampleComponent {
     @Input() public icon: boolean = false;

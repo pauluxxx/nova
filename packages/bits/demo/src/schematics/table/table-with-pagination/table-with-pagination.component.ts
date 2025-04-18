@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectorRef,
@@ -44,6 +45,10 @@ import {
 import { RESULTS_PER_PAGE } from "./table-with-pagination-data";
 import { TableWithPaginationDataSource } from "./table-with-pagination-data-source.service";
 import { IServer } from "./types";
+import { NuiPaginatorModule } from "../../../../../src/lib/paginator/paginator.module";
+import { NuiProgressModule } from "../../../../../src/lib/progress/progress.module";
+import { NuiSearchModule } from "../../../../../src/lib/search/search.module";
+import { NuiTableModule } from "../../../../../src/lib/table/table.module";
 
 @Component({
     selector: "app-table-with-pagination",
@@ -56,7 +61,7 @@ import { IServer } from "./types";
             useClass: TableWithPaginationDataSource,
         },
     ],
-    standalone: false
+    imports: [NuiSearchModule, NuiTableModule, NgIf, NuiProgressModule, NuiPaginatorModule],
 })
 export class TableWithPaginationComponent
     implements OnInit, OnDestroy, AfterViewInit

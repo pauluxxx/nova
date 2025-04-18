@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { OverlayConfig } from "@angular/cdk/overlay";
 import {
     AfterViewInit,
@@ -62,6 +63,10 @@ import { NuiFormFieldControl } from "../form-field/public-api";
 import { OVERLAY_WITH_POPUP_STYLES_CLASS } from "../overlay/constants";
 import { OverlayComponent } from "../overlay/overlay-component/overlay.component";
 import { TextboxComponent } from "../textbox/textbox.component";
+import { IconComponent } from "../icon/icon.component";
+import { DayPickerComponent } from "./date-picker-day-picker.component";
+import { MonthPickerComponent } from "./date-picker-month-picker.component";
+import { YearPickerComponent } from "./date-picker-year-picker.component";
 
 // <example-url>./../examples/index.html#/date-picker</example-url><br />
 @Component({
@@ -86,7 +91,17 @@ import { TextboxComponent } from "../textbox/textbox.component";
     ],
     styleUrls: ["./date-picker.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+
+    imports: [
+        NgIf,
+        TextboxComponent,
+        IconComponent,
+        OverlayComponent,
+        DatePickerInnerComponent,
+        DayPickerComponent,
+        MonthPickerComponent,
+        YearPickerComponent,
+    ],
 })
 export class DatePickerComponent
     implements

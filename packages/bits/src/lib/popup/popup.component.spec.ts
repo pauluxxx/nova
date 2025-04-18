@@ -32,14 +32,14 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [PopupDeprecatedComponent],
-                providers: [
-                    DomUtilService,
-                    ChangeDetectorRef,
-                    LoggerService,
-                    EdgeDetectionService,
-                ],
-            });
+    imports: [PopupDeprecatedComponent],
+    providers: [
+        DomUtilService,
+        ChangeDetectorRef,
+        LoggerService,
+        EdgeDetectionService,
+    ],
+});
             const componentFixture = TestBed.createComponent(
                 PopupDeprecatedComponent
             );

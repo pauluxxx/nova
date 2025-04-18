@@ -20,9 +20,19 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../src/lib/message/message.module";
+import { LayoutBasicExampleComponent } from "../layout-basic/layout-basic.example.component";
+import { LayoutComplexExampleComponent } from "../layout-complex/layout-complex.example.component";
+import { LayoutFitContentComponent } from "../layout-fit-content/layout-fit-content.example.component";
+import { LayoutInitSizeExampleComponent } from "../layout-init-size/layout-init-size.component";
+import { LayoutPageContentExampleComponent } from "../layout-page-content/layout-page-content.example.component";
+import { LayoutResizeExampleComponent } from "../layout-resize/layout-resize.example.component";
+import { LayoutSeparateSheetsExampleComponent } from "../layout-separate-sheets/layout-separate-sheets.example.component";
+
 @Component({
     selector: "nui-layout-docs-example",
     templateUrl: "./layout-docs.example.component.html",
-    standalone: false
+    imports: [NuiMessageModule, NuiDocsModule, LayoutBasicExampleComponent, LayoutPageContentExampleComponent, LayoutSeparateSheetsExampleComponent, LayoutFitContentComponent, LayoutResizeExampleComponent, LayoutInitSizeExampleComponent, LayoutComplexExampleComponent],
 })
 export class LayoutExampleComponent {}

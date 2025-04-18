@@ -27,8 +27,7 @@ import { NuiCommonModule } from "../../common/common.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule],
-    declarations: [RadioComponent, RadioGroupComponent],
+    imports: [NuiCommonModule, RadioComponent, RadioGroupComponent],
     exports: [RadioComponent, RadioGroupComponent],
     providers: [],
 })

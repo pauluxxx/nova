@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDividerModule } from "../../../../../../src/lib/divider/divider.module";
+
 @Component({
     selector: "nui-horizontal-dividers-example",
     templateUrl: "./horizontal-dividers.example.component.html",
-    standalone: false
+    imports: [NuiDividerModule],
 })
 export class HorizontalDividersExampleComponent {}

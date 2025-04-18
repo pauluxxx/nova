@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgClass } from "@angular/common";
 import {
     AfterContentInit,
     ChangeDetectionStrategy,
@@ -40,6 +41,10 @@ import { ITimeframe } from "../../time-frame-picker/public-api";
 import { QuickPickerComponent } from "../../time-frame-picker/quick-picker/quick-picker.component";
 import { TimeframeService } from "../../time-frame-picker/services/timeframe.service";
 import { TimeFramePickerComponent } from "../../time-frame-picker/time-frame-picker.component";
+import { TooltipDirective } from "../../tooltip/tooltip.directive";
+import { ButtonComponent } from "../../button/button.component";
+import { PopoverComponent } from "../../popover/popover.component";
+import { DialogFooterComponent } from "../../dialog/dialog-footer.component";
 
 /**
  *
@@ -62,7 +67,13 @@ import { TimeFramePickerComponent } from "../../time-frame-picker/time-frame-pic
     styleUrls: ["./time-frame-bar.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: { role: "spinbutton" },
-    standalone: false
+    imports: [
+        TooltipDirective,
+        ButtonComponent,
+        PopoverComponent,
+        NgClass,
+        DialogFooterComponent,
+    ],
 })
 export class TimeFrameBarComponent
     implements AfterContentInit, OnChanges, OnDestroy

@@ -18,13 +18,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component, ViewEncapsulation } from "@angular/core";
+
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiMenuModule } from "../../../../../../src/lib/menu/menu.module";
+import { NuiPopupModule } from "../../../../../../src/lib/popup/popup.module";
+import { PopupAdapterModule } from "../../../../../../src/lib/popup-adapter/popup-adapter.module";
 
 @Component({
     selector: "nui-popup-different-directions-example",
     templateUrl: "./popup-different-directions.example.component.html",
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [PopupAdapterModule, NuiButtonModule, NuiPopupModule, NgFor, NuiMenuModule],
 })
 export class PopupDifferentDirectionsExampleComponent {
     public icon = "caret-down";

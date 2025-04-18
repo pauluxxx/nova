@@ -18,9 +18,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import { Component, ViewEncapsulation } from "@angular/core";
 
 import { IItemsReorderedEvent } from "@nova-ui/bits";
+
+import { NuiRepeatModule } from "../../../../../../src/lib/repeat/repeat.module";
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
 
 type ISortingOrderTrimmedData = Omit<IItemsReorderedEvent, "item" | "dropListRef">;
 
@@ -28,7 +32,7 @@ type ISortingOrderTrimmedData = Omit<IItemsReorderedEvent, "item" | "dropListRef
     selector: "nui-repeat-reorder-simple-example",
     templateUrl: "./repeat-reorder-simple-example.component.html",
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NuiSwitchModule, NuiRepeatModule, JsonPipe],
 })
 export class RepeatReorderSimpleExampleComponent {
     public companies: string[] = ["Adobe", "IBM", "Dell", "Microsoft"];

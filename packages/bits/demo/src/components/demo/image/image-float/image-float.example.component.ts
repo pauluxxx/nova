@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiImageModule } from "../../../../../../src/lib/image/image.module";
+
 @Component({
     selector: "nui-image-float-example",
     templateUrl: "./image-float.example.component.html",
-    standalone: false
+    imports: [NuiImageModule],
 })
 export class ImageFloatExampleComponent {}

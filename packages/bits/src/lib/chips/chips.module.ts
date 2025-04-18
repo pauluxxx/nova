@@ -31,8 +31,7 @@ import { NuiTooltipModule } from "../tooltip/tooltip.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiIconModule, NuiTooltipModule],
-    declarations: [ChipComponent, ChipsComponent, ChipsOverflowComponent],
+    imports: [NuiCommonModule, NuiIconModule, NuiTooltipModule, ChipComponent, ChipsComponent, ChipsOverflowComponent],
     exports: [ChipComponent, ChipsComponent, ChipsOverflowComponent],
     providers: [],
 })

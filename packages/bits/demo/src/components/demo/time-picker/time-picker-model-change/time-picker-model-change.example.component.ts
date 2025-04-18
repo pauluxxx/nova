@@ -23,10 +23,12 @@ import moment, { Moment } from "moment/moment";
 
 import { ToastService } from "@nova-ui/bits";
 
+import { NuiTimePickerModule } from "../../../../../../src/lib/time-picker/time-picker.module";
+
 @Component({
     selector: "nui-time-picker-model-change",
     templateUrl: "./time-picker-model-change.example.component.html",
-    standalone: false
+    imports: [NuiTimePickerModule],
 })
 export class TimePickerModelChangeExampleComponent {
     public time: Moment;

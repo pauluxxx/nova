@@ -45,8 +45,8 @@ import { NuiTooltipModule } from "../../tooltip/tooltip.module";
         NuiTimeFramePickerModule,
         NuiTimePickerModule,
         NuiTooltipModule,
+        TimeFrameBarComponent,
     ],
-    declarations: [TimeFrameBarComponent],
     exports: [TimeFrameBarComponent],
     providers: [],
 })

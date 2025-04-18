@@ -59,16 +59,13 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [FormsModule],
-                declarations: [
-                    TextboxNumberComponent,
-                    IconComponent,
-                    SpinnerComponent,
-                    ButtonComponent,
-                    TooltipDirective,
-                ],
-                providers: [FormBuilder, LoggerService, IconService],
-            });
+    imports: [FormsModule, TextboxNumberComponent,
+        IconComponent,
+        SpinnerComponent,
+        ButtonComponent,
+        TooltipDirective],
+    providers: [FormBuilder, LoggerService, IconService],
+});
             fixture = TestBed.createComponent(TextboxNumberComponent);
             fixture.detectChanges();
 

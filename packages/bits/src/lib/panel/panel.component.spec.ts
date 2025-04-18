@@ -73,7 +73,6 @@ const PANE_HEADER = "DEFAULT HEADER";
             <div>${CENTER_PANE_CONTENT}</div>
         </nui-panel>
     `,
-    standalone: false
 })
 class TestAppComponent {
     paneSize = PanelComponent.SIZE_VALUES.width.DEFAULT_VALUE;
@@ -105,16 +104,13 @@ describe("components >", () => {
     describe("panel >", () => {
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [NoopAnimationsModule],
-                declarations: [
-                    IconComponent,
-                    ButtonComponent,
-                    PanelComponent,
-                    TestAppComponent,
-                    ResizerDirective,
-                ],
-                providers: [IconService, UtilService],
-            });
+    imports: [NoopAnimationsModule, IconComponent,
+        ButtonComponent,
+        PanelComponent,
+        TestAppComponent,
+        ResizerDirective],
+    providers: [IconService, UtilService],
+});
 
             fixture = TestBed.createComponent(TestAppComponent);
             testComponent = fixture.componentInstance;

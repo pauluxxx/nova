@@ -18,7 +18,11 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from "@angular/core";
+
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
 
 interface IExampleTableModel {
     position: number;
@@ -36,7 +40,7 @@ interface IExampleTableModel {
     templateUrl: "./table-pinned-header.example.component.html",
     styleUrls: ["./table-pinned-header.example.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiTableModule, NgFor, NuiIconModule],
 })
 export class TablePinnedHeaderComponent {
     public displayedColumns = [

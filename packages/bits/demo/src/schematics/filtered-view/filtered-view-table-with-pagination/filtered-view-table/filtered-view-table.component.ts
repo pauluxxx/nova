@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectorRef,
@@ -38,6 +39,9 @@ import {
     TableComponent,
 } from "@nova-ui/bits";
 
+import { NuiPaginatorModule } from "../../../../../../src/lib/paginator/paginator.module";
+import { NuiProgressModule } from "../../../../../../src/lib/progress/progress.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
 import { RESULTS_PER_PAGE } from "../filtered-view-table-with-pagination-data";
 import { FilteredViewTableWithPaginationDataSource } from "../filtered-view-table-with-pagination-data-source.service";
 import { IServer } from "../types";
@@ -47,7 +51,7 @@ import { IServer } from "../types";
     templateUrl: "./filtered-view-table.component.html",
     styleUrls: ["./filtered-view-table.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NuiTableModule, NgIf, NuiProgressModule, NuiPaginatorModule],
 })
 export class FilteredViewTableComponent
     implements OnInit, OnDestroy, AfterViewInit

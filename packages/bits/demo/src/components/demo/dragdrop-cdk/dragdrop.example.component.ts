@@ -18,13 +18,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, JsonPipe } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiDragDropModule } from "../../../../../src/lib/dragdrop/dragdrop.module";
 
 @Component({
     selector: "nui-dd-cdk-example",
     templateUrl: "./dragdrop.example.component.html",
     styleUrls: ["./dragdrop.example.component.less"],
-    standalone: false
+    imports: [NuiDragDropModule, NgFor, JsonPipe],
 })
 export class DragdropExampleComponent {
     public draggableObj = {

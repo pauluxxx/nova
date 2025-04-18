@@ -36,14 +36,14 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [
-                    NuiCommonModule,
-                    NuiSpinnerModule,
-                    FormsModule,
-                    NuiButtonModule,
-                ],
-                declarations: [SearchComponent],
-            }).compileComponents();
+    imports: [
+        NuiCommonModule,
+        NuiSpinnerModule,
+        FormsModule,
+        NuiButtonModule,
+        SearchComponent,
+    ],
+}).compileComponents();
 
             fixture = TestBed.createComponent(SearchComponent);
             subject = fixture.componentInstance;

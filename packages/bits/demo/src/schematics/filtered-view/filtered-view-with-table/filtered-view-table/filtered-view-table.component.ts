@@ -37,6 +37,8 @@ import {
     TableComponent,
 } from "@nova-ui/bits";
 
+import { NuiPaginatorModule } from "../../../../../../src/lib/paginator/paginator.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
 import { LOCAL_DATA, RESULTS_PER_PAGE } from "../filtered-view-with-table-data";
 import { IServer } from "../types";
 
@@ -45,7 +47,7 @@ import { IServer } from "../types";
     templateUrl: "./filtered-view-table.component.html",
     styleUrls: ["./filtered-view-table.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NuiTableModule, NuiPaginatorModule],
 })
 export class FilteredViewTableComponent implements OnDestroy, AfterViewInit {
     public items: IServer[] = [];

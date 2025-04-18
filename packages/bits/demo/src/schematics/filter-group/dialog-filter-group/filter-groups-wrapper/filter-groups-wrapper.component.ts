@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, I18nPluralPipe } from "@angular/common";
 import {
     AfterViewInit,
     Component,
@@ -29,13 +30,14 @@ import _isEmpty from "lodash/isEmpty";
 
 import { DataSourceService, IFilteringParticipants } from "@nova-ui/bits";
 
+import { NuiPopoverModule } from "../../../../../../src/lib/popover/popover.module";
 import { DialogFilterGroupCompositeComponent } from "../dialog-filter-group.component";
 
 @Component({
     selector: "app-dialog-filter-groups-wrapper",
     templateUrl: "filter-groups-wrapper.component.html",
     styleUrls: ["filter-groups-wrapper.component.less"],
-    standalone: false
+    imports: [NgIf, NuiPopoverModule, I18nPluralPipe],
 })
 export class FilterGroupsWrapperComponent implements AfterViewInit {
     @ContentChildren(DialogFilterGroupCompositeComponent)

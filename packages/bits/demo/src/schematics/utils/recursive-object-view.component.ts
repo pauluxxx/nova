@@ -18,9 +18,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf, NgTemplateOutlet } from "@angular/common";
 import { Component, Input, OnInit, TemplateRef } from "@angular/core";
 import _isObject from "lodash/isObject";
 import _sortBy from "lodash/sortBy";
+
+import { NuiExpanderModule } from "../../../../src/lib/expander/expander.module";
 
 @Component({
     selector: "nui-recursive-object-view",
@@ -48,7 +51,7 @@ import _sortBy from "lodash/sortBy";
             </ng-template>
         </div>
     `,
-    standalone: false
+    imports: [NgFor, NgIf, NuiExpanderModule, NgTemplateOutlet],
 })
 export class RecursiveObjectViewComponent implements OnInit {
     @Input() object: any;

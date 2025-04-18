@@ -33,15 +33,12 @@ import { NuiIconModule } from "../icon/icon.module";
  * @ignore
  */
 @NgModule({
-    declarations: [
-        TabHeadingCustomTemplateRefDirective,
+    imports: [NuiCommonModule, NuiIconModule, TabHeadingCustomTemplateRefDirective,
         TabHeadingDirective,
         TabComponent,
         TabGroupComponent,
         TabHeadingComponent,
-        TabHeadingGroupComponent,
-    ],
-    imports: [NuiCommonModule, NuiIconModule],
+        TabHeadingGroupComponent],
     exports: [
         TabHeadingCustomTemplateRefDirective,
         TabHeadingDirective,

@@ -18,18 +18,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf, NgClass, SlicePipe, TitleCasePipe, KeyValuePipe } from "@angular/common";
 import { Component } from "@angular/core";
 
 import { ToastService } from "@nova-ui/bits";
 
 /* eslint-disable-next-line */
+import { NuiCommonModule } from "../../../../src/common/common.module";
+import { NuiMessageModule } from "../../../../src/lib/message/message.module";
 import { default as colors } from "../../../../src/styles/data/framework-colors-dark.json";
 
 @Component({
     selector: "framework-colors-dark.example",
     styleUrls: ["./framework-colors-dark.example.component.less"],
     templateUrl: "./framework-colors-dark.example.component.html",
-    standalone: false
+    imports: [NuiMessageModule, NgFor, NgIf, NuiCommonModule, NgClass, SlicePipe, TitleCasePipe, KeyValuePipe],
 })
 export class FrameworkColorsDarkExampleComponent {
     public colors = colors;

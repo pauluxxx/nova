@@ -51,6 +51,7 @@ import { OverlayCustomContainer } from "../overlay-custom-container";
 import { OverlayPositionService } from "../overlay-position.service";
 import { OverlayService } from "../overlay.service";
 import { IOverlayComponent, OverlayContainerType } from "../types";
+import { AsyncPipe, NgClass } from "@angular/common";
 
 export const POPUP_V2_VIEWPORT_MARGINS_DEFAULT = 30;
 
@@ -62,7 +63,7 @@ const isMouseEvent = (event: Event): event is MouseEvent =>
 /* @dynamic */
 @Component({
     selector: "nui-overlay",
-    template: ` <ng-template cdk-portal>
+    template: ` <ng-template cdkPortal>
         <div
             id="nui-overlay"
             class="nui-overlay"
@@ -81,7 +82,7 @@ const isMouseEvent = (event: Event): event is MouseEvent =>
     ],
     styleUrls: ["overlay.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NgClass, AsyncPipe, CdkPortal],
 })
 export class OverlayComponent
     implements
@@ -121,12 +122,6 @@ export class OverlayComponent
 
     /** Emits when content of the Popup is empty */
     public readonly empty$ = new Subject<boolean>();
-
-    /** Indicates open/close state */
-    public get showing(): boolean {
-        return this.overlayService?.showing;
-    }
-
     private positionStrategySubscription: Subscription;
 
     constructor(
@@ -137,6 +132,11 @@ export class OverlayComponent
     ) {
         this.show$ = this.overlayService.show$;
         this.hide$ = this.overlayService.hide$;
+    }
+
+    /** Indicates open/close state */
+    public get showing(): boolean {
+        return this.overlayService?.showing;
     }
 
     public ngOnChanges(changes: SimpleChanges): void {

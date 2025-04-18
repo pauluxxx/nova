@@ -43,7 +43,7 @@ import { NuiOverlayModule } from "../overlay/overlay.module";
         (shown)="handleShowPopover()"
         (hidden)="handleHidePopover()"
     ></nui-popover>`,
-    standalone: false
+    imports: [OverlayModule, NuiOverlayModule],
 })
 class PopoverComponentTestingComponent {
     public handleShowPopover() {
@@ -65,15 +65,12 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [OverlayModule, NuiOverlayModule],
-                declarations: [
-                    PopoverComponent,
-                    PopoverComponentTestingComponent,
-                    PopoverModalComponent,
-                ],
-                providers: [UtilService, PositionService],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA],
-            });
+    imports: [OverlayModule, NuiOverlayModule, PopoverComponent,
+        PopoverComponentTestingComponent,
+        PopoverModalComponent],
+    providers: [UtilService, PositionService],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+});
             fixture = TestBed.createComponent(PopoverComponentTestingComponent);
             fixture.autoDetectChanges(true);
             component = fixture.componentInstance;

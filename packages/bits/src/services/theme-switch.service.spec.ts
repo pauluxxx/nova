@@ -26,7 +26,6 @@ import { ThemeSwitchService } from "./theme-switch.service";
 
 @Component({
     template: "",
-    standalone: false
 })
 class FakeComponent {
     constructor(private zone: NgZone, private router: Router) {}
@@ -51,9 +50,8 @@ describe("ThemeSwitchService", () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [RouterModule.forRoot(routes)],
-            declarations: [FakeComponent],
-        });
+    imports: [RouterModule.forRoot(routes), FakeComponent],
+});
 
         const fixture = TestBed.createComponent(FakeComponent);
 

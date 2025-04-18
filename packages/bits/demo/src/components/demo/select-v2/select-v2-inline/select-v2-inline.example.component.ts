@@ -18,13 +18,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
 
 @Component({
     selector: "nui-select-v2-inline-example",
     templateUrl: "./select-v2-inline.example.component.html",
     host: { class: "select-container" },
-    standalone: false
+    imports: [NuiSelectV2Module, NgFor],
 })
 export class SelectV2InlineExampleComponent {
     public items = Array.from({ length: 100 }).map(

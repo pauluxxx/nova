@@ -19,14 +19,19 @@
 //  THE SOFTWARE.
 
 import { Component, Inject } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import _includes from "lodash/includes";
 
 import { ISearchService, SearchService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiDividerModule } from "../../../../../../src/lib/divider/divider.module";
+
 @Component({
     selector: "nui-search-service-example",
     templateUrl: "./search-service.example.component.html",
-    standalone: false
+    imports: [FormsModule, NuiCheckboxModule, NuiButtonModule, NuiDividerModule],
 })
 export class SearchServiceExampleComponent {
     private now = new Date().getTime();

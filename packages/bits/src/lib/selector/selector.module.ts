@@ -37,8 +37,8 @@ import { NuiOverlayModule } from "../overlay/overlay.module";
         NuiMenuModule,
         NuiButtonModule,
         NuiOverlayModule,
+        SelectorComponent,
     ],
-    declarations: [SelectorComponent],
     exports: [SelectorComponent],
     providers: [],
 })

@@ -22,10 +22,13 @@ import { Component, Inject, TemplateRef } from "@angular/core";
 
 import { DialogService, NuiDialogRef, ToastService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+
 @Component({
     selector: "nui-dialog-severity-example",
     templateUrl: "./dialog-severity.example.component.html",
-    standalone: false
+    imports: [NuiDialogModule, NuiButtonModule],
 })
 export class DialogSeverityExampleComponent {
     public severity: string;

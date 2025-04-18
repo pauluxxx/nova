@@ -45,6 +45,7 @@ import {
 import { KEYBOARD_CODE } from "../../constants/keycode.constants";
 import { EventBusService } from "../../services/event-bus.service";
 import { NuiFormFieldControl } from "../form-field/public-api";
+import { NgIf } from "@angular/common";
 
 @Component({
     selector: "nui-checkbox",
@@ -69,7 +70,8 @@ import { NuiFormFieldControl } from "../form-field/public-api";
         "[class.nui-checkbox--hovered]": "hovered",
         "[class.nui-checkbox--checked]": "checked",
     },
-    standalone: false
+
+    imports: [NgIf],
 })
 
 /**

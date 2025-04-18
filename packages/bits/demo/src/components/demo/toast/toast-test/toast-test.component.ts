@@ -19,6 +19,7 @@
 //  THE SOFTWARE.
 
 import { Component, Inject, OnInit } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 import {
     IActiveToast,
@@ -32,7 +33,7 @@ import {
 @Component({
     selector: "nui-toast-test",
     templateUrl: "./toast-test.component.html",
-    standalone: false
+    imports: [FormsModule],
 })
 export class ToastTestComponent implements OnInit {
     constructor(@Inject(ToastService) private toastService: IToastService) {}

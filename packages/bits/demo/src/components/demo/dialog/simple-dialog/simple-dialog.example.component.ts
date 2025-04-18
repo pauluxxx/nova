@@ -22,10 +22,13 @@ import { Component, TemplateRef } from "@angular/core";
 
 import { DialogService, NuiDialogRef, ToastService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+
 @Component({
     selector: "nui-simple-dialog-example",
     templateUrl: "./simple-dialog.example.component.html",
-    standalone: false
+    imports: [NuiDialogModule, NuiButtonModule],
 })
 export class SimpleDialogExampleComponent {
     private activeDialog: NuiDialogRef;

@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import {
     Component,
     computed,
@@ -26,15 +27,19 @@ import {
     Signal,
     WritableSignal,
 } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
+import { FormControl, Validators, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import moment from "moment-timezone";
 
 import { OptionValueType } from "@nova-ui/bits";
 
+import { NuiDatePickerModule } from "../../../../../../src/lib/date-picker/date-picker.module";
+import { NuiFormFieldModule } from "../../../../../../src/lib/form-field/form-field.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
+
 @Component({
     selector: "nui-date-picker-timezone-example",
     templateUrl: "./date-picker-timezone.example.component.html",
-    standalone: false
+    imports: [NuiFormFieldModule, NuiDatePickerModule, FormsModule, ReactiveFormsModule, NuiSelectV2Module, NgFor],
 })
 export class DatePickerTimezoneExampleComponent implements OnInit {
     public control = new FormControl(moment(), {

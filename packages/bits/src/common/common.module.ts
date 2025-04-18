@@ -67,7 +67,6 @@ import { ZoomContentDirective } from "./directives/zoom-content/zoom-content.dir
  * @ignore
  */
 @NgModule({
-    imports: [CommonModule],
     providers: [
         DragAndDropService,
         EventBusService,
@@ -92,7 +91,8 @@ import { ZoomContentDirective } from "./directives/zoom-content/zoom-content.dir
         } as Provider,
         { provide: imagesPresetToken, useValue: IMAGES_PRESET } as Provider,
     ],
-    declarations: [
+    imports: [
+        CommonModule,
         ClickFilterDirective,
         ClickInterceptorDirective,
         ClipboardDirective,

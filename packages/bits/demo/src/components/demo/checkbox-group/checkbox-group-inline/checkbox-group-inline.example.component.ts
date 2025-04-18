@@ -18,12 +18,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
 
 @Component({
     selector: "nui-checkbox-group-inline-example",
     templateUrl: "./checkbox-group-inline.example.component.html",
-    standalone: false
+    imports: [NuiCheckboxModule, NgFor],
 })
 export class CheckboxGroupInlineExampleComponent {
     public cabbage = $localize`Cabbage`;

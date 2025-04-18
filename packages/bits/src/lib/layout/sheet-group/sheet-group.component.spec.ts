@@ -28,8 +28,8 @@ describe("sheet-group", () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [SheetGroupComponent],
-        });
+    imports: [SheetGroupComponent],
+});
         fixture = TestBed.createComponent(SheetGroupComponent);
         sheetGroupComponent = fixture.componentInstance;
         fixture.detectChanges();

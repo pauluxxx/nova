@@ -20,10 +20,13 @@
 
 import { Component } from "@angular/core";
 
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
+import { NuiTooltipModule } from "../../../../../../src/lib/tooltip/tooltip.module";
+
 @Component({
     selector: "nui-tooltip-ellipsis-example",
     templateUrl: "tooltip-ellipsis.example.component.html",
-    standalone: false
+    imports: [NuiTooltipModule, NuiSwitchModule],
 })
 export class TooltipEllipsisExampleComponent {
     public isEllipsisActive = true;

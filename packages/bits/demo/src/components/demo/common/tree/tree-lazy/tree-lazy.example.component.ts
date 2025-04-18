@@ -19,11 +19,8 @@
 //  THE SOFTWARE.
 
 import { ArrayDataSource } from "@angular/cdk/collections";
-import {
-    CdkNestedTreeNode,
-    CdkTree,
-    NestedTreeControl,
-} from "@angular/cdk/tree";
+import { CdkNestedTreeNode, CdkTree, NestedTreeControl, CdkTreeNodeDef, CdkTreeNodeToggle, CdkTreeNodeOutlet } from "@angular/cdk/tree";
+import { NgIf } from "@angular/common";
 import {
     Component,
     Injectable,
@@ -35,6 +32,10 @@ import { Observable, of } from "rxjs";
 import { delay } from "rxjs/operators";
 
 import { expand } from "@nova-ui/bits";
+
+import { NuiButtonModule } from "../../../../../../../src/lib/button/button.module";
+import { NuiIconModule } from "../../../../../../../src/lib/icon/icon.module";
+import { NuiSpinnerModule } from "../../../../../../../src/lib/spinner/spinner.module";
 
 interface FoodNode {
     name: string;
@@ -75,7 +76,7 @@ class HttpMock {
     styleUrls: ["./tree-lazy.component.example.less"],
     animations: [expand],
     providers: [HttpMock],
-    standalone: false
+    imports: [CdkTree, CdkTreeNodeDef, CdkNestedTreeNode, NuiButtonModule, CdkTreeNodeToggle, NuiIconModule, NgIf, NuiSpinnerModule, CdkTreeNodeOutlet],
 })
 export class TreeLazyExampleComponent {
     treeControl = new NestedTreeControl<FoodNode>((node) => node.children);

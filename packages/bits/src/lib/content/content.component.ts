@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgClass } from "@angular/common";
 import { Component, Input, ViewEncapsulation } from "@angular/core";
 
 /**
@@ -31,7 +32,7 @@ import { Component, Input, ViewEncapsulation } from "@angular/core";
     styleUrls: ["./content.component.less"],
     encapsulation: ViewEncapsulation.None,
     host: { role: "document" },
-    standalone: false
+    imports: [NgClass],
 })
 export class ContentComponent {
     @Input() size: "small" | "normal" | "large" = "normal";

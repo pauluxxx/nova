@@ -83,41 +83,38 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [FormsModule, ReactiveFormsModule, PopupAdapterModule],
-                declarations: [
-                    ButtonComponent,
-                    CheckboxComponent,
-                    ComboboxComponent,
-                    DividerComponent,
-                    HighlightPipe,
-                    IconComponent,
-                    MenuActionComponent,
-                    MenuComponent,
-                    MenuGroupComponent,
-                    MenuItemComponent,
-                    MenuLinkComponent,
-                    MenuOptionComponent,
-                    MenuPopupComponent,
-                    MenuSwitchComponent,
-                    PopoverComponent,
-                    PopupComponent,
-                    PopupToggleDirective,
-                    RepeatItemComponent,
-                    SpinnerComponent,
-                    SwitchComponent,
-                    TextboxComponent,
-                    TooltipDirective,
-                    ValidationMessageComponent,
-                    ComboboxReactiveFormTestComponent,
-                ],
-                providers: [
-                    UtilService,
-                    EdgeDetectionService,
-                    DomUtilService,
-                    LoggerService,
-                    IconService,
-                ],
-            });
+    imports: [FormsModule, ReactiveFormsModule, PopupAdapterModule, ButtonComponent,
+        CheckboxComponent,
+        ComboboxComponent,
+        DividerComponent,
+        HighlightPipe,
+        IconComponent,
+        MenuActionComponent,
+        MenuComponent,
+        MenuGroupComponent,
+        MenuItemComponent,
+        MenuLinkComponent,
+        MenuOptionComponent,
+        MenuPopupComponent,
+        MenuSwitchComponent,
+        PopoverComponent,
+        PopupComponent,
+        PopupToggleDirective,
+        RepeatItemComponent,
+        SpinnerComponent,
+        SwitchComponent,
+        TextboxComponent,
+        TooltipDirective,
+        ValidationMessageComponent,
+        ComboboxReactiveFormTestComponent],
+    providers: [
+        UtilService,
+        EdgeDetectionService,
+        DomUtilService,
+        LoggerService,
+        IconService,
+    ],
+});
 
             fixture = TestBed.createComponent(ComboboxComponent);
             componentInstance = fixture.componentInstance;
@@ -398,15 +395,14 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [FormsModule, ReactiveFormsModule],
-                declarations: [ComboboxReactiveFormTestComponent],
-                providers: [
-                    ToastService,
-                    ToastContainerService,
-                    NotificationService,
-                ],
-                schemas: [NO_ERRORS_SCHEMA],
-            });
+    imports: [FormsModule, ReactiveFormsModule, ComboboxReactiveFormTestComponent],
+    providers: [
+        ToastService,
+        ToastContainerService,
+        NotificationService,
+    ],
+    schemas: [NO_ERRORS_SCHEMA],
+});
 
             fixture = TestBed.createComponent(
                 ComboboxReactiveFormTestComponent

@@ -20,10 +20,13 @@
 
 import { Component } from "@angular/core";
 
+import { NuiMessageModule } from "../../../../../../src/lib/message/message.module";
+import { MessageManualControlExampleComponent } from "../message-manual-control/message-manual-control.example.component";
+
 @Component({
     selector: "message-test-component",
     templateUrl: "message-test.component.html",
-    standalone: false
+    imports: [NuiMessageModule, MessageManualControlExampleComponent],
 })
 export class MessageTestComponent {
     public onMessageDismiss(): void {

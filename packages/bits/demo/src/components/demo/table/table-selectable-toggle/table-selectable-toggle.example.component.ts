@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
@@ -39,6 +40,12 @@ import {
     TableSelectionMode,
 } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDividerModule } from "../../../../../../src/lib/divider/divider.module";
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiPaginatorModule } from "../../../../../../src/lib/paginator/paginator.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
+
 interface IExampleTableModel {
     position: number;
     item: string;
@@ -52,7 +59,7 @@ interface IExampleTableModel {
     providers: [ClientSideDataSource],
     templateUrl: "./table-selectable-toggle.example.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiButtonModule, NuiTableModule, NuiIconModule, NuiPaginatorModule, NuiDividerModule, JsonPipe],
 })
 export class TableSelectableToggleExampleComponent
     implements AfterViewInit, OnDestroy

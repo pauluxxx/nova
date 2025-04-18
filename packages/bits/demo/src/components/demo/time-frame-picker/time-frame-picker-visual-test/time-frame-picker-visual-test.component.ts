@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 import _find from "lodash/find";
 import _isUndefined from "lodash/isUndefined";
@@ -31,10 +32,16 @@ import {
     TimeframeService,
 } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDatePickerModule } from "../../../../../../src/lib/date-picker/date-picker.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+import { NuiPopoverModule } from "../../../../../../src/lib/popover/popover.module";
+import { NuiTimeFramePickerModule } from "../../../../../../src/lib/time-frame-picker/time-frame-picker.module";
+
 @Component({
     selector: "nui-time-frame-picker-visual-test",
     templateUrl: "./time-frame-picker-visual-test.component.html",
-    standalone: false
+    imports: [NuiPopoverModule, NuiTimeFramePickerModule, NgIf, NuiDialogModule, NuiButtonModule, NuiDatePickerModule],
 })
 export class TimeFramePickerVisualTestComponent {
     public presets: ITimeFramePresetDictionary;

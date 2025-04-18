@@ -20,9 +20,14 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { SwitchDisableExampleComponent } from "../switch-disable/switch-disable.example.component";
+import { SwitchSimpleExampleComponent } from "../switch-simple/switch-simple.example.component";
+import { SwitchValueChangeExampleComponent } from "../switch-value-change/switch-value-change.example.component";
+
 @Component({
     selector: "nui-switch-docs-example",
     templateUrl: "./switch-docs.example.component.html",
-    standalone: false
+    imports: [NuiDocsModule, SwitchSimpleExampleComponent, SwitchValueChangeExampleComponent, SwitchDisableExampleComponent],
 })
 export class SwitchDocsExampleComponent {}

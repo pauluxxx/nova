@@ -18,12 +18,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiRepeatModule } from "../../../../../../src/lib/repeat/repeat.module";
 
 @Component({
     selector: "nui-repeat-item-example",
     templateUrl: "./repeat-item.example.component.html",
-    standalone: false
+    imports: [NgFor, NuiRepeatModule],
 })
 export class RepeatItemExampleComponent {
     public items = [$localize`Item 1`, $localize`Item 2`, $localize`Item 3`];

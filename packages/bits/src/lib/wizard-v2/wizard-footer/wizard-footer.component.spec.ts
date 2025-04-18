@@ -29,8 +29,8 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [WizardFooterComponent],
-            });
+    imports: [WizardFooterComponent],
+});
 
             fixture = TestBed.createComponent(WizardFooterComponent);
             component = fixture.componentInstance;

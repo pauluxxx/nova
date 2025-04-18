@@ -20,11 +20,14 @@
 
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
+
 @Component({
     selector: "nui-spinner-e2e",
     templateUrl: "./spinner-test.html",
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiButtonModule, NuiSpinnerModule],
 })
 export class SpinnerTestComponent {
     public show1: boolean;

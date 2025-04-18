@@ -20,10 +20,12 @@
 
 import { Component, Input } from "@angular/core";
 
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
+
 @Component({
     selector: "nui-switch-visual",
     templateUrl: "./switch-visual-test.component.html",
-    standalone: false
+    imports: [NuiSwitchModule],
 })
 export class SwitchVisualTestComponent {
     @Input() isOn = true;

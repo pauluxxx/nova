@@ -29,8 +29,7 @@ import { NuiIconModule } from "../../lib/icon/icon.module";
  * @ignore
  */
 @NgModule({
-    declarations: [MessageComponent],
-    imports: [NuiCommonModule, NuiIconModule, NuiButtonModule],
+    imports: [NuiCommonModule, NuiIconModule, NuiButtonModule, MessageComponent],
     exports: [MessageComponent],
     providers: [],
 })

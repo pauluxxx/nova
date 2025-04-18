@@ -22,10 +22,13 @@ import { Component, Inject, Input } from "@angular/core";
 
 import { IToastService, NuiActiveDialog, ToastService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+
 @Component({
     selector: "nui-dialog-content-example",
     templateUrl: "./dialog-content.example.component.html",
-    standalone: false
+    imports: [NuiDialogModule, NuiButtonModule],
 })
 export class DialogContentExampleComponent {
     @Input() name: string;

@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiLayoutModule } from "../../../../../../src/lib/layout/layout.module";
+
 @Component({
     selector: "nui-layout-resize-example",
     templateUrl: "./layout-resize.example.component.html",
     styleUrls: ["./layout-resize.example.component.less"],
-    standalone: false
+    imports: [NuiLayoutModule],
 })
 export class LayoutResizeExampleComponent {}

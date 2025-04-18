@@ -20,9 +20,20 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { IconBasicExampleComponent } from "../icon-basic/icon-basic.example.component";
+import { IconChildStatusExampleComponent } from "../icon-child-status/icon-child-status.example.component";
+import { IconColorExampleComponent } from "../icon-color/icon-color.example.component";
+import { IconCounterExampleComponent } from "../icon-counter/icon-counter.example.component";
+import { IconHoverExampleComponent } from "../icon-hover/icon-hover.example.component";
+import { IconListExampleComponent } from "../icon-list/icon-list.example.component";
+import { IconSizeExampleComponent } from "../icon-size/icon-size.example.component";
+import { IconStatusExampleComponent } from "../icon-status/icon-status.example.component";
+import { IconWithTextExampleComponent } from "../icon-with-text/icon-with-text.example.component";
+
 @Component({
     selector: "nui-icon-docs-example",
     templateUrl: "./icon-docs.example.component.html",
-    standalone: false
+    imports: [NuiDocsModule, IconBasicExampleComponent, IconSizeExampleComponent, IconColorExampleComponent, IconHoverExampleComponent, IconStatusExampleComponent, IconChildStatusExampleComponent, IconWithTextExampleComponent, IconCounterExampleComponent, IconListExampleComponent],
 })
 export class IconDocsExampleComponent {}

@@ -37,8 +37,8 @@ import { NuiSelectV2Module } from "../select-v2/select-v2.module";
         NuiButtonModule,
         ScrollingModule,
         NuiSelectV2Module,
+        PaginatorComponent,
     ],
-    declarations: [PaginatorComponent],
     exports: [PaginatorComponent],
     providers: [],
 })

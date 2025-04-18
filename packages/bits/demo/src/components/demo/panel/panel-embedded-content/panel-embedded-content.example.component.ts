@@ -18,14 +18,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { Component, Inject } from "@angular/core";
 
 import { ToastService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiPanelModule } from "../../../../../../src/lib/panel/panel.module";
+
 @Component({
     selector: "nui-panel-embedded-content-example",
     templateUrl: "./panel-embedded-content.example.component.html",
-    standalone: false
+    imports: [NuiButtonModule, NuiPanelModule, NuiIconModule, NgIf],
 })
 export class PanelEmbeddedContentExampleComponent {
     public isCollapsed = false;

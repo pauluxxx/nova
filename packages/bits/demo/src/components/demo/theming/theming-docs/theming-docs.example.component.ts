@@ -20,11 +20,15 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { CustomThemeExampleComponent } from "../custom-theme/custom-theme.example.component";
+import { ThemeSwitchServiceExampleComponent } from "../theme-switch-service/theme-switch-service.example.component";
+
 @Component({
     selector: "theming-docs-example",
     templateUrl: "./theming-docs.example.component.html",
     styleUrls: ["./theming-docs.example.component.less"],
-    standalone: false
+    imports: [NuiDocsModule, ThemeSwitchServiceExampleComponent, CustomThemeExampleComponent],
 })
 export class ThemingDocsExampleComponent {
     public lessCode = `

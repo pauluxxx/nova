@@ -20,9 +20,15 @@
 
 import { Component } from "@angular/core";
 
+import { PanelBasicExampleComponent } from "../panel-basic/panel-basic.example.component";
+import { PanelCollapseExampleComponent } from "../panel-collapse/panel-collapse.example.component";
+import { PanelFloatExampleComponent } from "../panel-float/panel-float.example.component";
+import { PanelHideExampleComponent } from "../panel-hide/panel-hide.example.component";
+import { PanelResizeExampleComponent } from "../panel-resize/panel-resize.example.component";
+
 @Component({
     selector: "nui-panel-test",
     templateUrl: "./panel-test.component.html",
-    standalone: false
+    imports: [PanelBasicExampleComponent, PanelCollapseExampleComponent, PanelFloatExampleComponent, PanelResizeExampleComponent, PanelHideExampleComponent],
 })
 export class PanelTestComponent {}

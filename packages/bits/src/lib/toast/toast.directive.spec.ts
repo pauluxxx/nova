@@ -30,7 +30,6 @@ import { INotificationService } from "../../services/public-api";
 
 @Component({
     template: `<div [nuiToast]="model"></div>`,
-    standalone: false
 })
 class ToastTestingComponent {
     public model = {
@@ -48,9 +47,9 @@ describe("directives >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [ToastTestingComponent, ToastDirective],
-                providers: [ToastService, NotificationService],
-            });
+    imports: [ToastTestingComponent, ToastDirective],
+    providers: [ToastService, NotificationService],
+});
             fixture = TestBed.createComponent(ToastTestingComponent);
             fixture.autoDetectChanges(true);
             notificationService = TestBed.inject(NotificationService);

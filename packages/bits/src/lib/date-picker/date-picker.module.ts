@@ -41,8 +41,6 @@ import { NuiTextboxModule } from "../textbox/textbox.module";
         NuiIconModule,
         NuiButtonModule,
         NuiOverlayModule,
-    ],
-    declarations: [
         YearPickerComponent,
         MonthPickerComponent,
         DatePickerInnerComponent,

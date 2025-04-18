@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+
 @Component({
     selector: "nui-icon-hover-example",
     templateUrl: "./icon-hover.example.component.html",
-    standalone: false
+    imports: [NuiIconModule],
 })
 export class IconHoverExampleComponent {}

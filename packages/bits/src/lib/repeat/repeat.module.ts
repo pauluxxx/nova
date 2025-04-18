@@ -38,8 +38,8 @@ import { NuiRadioModule } from "../radio/radio.module";
         NuiRadioModule,
         ScrollingModule,
         DragDropModule,
+        RepeatComponent, RepeatItemComponent,
     ],
-    declarations: [RepeatComponent, RepeatItemComponent],
     exports: [RepeatComponent, RepeatItemComponent],
     providers: [],
 })

@@ -20,9 +20,21 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../src/lib/message/message.module";
+import { OverlayArrowExampleComponent } from "../overlay-arrow/overlay-arrow.example.component";
+import { CustomConfirmationInsideDialogComponent } from "../overlay-custom-confirmation-inside-dialog/overlay-custom-confirmation-inside-dialog.component";
+import { OverlayCustomContainerExampleComponent } from "../overlay-custom-container/overlay-custom-container.example.component";
+import { OverlayCustomDialogComponent } from "../overlay-custom-dialog/overlay-custom-dialog.component";
+import { OverlayCustomStylesExampleComponent } from "../overlay-custom-styles/overlay-custom-styles.example.component";
+import { OverlayPopupStylesExampleComponent } from "../overlay-popup-styles/overlay-popup-styles.example.component";
+import { OverlayShowHideToggleExampleComponent } from "../overlay-show-hide-toggle/overlay-show-hide-toggle.example.component";
+import { OverlaySimpleExampleComponent } from "../overlay-simple-usage/overlay-simple-usage.example.component";
+import { OverlayViewportMarginExampleComponent } from "../overlay-viewport-margin/overlay-viewport-margin-example.component";
+
 @Component({
     selector: "nui-overlay-docs-example",
     templateUrl: "./overlay-docs.example.component.html",
-    standalone: false
+    imports: [NuiMessageModule, NuiDocsModule, OverlaySimpleExampleComponent, OverlayPopupStylesExampleComponent, OverlayViewportMarginExampleComponent, OverlayShowHideToggleExampleComponent, OverlayCustomStylesExampleComponent, OverlayCustomContainerExampleComponent, OverlayArrowExampleComponent, OverlayCustomDialogComponent, CustomConfirmationInsideDialogComponent],
 })
 export class OverlayDocsComponent {}

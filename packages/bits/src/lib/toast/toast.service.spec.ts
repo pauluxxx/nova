@@ -34,14 +34,14 @@ describe("services >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [ToastComponent, IconComponent],
-                providers: [
-                    NotificationService,
-                    ToastContainerService,
-                    ToastService,
-                    ToastServiceBase,
-                ],
-            });
+    imports: [ToastComponent, IconComponent],
+    providers: [
+        NotificationService,
+        ToastContainerService,
+        ToastService,
+        ToastServiceBase,
+    ],
+});
 
             toastService = TestBed.inject(ToastService);
             toastService.clear();

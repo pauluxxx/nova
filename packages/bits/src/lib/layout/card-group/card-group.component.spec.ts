@@ -28,8 +28,8 @@ describe("card-group", () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [CardGroupComponent],
-        });
+    imports: [CardGroupComponent],
+});
         fixture = TestBed.createComponent(CardGroupComponent);
         cardGroupComponent = fixture.componentInstance;
         fixture.detectChanges();

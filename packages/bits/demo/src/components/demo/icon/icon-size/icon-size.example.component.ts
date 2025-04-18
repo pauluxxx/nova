@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+
 @Component({
     selector: "nui-icon-size-example",
     templateUrl: "./icon-size.example.component.html",
-    standalone: false
+    imports: [NuiIconModule],
 })
 export class IconSizeExampleComponent {}

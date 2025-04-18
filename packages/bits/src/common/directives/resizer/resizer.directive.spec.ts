@@ -37,7 +37,6 @@ import { UtilService } from "../../../services/util.service";
             (resizerSizeChanged)="containerResizeHandler($event)"
         ></div>
     </div>`,
-    standalone: false
 })
 class ResizeSplitTestingComponent {
     public resizeDirection = ResizeDirection.right;
@@ -59,9 +58,9 @@ describe("directives >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [ResizeSplitTestingComponent, ResizerDirective],
-                providers: [UtilService],
-            });
+    imports: [ResizeSplitTestingComponent, ResizerDirective],
+    providers: [UtilService],
+});
             fixture = TestBed.createComponent(ResizeSplitTestingComponent);
             component = fixture.componentInstance;
 

@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, JsonPipe } from "@angular/common";
 import { AfterViewInit, Component, OnDestroy, ViewChild } from "@angular/core";
 import { Subscription } from "rxjs";
 
@@ -28,6 +29,10 @@ import {
     SorterDirection,
     TableComponent,
 } from "@nova-ui/bits";
+
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
 
 interface IExampleTableModel {
     position: number;
@@ -44,7 +49,7 @@ interface IExampleTableModel {
     selector: "nui-table-sorting-example",
     templateUrl: "./table-sorting.example.component.html",
     providers: [ClientSideDataSource],
-    standalone: false
+    imports: [NuiButtonModule, NuiTableModule, NgFor, NuiIconModule, JsonPipe],
 })
 export class TableSortingExampleComponent implements AfterViewInit, OnDestroy {
     public displayedColumns = [

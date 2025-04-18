@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgClass, NgForOf, NgIf } from "@angular/common";
 import {
     AfterViewInit,
     Component,
@@ -78,7 +79,8 @@ import {
     encapsulation: ViewEncapsulation.None,
     providers: [ChipsOverflowService],
     host: { "[attr.role]": "role" },
-    standalone: false
+
+    imports: [NgClass, NgIf, ChipComponent, NgForOf],
 })
 export class ChipsComponent
     implements OnInit, OnDestroy, OnChanges, AfterViewInit

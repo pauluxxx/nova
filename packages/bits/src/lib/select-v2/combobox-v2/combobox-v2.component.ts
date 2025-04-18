@@ -37,7 +37,7 @@ import {
     SimpleChanges,
     ViewEncapsulation,
 } from "@angular/core";
-import { NG_VALUE_ACCESSOR } from "@angular/forms";
+import { FormsModule, NG_VALUE_ACCESSOR } from "@angular/forms";
 import includes from "lodash/includes";
 import isEqual from "lodash/isEqual";
 
@@ -50,6 +50,9 @@ import { SelectV2OptionComponent } from "../option/select-v2-option.component";
 import { OptionKeyControlService } from "../option-key-control.service";
 import { SelectedItemsKeyControlService } from "../selected-items-key-control.service";
 import { InputValueTypes } from "../types";
+import { ButtonComponent } from "../../button/button.component";
+import { TooltipDirective } from "../../tooltip/tooltip.directive";
+import { OverlayComponent } from "../../overlay/overlay-component/overlay.component";
 
 // <example-url>./../examples/index.html#/combobox-v2</example-url>
 
@@ -84,7 +87,7 @@ import { InputValueTypes } from "../types";
         "aria-haspopup": "listbox",
         "aria-owns": "nui-overlay",
     },
-    standalone: false
+    imports: [FormsModule, ButtonComponent, TooltipDirective, OverlayComponent],
 })
 
 // Will be renamed in scope of the NUI-5797

@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import {
     AfterContentInit,
     Component,
@@ -43,7 +44,7 @@ import { SpinnerComponent } from "../spinner/spinner.component";
     providers: [TabNavigationService],
     encapsulation: ViewEncapsulation.None,
     host: { "[attr.aria-busy]": "busy" },
-    standalone: false
+    imports: [SpinnerComponent, NgIf],
 })
 /* eslint-enable @angular-eslint/component-selector */
 export class BusyComponent implements AfterContentInit, OnChanges {

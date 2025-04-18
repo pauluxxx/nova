@@ -20,10 +20,17 @@
 
 import { Component } from "@angular/core";
 
+import { NuiBusyModule } from "../../../../../../src/lib/busy/busy.module";
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiProgressModule } from "../../../../../../src/lib/progress/progress.module";
+import { NuiSelectModule } from "../../../../../../src/lib/select/select.module";
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
+
 @Component({
     selector: "nui-busy-test",
     templateUrl: "./busy-test.component.html",
-    standalone: false
+    imports: [NuiBusyModule, NuiProgressModule, NuiSelectModule, NuiCheckboxModule, NuiSpinnerModule, NuiButtonModule],
 })
 export class BusyTestComponent {
     public busy: boolean;

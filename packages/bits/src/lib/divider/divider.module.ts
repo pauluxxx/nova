@@ -27,8 +27,7 @@ import { NuiCommonModule } from "../../common/common.module";
  * @ignore
  */
 @NgModule({
-    declarations: [DividerComponent],
-    imports: [NuiCommonModule],
+    imports: [NuiCommonModule, DividerComponent],
     exports: [DividerComponent],
     providers: [],
 })

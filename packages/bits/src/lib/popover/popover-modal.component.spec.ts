@@ -41,18 +41,16 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    PopoverModalComponent,
-                    IconComponent,
-                    OverlayArrowComponent,
-                ],
-                providers: [
-                    EdgeDetectionService,
-                    LoggerService,
-                    IconService,
-                    PositionService,
-                ],
-            });
+    imports: [PopoverModalComponent,
+        IconComponent,
+        OverlayArrowComponent],
+    providers: [
+        EdgeDetectionService,
+        LoggerService,
+        IconService,
+        PositionService,
+    ],
+});
             fixture = TestBed.createComponent(PopoverModalComponent);
             subject = fixture.componentInstance;
             debugElement = fixture.debugElement;

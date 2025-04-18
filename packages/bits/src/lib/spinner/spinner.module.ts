@@ -29,8 +29,7 @@ import { NuiTooltipModule } from "../tooltip/tooltip.module";
  * @ignore
  */
 @NgModule({
-    declarations: [SpinnerComponent],
-    imports: [NuiCommonModule, NuiButtonModule, NuiTooltipModule],
+    imports: [NuiCommonModule, NuiButtonModule, NuiTooltipModule, SpinnerComponent],
     exports: [SpinnerComponent],
     providers: [],
 })

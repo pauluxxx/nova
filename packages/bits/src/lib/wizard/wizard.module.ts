@@ -38,8 +38,8 @@ import { NuiSpinnerModule } from "../spinner/spinner.module";
         NuiBusyModule,
         NuiIconModule,
         NuiSpinnerModule,
+        WizardComponent, WizardStepComponent,
     ],
-    declarations: [WizardComponent, WizardStepComponent],
     exports: [WizardComponent, WizardStepComponent],
     providers: [],
 })

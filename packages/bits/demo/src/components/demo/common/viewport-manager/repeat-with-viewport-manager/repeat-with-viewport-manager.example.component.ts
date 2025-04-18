@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, AsyncPipe } from "@angular/common";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import {
     AfterViewInit,
@@ -58,6 +59,10 @@ import {
     SearchComponent,
     VirtualViewportManager,
 } from "@nova-ui/bits";
+
+import { NuiProgressModule } from "../../../../../../../src/lib/progress/progress.module";
+import { NuiRepeatModule } from "../../../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../../../src/lib/search/search.module";
 
 const API_URL = "https://www.googleapis.com/books/v1/volumes";
 const RESULTS_PER_PAGE = 20;
@@ -244,7 +249,7 @@ export class GBooksDataSourceWithSearch
     selector: "nui-repeat-with-viewport-manager-example",
     templateUrl: "./repeat-with-viewport-manager.example.component.html",
     providers: [VirtualViewportManager, GBooksDataSourceWithSearch],
-    standalone: false
+    imports: [NuiSearchModule, NgIf, NuiRepeatModule, NuiProgressModule, AsyncPipe],
 })
 export class RepeatWithViewportManagerExampleComponent
     implements OnInit, OnDestroy, AfterViewInit

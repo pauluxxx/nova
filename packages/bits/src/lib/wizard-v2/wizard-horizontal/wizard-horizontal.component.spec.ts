@@ -31,7 +31,6 @@ import { WizardStepV2Component } from "../wizard-step/wizard-step.component";
 
         <nui-wizard-step-v2 label="step 2"> </nui-wizard-step-v2>
     </nui-wizard-horizontal>`,
-    standalone: false
 })
 class TestWrapperComponent {}
 
@@ -42,14 +41,12 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    WizardHorizontalComponent,
-                    WizardStepV2Component,
-                    TestWrapperComponent,
-                ],
-                providers: [ChangeDetectorRef],
-                schemas: [NO_ERRORS_SCHEMA],
-            });
+    imports: [WizardHorizontalComponent,
+        WizardStepV2Component,
+        TestWrapperComponent],
+    providers: [ChangeDetectorRef],
+    schemas: [NO_ERRORS_SCHEMA],
+});
 
             fixture = TestBed.createComponent(TestWrapperComponent);
             component = fixture.debugElement.children[0].componentInstance;

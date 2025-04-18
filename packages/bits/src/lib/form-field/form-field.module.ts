@@ -29,8 +29,7 @@ import { NuiPopoverModule } from "../popover/popover.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiIconModule, NuiPopoverModule],
-    declarations: [FormFieldComponent],
+    imports: [NuiCommonModule, NuiIconModule, NuiPopoverModule, FormFieldComponent],
     exports: [FormFieldComponent],
     providers: [],
 })

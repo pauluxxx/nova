@@ -18,8 +18,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
 
 interface IExampleItem {
     id: string;
@@ -31,7 +35,7 @@ interface IExampleItem {
     selector: "nui-combobox-v2-disabled-example",
     templateUrl: "combobox-v2-disabled.example.component.html",
     host: { class: "combobox-container" },
-    standalone: false
+    imports: [NuiSelectV2Module, FormsModule, ReactiveFormsModule, NgFor, NuiSwitchModule],
 })
 export class ComboboxV2DisabledExampleComponent {
     public items: IExampleItem[] = Array.from({ length: 100 }).map((_, i) => ({

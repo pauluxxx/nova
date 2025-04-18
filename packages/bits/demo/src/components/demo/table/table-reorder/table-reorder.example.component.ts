@@ -18,9 +18,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component, Inject } from "@angular/core";
 
 import { IToastService, ToastService } from "@nova-ui/bits";
+
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
 
 interface IExampleTableModel {
     position: number;
@@ -37,7 +41,7 @@ interface IExampleTableModel {
     selector: "nui-table-reorder-example",
     templateUrl: "./table-reorder.example.component.html",
     styleUrls: ["./table-reorder.example.component.less"],
-    standalone: false
+    imports: [NuiTableModule, NgFor, NuiIconModule],
 })
 export class TableReorderExampleComponent {
     public displayedColumns = [

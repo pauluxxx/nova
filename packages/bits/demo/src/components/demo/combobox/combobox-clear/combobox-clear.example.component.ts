@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiSelectModule } from "../../../../../../src/lib/select/select.module";
+
 @Component({
     selector: "nui-combobox-clear-example",
     templateUrl: "./combobox-clear.example.component.html",
-    standalone: false
+    imports: [NuiSelectModule],
 })
 export class ComboboxClearExampleComponent {
     public dataset = {

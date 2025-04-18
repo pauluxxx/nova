@@ -36,14 +36,11 @@ import { NuiIconModule } from "../icon/icon.module";
  * @ignore
  */
 @NgModule({
-    imports: [A11yModule, NuiCommonModule, NuiIconModule, NuiButtonModule],
-    declarations: [
-        ConfirmationDialogComponent,
+    imports: [A11yModule, NuiCommonModule, NuiIconModule, NuiButtonModule, ConfirmationDialogComponent,
         DialogComponent,
         DialogHeaderComponent,
         DialogFooterComponent,
-        DialogBackdropComponent,
-    ],
+        DialogBackdropComponent],
     exports: [DialogHeaderComponent, DialogFooterComponent],
     providers: [DialogService, DialogStackService],
 })

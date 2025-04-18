@@ -52,27 +52,24 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [ScrollingModule, OverlayModule],
-                declarations: [
-                    ButtonComponent,
-                    SorterComponent,
-                    OverlayComponent,
-                    RepeatComponent,
-                    RepeatItemComponent,
-                    IconComponent,
-                    CheckboxComponent,
-                    RadioComponent,
-                    ImageComponent,
-                ],
-                schemas: [NO_ERRORS_SCHEMA],
-                providers: [
-                    EdgeDetectionService,
-                    DomUtilService,
-                    LoggerService,
-                    IconService,
-                    SorterKeyboardService,
-                ],
-            });
+    imports: [ScrollingModule, OverlayModule, ButtonComponent,
+        SorterComponent,
+        OverlayComponent,
+        RepeatComponent,
+        RepeatItemComponent,
+        IconComponent,
+        CheckboxComponent,
+        RadioComponent,
+        ImageComponent],
+    schemas: [NO_ERRORS_SCHEMA],
+    providers: [
+        EdgeDetectionService,
+        DomUtilService,
+        LoggerService,
+        IconService,
+        SorterKeyboardService,
+    ],
+});
             fixture = TestBed.createComponent(SorterComponent);
             component = fixture.componentInstance;
             itemsSource = [

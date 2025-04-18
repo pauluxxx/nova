@@ -31,12 +31,9 @@ import { PopupAdapterModule } from "../popup-adapter/popup-adapter.module";
  * @ignore
  */
 @NgModule({
-    declarations: [
-        PopupToggleDirective,
+    imports: [NuiCommonModule, PopupAdapterModule, PopupToggleDirective,
         PopupDeprecatedComponent,
-        PopupContainerComponent,
-    ],
-    imports: [NuiCommonModule, PopupAdapterModule],
+        PopupContainerComponent],
     exports: [PopupToggleDirective, PopupDeprecatedComponent, PopupComponent],
 })
 export class NuiPopupModule {}

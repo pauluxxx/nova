@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgTemplateOutlet } from "@angular/common";
 import { Component, ViewChild } from "@angular/core";
 
 import {
@@ -27,6 +28,9 @@ import {
     WizardStepStateConfig,
     WIZARD_CONFIG,
 } from "@nova-ui/bits";
+
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiWizardV2Module } from "../../../../../../src/lib/wizard-v2/wizard.module";
 
 @Component({
     selector: "nui-wizard-with-custom-icons-example",
@@ -44,7 +48,7 @@ import {
             } as IWizardConfig,
         },
     ],
-    standalone: false
+    imports: [NuiWizardV2Module, NgTemplateOutlet, NuiButtonModule],
 })
 export class WizardWithCustomIconsExampleComponent {
     @ViewChild("wizard") wizard: WizardHorizontalComponent;

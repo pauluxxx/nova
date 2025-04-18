@@ -20,11 +20,15 @@
 
 import { Component } from "@angular/core";
 
+import { NuiBusyModule } from "../../../../../../src/lib/busy/busy.module";
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+
 @Component({
     selector: "nui-busy-basic-example",
     templateUrl: "./busy-basic.example.component.html",
     styleUrls: ["./busy-basic.example.component.less"],
-    standalone: false
+    imports: [NuiBusyModule, NuiCheckboxModule, NuiButtonModule],
 })
 export class BusyBasicExampleComponent {
     public busy: boolean;

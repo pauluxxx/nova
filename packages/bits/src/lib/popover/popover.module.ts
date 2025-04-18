@@ -36,8 +36,8 @@ import { NuiOverlayModule } from "../overlay/overlay.module";
         NuiIconModule,
         NuiOverlayModule,
         NuiOverlayAdditionsModule,
+        PopoverModalComponent, PopoverComponent,
     ],
-    declarations: [PopoverModalComponent, PopoverComponent],
     exports: [PopoverComponent, PopoverModalComponent],
     providers: [],
 })

@@ -30,8 +30,7 @@ import { NuiSpinnerModule } from "../spinner/spinner.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiSpinnerModule, FormsModule, NuiButtonModule],
-    declarations: [SearchComponent],
+    imports: [NuiCommonModule, NuiSpinnerModule, FormsModule, NuiButtonModule, SearchComponent],
     exports: [SearchComponent],
     providers: [],
 })

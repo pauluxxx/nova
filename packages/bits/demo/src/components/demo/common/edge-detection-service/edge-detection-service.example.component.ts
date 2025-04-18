@@ -18,16 +18,22 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgClass, NgStyle } from "@angular/common";
 import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import _set from "lodash/set";
 
 import { EdgeDetectionService, IEdgeDetectionResult } from "@nova-ui/bits";
+
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
 
 @Component({
     selector: "nui-edge-detection-service-example",
     templateUrl: "./edge-detection-service.example.component.html",
     styleUrls: ["./edge-detection-service.example.component.less"],
-    standalone: false
+    imports: [FormsModule, NuiTextboxModule, NuiButtonModule, NgIf, NgClass, NuiCheckboxModule, NgStyle],
 })
 export class EdgeDetectionServiceExampleComponent implements AfterViewInit {
     @ViewChild("parent") private parentElement: ElementRef;

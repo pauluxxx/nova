@@ -43,7 +43,7 @@ import { DndDropTargetDirective } from "./dnd-drop-target.directive";
             <div cdkDrag [cdkDragData]="'not-allowed'">Not Allowed</div>
         </div>
     `,
-    standalone: false
+    imports: [DragDropModule],
 })
 class DropTargetTestingComponent {
     @ViewChild(CdkDropList) dropListInstance: CdkDropList;
@@ -58,13 +58,10 @@ describe("directives >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [DragDropModule],
-                declarations: [
-                    DndDropTargetDirective,
-                    DropTargetTestingComponent,
-                ],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA],
-            });
+    imports: [DragDropModule, DndDropTargetDirective,
+        DropTargetTestingComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+});
 
             fixture = TestBed.createComponent(DropTargetTestingComponent);
             subject = fixture.componentInstance;

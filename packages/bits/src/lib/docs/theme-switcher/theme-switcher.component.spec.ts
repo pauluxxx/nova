@@ -33,7 +33,7 @@ import { SwitchComponent } from "../../switch/switch.component";
 
 @Component({
     template: "",
-    standalone: false
+    
 })
 class FakeComponent {
     constructor(private zone: NgZone, private router: Router) {}
@@ -58,9 +58,8 @@ describe("ThemeSwitcherComponent", () => {
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [SwitchComponent, ThemeSwitcherComponent],
-            imports: [RouterModule.forRoot(routes)],
-        });
+    imports: [RouterModule.forRoot(routes), SwitchComponent, ThemeSwitcherComponent],
+});
     }));
 
     beforeEach(() => {

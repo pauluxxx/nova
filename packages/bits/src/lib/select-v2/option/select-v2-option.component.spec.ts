@@ -29,7 +29,7 @@ import { SelectV2Component } from "../select/select-v2.component";
 // noinspection AngularIncorrectTemplateDefinition
 @Component({
     selector: "select-mock",
-    standalone: false
+    
 })
 class SelectMockComponent {
     public multiselect: boolean = false;
@@ -52,16 +52,15 @@ describe("components >", () => {
 
         beforeEach(waitForAsync(() => {
             TestBed.configureTestingModule({
-                declarations: [SelectV2OptionComponent, SelectV2Component],
-                providers: [
-                    {
-                        provide: NUI_SELECT_V2_OPTION_PARENT_COMPONENT,
-                        useClass: SelectMockComponent,
-                    },
-                ],
-                imports: [],
-                schemas: [NO_ERRORS_SCHEMA],
-            }).compileComponents();
+    providers: [
+        {
+            provide: NUI_SELECT_V2_OPTION_PARENT_COMPONENT,
+            useClass: SelectMockComponent,
+        },
+    ],
+    imports: [SelectV2OptionComponent, SelectV2Component],
+    schemas: [NO_ERRORS_SCHEMA],
+}).compileComponents();
         }));
 
         beforeEach(() => {

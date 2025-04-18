@@ -39,8 +39,8 @@ import { NuiSpinnerModule } from "../spinner/spinner.module";
         FormsModule,
         NuiButtonModule,
         NuiRepeatModule,
+        TextboxComponent, TextboxNumberComponent,
     ],
-    declarations: [TextboxComponent, TextboxNumberComponent],
     exports: [TextboxComponent, TextboxNumberComponent],
     providers: [],
 })

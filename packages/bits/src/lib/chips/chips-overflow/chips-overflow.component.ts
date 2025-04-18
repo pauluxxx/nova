@@ -27,6 +27,7 @@ import {
 } from "@angular/core";
 
 import { IChipsGroup, IChipsItem, IChipsItemsSource } from "../public-api";
+import { ChipsComponent } from "../chips.component";
 
 @Component({
     selector: "nui-chips-overflow",
@@ -34,7 +35,8 @@ import { IChipsGroup, IChipsItem, IChipsItemsSource } from "../public-api";
     styleUrls: ["./chips-overflow.component.less"],
     encapsulation: ViewEncapsulation.None,
     host: { class: "nui-chips-overflow" },
-    standalone: false
+
+    imports: [ChipsComponent],
 })
 export class ChipsOverflowComponent {
     @Input() overflowSource: IChipsItemsSource;

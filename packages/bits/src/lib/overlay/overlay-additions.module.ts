@@ -27,7 +27,7 @@ import { OverlayItemComponent } from "./overlay-item/overlay-item.component";
  * @ignore
  */
 @NgModule({
-    declarations: [OverlayItemComponent, OverlayArrowComponent],
+    imports: [OverlayItemComponent, OverlayArrowComponent],
     exports: [OverlayItemComponent, OverlayArrowComponent],
 })
 export class NuiOverlayAdditionsModule {}

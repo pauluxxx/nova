@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiTooltipModule } from "../../../../../../src/lib/tooltip/tooltip.module";
+
 @Component({
     selector: "nui-tooltip-basic-example",
     templateUrl: "tooltip-basic.example.component.html",
-    standalone: false
+    imports: [NuiTooltipModule],
 })
 export class TooltipBasicExampleComponent {
     public tooltip = $localize`I am a Tooltip!`;

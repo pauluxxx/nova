@@ -40,7 +40,6 @@ import { WizardDirective } from "./wizard.directive";
         <nui-wizard-step-v2 label="step2"></nui-wizard-step-v2>
         <nui-wizard-step-v2 label="step3"></nui-wizard-step-v2>
     </div>`,
-    standalone: false
 })
 class TestWrapperComponent extends WizardDirective {}
 
@@ -51,20 +50,18 @@ describe("directives >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    WizardStepHeaderComponent,
-                    WizardFooterComponent,
-                    WizardStepV2Component,
-                    WizardDirective,
-                    WizardStepLabelDirective,
-                    WizardStepFooterDirective,
-                    WizardStepperNextDirective,
-                    WizardStepperPreviousDirective,
-                    TestWrapperComponent,
-                ],
-                providers: [CdkStepper],
-                schemas: [NO_ERRORS_SCHEMA],
-            });
+    imports: [WizardStepHeaderComponent,
+        WizardFooterComponent,
+        WizardStepV2Component,
+        WizardDirective,
+        WizardStepLabelDirective,
+        WizardStepFooterDirective,
+        WizardStepperNextDirective,
+        WizardStepperPreviousDirective,
+        TestWrapperComponent],
+    providers: [CdkStepper],
+    schemas: [NO_ERRORS_SCHEMA],
+});
 
             fixture = TestBed.createComponent(TestWrapperComponent);
             component = fixture.componentInstance;

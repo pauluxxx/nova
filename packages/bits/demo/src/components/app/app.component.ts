@@ -18,16 +18,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, AsyncPipe } from "@angular/common";
 import { Component, ViewEncapsulation } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
 
 import { ThemeSwitchService } from "@nova-ui/bits";
+
+import { NuiDocsModule } from "../../../../src/lib/docs/docs.module";
+
 
 @Component({
     selector: "nui-app",
     templateUrl: "app.component.html",
     styleUrls: ["app.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NgIf, NuiDocsModule, RouterOutlet, AsyncPipe],
 })
 export class AppComponent {
     constructor(public themeSwitcherService: ThemeSwitchService) {}

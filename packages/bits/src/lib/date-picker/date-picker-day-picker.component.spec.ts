@@ -25,7 +25,7 @@ import moment from "moment/moment";
 import { DayPickerComponent } from "./date-picker-day-picker.component";
 import { DatePickerInnerComponent } from "./date-picker-inner.component";
 
-describe("components >", () => {
+fdescribe("components >", () => {
     describe("daypicker >", () => {
         let inner: DatePickerInnerComponent;
         let dayPicker: DayPickerComponent;

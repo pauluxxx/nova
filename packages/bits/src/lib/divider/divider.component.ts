@@ -39,7 +39,7 @@ import { DividerSize } from "./public-api";
     },
     styleUrls: ["./divider.component.less"],
     encapsulation: ViewEncapsulation.Emulated,
-    standalone: false
+    
 })
 export class DividerComponent {
     /**

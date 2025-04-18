@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgTemplateOutlet, NgFor, SlicePipe } from "@angular/common";
 import {
     Component,
     EventEmitter,
@@ -45,12 +46,14 @@ import {
     IFilterGroupMultiFilterMetadata,
     IFilterGroupOption,
 } from "./public-api";
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiExpanderModule } from "../../../../../../src/lib/expander/expander.module";
 
 @Component({
     selector: "app-filter-group-with-vs",
     templateUrl: "./filter-group.component.html",
     styleUrls: ["./filter-group.component.less"],
-    standalone: false
+    imports: [NgIf, NuiExpanderModule, NgTemplateOutlet, NuiCheckboxModule, NgFor, SlicePipe],
 })
 export class FilterGroupComponent implements IFilterPub, OnInit, OnDestroy {
     // mark this filter to be monitored by our datasource for any changes in order reset other filters(eg: pagination)

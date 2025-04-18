@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiImageModule } from "../../../../../../src/lib/image/image.module";
+
 @Component({
     selector: "nui-image-width-height-autofill-example",
     templateUrl: "./image-width-height-and-autoFill.example.component.html",
     styleUrls: ["image-width-height-and-autoFill.example.component.less"],
-    standalone: false
+    imports: [NuiImageModule],
 })
 export class ImageWidthHeightAndAutoFillExampleComponent {}

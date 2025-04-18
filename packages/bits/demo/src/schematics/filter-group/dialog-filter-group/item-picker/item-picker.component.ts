@@ -34,6 +34,7 @@ import {
     RepeatSelectionMode,
 } from "@nova-ui/bits";
 
+import { NuiRepeatModule } from "../../../../../../src/lib/repeat/repeat.module";
 import { IFilterGroupOption } from "../public-api";
 
 export interface IItemPickerOption {
@@ -52,7 +53,7 @@ export interface IItemPickerOption {
         },
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiRepeatModule],
 })
 export class ItemPickerCompositeComponent implements OnInit {
     @Input() itemPickerOptions: IFilterGroupOption[];

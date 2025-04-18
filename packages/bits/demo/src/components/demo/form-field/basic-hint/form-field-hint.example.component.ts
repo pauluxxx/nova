@@ -19,10 +19,14 @@
 //  THE SOFTWARE.
 
 import { Component } from "@angular/core";
+import { RouterLink } from "@angular/router";
+
+import { NuiFormFieldModule } from "../../../../../../src/lib/form-field/form-field.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
 
 @Component({
     selector: "nui-form-field-hint-basic-example",
     templateUrl: "./form-field-hint.example.component.html",
-    standalone: false
+    imports: [NuiFormFieldModule, NuiTextboxModule, RouterLink],
 })
 export class FormFieldBasicHintExampleComponent {}

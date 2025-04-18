@@ -36,7 +36,6 @@ import { UtilService } from "../../../services/util.service";
         (dragStart)="onDragStart($event)"
         (dragEnd)="onDragEnd()"
     ></div>`,
-    standalone: false
 })
 class DraggableTestingComponent {
     public draggableString = "this is a string";
@@ -78,17 +77,17 @@ describe("directives >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [DraggableDirective, DraggableTestingComponent],
-                providers: [
-                    {
-                        provide: DragAndDropService,
-                        useValue: dragAndDropServiceMock,
-                    },
-                    UtilService,
-                    { provide: "windowObject", useValue: window },
-                ],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA],
-            });
+    imports: [DraggableDirective, DraggableTestingComponent],
+    providers: [
+        {
+            provide: DragAndDropService,
+            useValue: dragAndDropServiceMock,
+        },
+        UtilService,
+        { provide: "windowObject", useValue: window },
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+});
             fixture = TestBed.createComponent(DraggableTestingComponent);
             fixture.autoDetectChanges(true);
             component = fixture.componentInstance;

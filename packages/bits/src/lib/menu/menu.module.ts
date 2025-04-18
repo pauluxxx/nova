@@ -48,8 +48,6 @@ import { NuiSwitchModule } from "../switch/switch.module";
         NuiPopupModule,
         NuiDividerModule,
         NuiSwitchModule,
-    ],
-    exports: [
         MenuActionComponent,
         MenuComponent,
         MenuGroupComponent,
@@ -59,7 +57,7 @@ import { NuiSwitchModule } from "../switch/switch.module";
         MenuPopupComponent,
         MenuSwitchComponent,
     ],
-    declarations: [
+    exports: [
         MenuActionComponent,
         MenuComponent,
         MenuGroupComponent,

@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf, KeyValuePipe } from "@angular/common";
 import {
     Component,
     Inject,
@@ -31,12 +32,18 @@ import _set from "lodash/set";
 
 import {CodeSourceFiles, DEMO_PATH_TOKEN} from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../src/lib/button/button.module";
+import { NuiDocsModule } from "../../../../../src/lib/docs/docs.module";
+import { NuiExpanderModule } from "../../../../../src/lib/expander/expander.module";
+import { NuiIconModule } from "../../../../../src/lib/icon/icon.module";
+import { RecursiveObjectViewComponent } from "../recursive-object-view.component";
+
 @Component({
     selector: "nui-schematic-docs-example",
     templateUrl: "schematic-docs-example.component.html",
     styleUrls: ["schematic-docs-example.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NgFor, NuiExpanderModule, RecursiveObjectViewComponent, NgIf, NuiDocsModule, NuiIconModule, NuiButtonModule, KeyValuePipe],
 })
 export class SchematicDocsExampleComponent implements OnInit {
     @Input() exampleFolderName: string;

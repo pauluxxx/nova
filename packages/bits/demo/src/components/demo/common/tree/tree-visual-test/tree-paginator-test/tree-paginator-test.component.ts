@@ -19,11 +19,8 @@
 //  THE SOFTWARE.
 
 import { ArrayDataSource } from "@angular/cdk/collections";
-import {
-    CdkNestedTreeNode,
-    CdkTree,
-    NestedTreeControl,
-} from "@angular/cdk/tree";
+import { CdkNestedTreeNode, CdkTree, NestedTreeControl, CdkTreeNodeDef, CdkTreeNodeToggle, CdkTreeNodeOutlet } from "@angular/cdk/tree";
+import { NgIf } from "@angular/common";
 import {
     Component,
     IterableDiffer,
@@ -33,6 +30,10 @@ import {
 
 import { DOCUMENT_CLICK_EVENT, EventBusService, expand } from "@nova-ui/bits";
 
+import { NuiBusyModule } from "../../../../../../../../src/lib/busy/busy.module";
+import { NuiButtonModule } from "../../../../../../../../src/lib/button/button.module";
+import { NuiIconModule } from "../../../../../../../../src/lib/icon/icon.module";
+import { NuiPaginatorModule } from "../../../../../../../../src/lib/paginator/paginator.module";
 import { FoodNode, HttpMock, IApiResponse, TREE_DATA_PAGINATOR } from "../data";
 
 @Component({
@@ -42,7 +43,7 @@ import { FoodNode, HttpMock, IApiResponse, TREE_DATA_PAGINATOR } from "../data";
     host: { id: "nui-tree-paginator-example" },
     animations: [expand],
     providers: [HttpMock],
-    standalone: false
+    imports: [CdkTree, CdkTreeNodeDef, CdkNestedTreeNode, NuiButtonModule, CdkTreeNodeToggle, NuiIconModule, NuiBusyModule, CdkTreeNodeOutlet, NgIf, NuiPaginatorModule],
 })
 export class TreePaginatorTestComponent {
     public pageSize = 10; // used for 'nui-paginator'

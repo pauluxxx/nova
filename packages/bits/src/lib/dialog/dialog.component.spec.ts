@@ -34,9 +34,9 @@ describe("components >", () => {
             };
 
             TestBed.configureTestingModule({
-                declarations: [DialogComponent],
-                providers: [{ provide: Router, useValue: mockRouter }],
-            });
+    imports: [DialogComponent],
+    providers: [{ provide: Router, useValue: mockRouter }],
+});
             fixture = TestBed.createComponent(DialogComponent);
         });
 

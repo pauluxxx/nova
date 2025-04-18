@@ -20,6 +20,7 @@
 
 import { ListRange } from "@angular/cdk/collections";
 import { CdkVirtualScrollViewport } from "@angular/cdk/scrolling";
+import { NgIf } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
@@ -41,6 +42,8 @@ import {
     TableVirtualScrollDirective,
 } from "@nova-ui/bits";
 
+import { NuiProgressModule } from "../../../../../../src/lib/progress/progress.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
 import { IRandomUserTableModel } from "../index";
 import { RandomuserTableDataSource } from "../table-virtual-scroll-datasource";
 
@@ -51,7 +54,7 @@ import { RandomuserTableDataSource } from "../table-virtual-scroll-datasource";
         "./table-virtual-scroll-real-api-progress-footer.example.component.less",
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [CdkVirtualScrollViewport, NuiTableModule, NgIf, NuiProgressModule],
 })
 export class TableVirtualScrollRealApiProgressFooterExampleComponent
     implements AfterViewInit, OnDestroy, OnInit

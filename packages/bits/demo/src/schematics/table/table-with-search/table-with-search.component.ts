@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectorRef,
@@ -42,6 +43,10 @@ import {
 import { RESULTS_PER_PAGE } from "./table-with-search-data";
 import { TableWithSearchDataSource } from "./table-with-search-data-source.service";
 import { IServer } from "./types";
+import { NuiPaginatorModule } from "../../../../../src/lib/paginator/paginator.module";
+import { NuiProgressModule } from "../../../../../src/lib/progress/progress.module";
+import { NuiSearchModule } from "../../../../../src/lib/search/search.module";
+import { NuiTableModule } from "../../../../../src/lib/table/table.module";
 
 @Component({
     selector: "app-table-with-search",
@@ -54,7 +59,7 @@ import { IServer } from "./types";
             useClass: TableWithSearchDataSource,
         },
     ],
-    standalone: false
+    imports: [NuiSearchModule, NuiTableModule, NgIf, NuiProgressModule, NuiPaginatorModule],
 })
 export class TableWithSearchComponent
     implements OnInit, OnDestroy, AfterViewInit

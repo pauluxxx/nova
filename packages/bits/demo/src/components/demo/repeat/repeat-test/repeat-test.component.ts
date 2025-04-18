@@ -18,12 +18,23 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiTabsModule } from "../../../../../../src/lib/tabgroup/tabs.module";
+import { RepeatDisabledMultiSelectionExampleComponent } from "../repeat-disabled-multi-selection/repeat-disabled-multi-selection.example.component";
+import { RepeatMultiSelectionExampleComponent } from "../repeat-multi-selection/repeat-multi-selection.example.component";
+import { RepeatRadioSelectionModeExampleComponent } from "../repeat-radio-selection-mode/repeat-radio-selection-mode.example.component";
+import { RepeatRadioWithNonRequiredSelectionModeExampleComponent } from "../repeat-radio-with-non-required-selection-mode/repeat-radio-with-non-required-selection-mode.example.component";
+import { RepeatSingleSelectionModeExampleComponent } from "../repeat-single-selection-mode/repeat-single-selection-mode.example.component";
+import { RepeatSingleWithRequiredSelectionModeExampleComponent } from "../repeat-single-with-required-selection-mode/repeat-single-with-required-selection-mode.example.component";
+import { RepeatVirtualScrollComponent } from "../repeat-virtual-scroll/repeat-virtual-scroll.component";
 
 @Component({
     selector: "nui-repeat-test",
     templateUrl: "./repeat-test.component.html",
-    standalone: false
+    imports: [NuiTabsModule, NgFor, RepeatVirtualScrollComponent, RepeatMultiSelectionExampleComponent, RepeatDisabledMultiSelectionExampleComponent, RepeatSingleSelectionModeExampleComponent, NuiButtonModule, RepeatRadioSelectionModeExampleComponent, RepeatRadioWithNonRequiredSelectionModeExampleComponent, RepeatSingleWithRequiredSelectionModeExampleComponent],
 })
 export class RepeatTestComponent {
     public colors = [

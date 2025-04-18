@@ -28,8 +28,7 @@ import { NuiIconModule } from "../icon/icon.module";
  * @ignore
  */
 @NgModule({
-    declarations: [ButtonComponent],
-    imports: [NuiCommonModule, NuiIconModule],
+    imports: [NuiCommonModule, NuiIconModule, ButtonComponent],
     exports: [ButtonComponent],
     providers: [],
 })

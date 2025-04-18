@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiPanelModule } from "../../../../../../src/lib/panel/panel.module";
+
 @Component({
     selector: "nui-panel-nested-example",
     templateUrl: "./panel-nested.example.component.html",
-    standalone: false
+    imports: [NuiPanelModule],
 })
 export class PanelNestedExampleComponent {
     public isCollapsible = true;

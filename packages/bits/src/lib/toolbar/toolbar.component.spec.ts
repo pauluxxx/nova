@@ -62,7 +62,6 @@ import { MenuComponent } from "../menu";
             </nui-toolbar-group>
         </nui-toolbar>
     `,
-    standalone: false
 })
 class TestWrapperComponent {}
 
@@ -72,25 +71,23 @@ describe("components >", () => {
         let fixture: ComponentFixture<TestWrapperComponent>;
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    TestWrapperComponent,
-                    ButtonComponent,
-                    ToolbarComponent,
-                    ToolbarItemComponent,
-                    ToolbarGroupComponent,
-                    ToolbarSplitterComponent,
-                    IconComponent,
-                    MenuComponent,
-                ],
-                schemas: [NO_ERRORS_SCHEMA],
-                providers: [
-                    IconService,
-                    LoggerService,
-                    { provide: TRANSLATIONS_FORMAT, useValue: "xlf" },
-                    { provide: TRANSLATIONS, useValue: "" },
-                    ToolbarKeyboardService,
-                ],
-            });
+    imports: [TestWrapperComponent,
+        ButtonComponent,
+        ToolbarComponent,
+        ToolbarItemComponent,
+        ToolbarGroupComponent,
+        ToolbarSplitterComponent,
+        IconComponent,
+        MenuComponent],
+    schemas: [NO_ERRORS_SCHEMA],
+    providers: [
+        IconService,
+        LoggerService,
+        { provide: TRANSLATIONS_FORMAT, useValue: "xlf" },
+        { provide: TRANSLATIONS, useValue: "" },
+        ToolbarKeyboardService,
+    ],
+});
         });
 
         beforeEach(() => {

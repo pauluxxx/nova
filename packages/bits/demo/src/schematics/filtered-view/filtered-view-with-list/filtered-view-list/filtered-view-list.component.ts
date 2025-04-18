@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgFor, KeyValuePipe } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
@@ -45,6 +46,10 @@ import {
     SorterDirection,
 } from "@nova-ui/bits";
 
+import { NuiPaginatorModule } from "../../../../../../src/lib/paginator/paginator.module";
+import { NuiRepeatModule } from "../../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../../src/lib/search/search.module";
+import { NuiSorterModule } from "../../../../../../src/lib/sorter/sorter.module";
 import { LOCAL_DATA, RESULTS_PER_PAGE } from "../filtered-view-with-list-data";
 import { IServer, IServerFilters } from "../types";
 
@@ -53,7 +58,7 @@ import { IServer, IServerFilters } from "../types";
     templateUrl: "./filtered-view-list.component.html",
     styleUrls: ["./filtered-view-list.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiSorterModule, NuiSearchModule, NgIf, NuiRepeatModule, NuiPaginatorModule, NgFor, KeyValuePipe],
 })
 export class FilteredViewListComponent implements AfterViewInit, OnDestroy {
     public readonly sorterItems: IMenuItem[] = [

@@ -54,7 +54,7 @@ import { InputValueTypes } from "../types";
             }}</nui-select-v2-option>
         </nui-select-v2>
     `,
-    standalone: false
+    imports: [FormsModule, ReactiveFormsModule, NuiOverlayModule],
 })
 class SelectV2WrapperWithFormControlComponent {
     public items = Array.from({ length: 10 }).map((_, i) => `Item ${i}`);
@@ -71,7 +71,7 @@ class SelectV2WrapperWithFormControlComponent {
             }}</nui-select-v2-option>
         </nui-select-v2>
     `,
-    standalone: false
+    imports: [FormsModule, ReactiveFormsModule, NuiOverlayModule],
 })
 class SelectV2WrapperWithValueComponent {
     public items = Array.from({ length: 10 }).map((_, i) => `Item ${i}`);
@@ -90,7 +90,7 @@ class SelectV2WrapperWithValueComponent {
             >
         </nui-select-v2>
     `,
-    standalone: false
+    imports: [FormsModule, ReactiveFormsModule, NuiOverlayModule],
 })
 class SelectV2WrapperAsyncComponent {
     public items: any[];
@@ -130,21 +130,18 @@ describe("components >", () => {
 
         beforeEach(waitForAsync(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    SelectV2Component,
-                    SelectV2OptionComponent,
-                    SelectV2WrapperWithFormControlComponent,
-                    SelectV2WrapperAsyncComponent,
-                    SelectV2WrapperWithValueComponent,
-                ],
-                providers: [
-                    ChangeDetectorRef,
-                    OptionKeyControlService,
-                    LiveAnnouncer,
-                ],
-                imports: [FormsModule, ReactiveFormsModule, NuiOverlayModule],
-                schemas: [NO_ERRORS_SCHEMA],
-            }).compileComponents();
+    providers: [
+        ChangeDetectorRef,
+        OptionKeyControlService,
+        LiveAnnouncer,
+    ],
+    imports: [FormsModule, ReactiveFormsModule, NuiOverlayModule, SelectV2Component,
+        SelectV2OptionComponent,
+        SelectV2WrapperWithFormControlComponent,
+        SelectV2WrapperAsyncComponent,
+        SelectV2WrapperWithValueComponent],
+    schemas: [NO_ERRORS_SCHEMA],
+}).compileComponents();
 
             // component
             fixture = TestBed.createComponent(SelectV2Component);

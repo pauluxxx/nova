@@ -33,11 +33,10 @@ describe("OverlayService >", () => {
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [OverlayComponent],
-            imports: [NuiOverlayModule],
-            providers: [EventBusService],
-            schemas: [NO_ERRORS_SCHEMA],
-        }).compileComponents();
+    imports: [NuiOverlayModule, OverlayComponent],
+    providers: [EventBusService],
+    schemas: [NO_ERRORS_SCHEMA],
+}).compileComponents();
 
         fixture = TestBed.createComponent(OverlayComponent);
         component = fixture.componentInstance;

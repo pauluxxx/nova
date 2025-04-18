@@ -32,9 +32,9 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [CheckboxComponent],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA],
-            });
+    imports: [CheckboxComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+});
 
             fixture = TestBed.createComponent(CheckboxComponent);
             subject = fixture.componentInstance;

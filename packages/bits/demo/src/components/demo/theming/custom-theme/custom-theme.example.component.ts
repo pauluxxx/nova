@@ -28,12 +28,14 @@ import {
     ViewEncapsulation,
 } from "@angular/core";
 
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
+
 @Component({
     selector: "custom-theme-example",
     templateUrl: "./custom-theme.example.component.html",
     styleUrls: ["./custom-theme.example.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NuiSwitchModule],
 })
 export class CustomThemeExampleComponent implements OnDestroy {
     private readonly renderer: Renderer2;

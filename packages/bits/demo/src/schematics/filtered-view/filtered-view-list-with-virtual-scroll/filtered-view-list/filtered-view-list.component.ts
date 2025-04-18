@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgFor, AsyncPipe, KeyValuePipe } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
@@ -52,6 +53,11 @@ import {
     VirtualViewportManager,
 } from "@nova-ui/bits";
 
+import { NuiBusyModule } from "../../../../../../src/lib/busy/busy.module";
+import { NuiRepeatModule } from "../../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../../src/lib/search/search.module";
+import { NuiSorterModule } from "../../../../../../src/lib/sorter/sorter.module";
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
 import { RESULTS_PER_PAGE } from "../filtered-view-list-with-virtual-scroll-data";
 import { FilteredViewListWithVirtualScrollDataSource } from "../filtered-view-list-with-virtual-scroll-data-source.service";
 import { IServer, IServerFilters } from "../types";
@@ -61,7 +67,7 @@ import { IServer, IServerFilters } from "../types";
     templateUrl: "./filtered-view-list.component.html",
     styleUrls: ["./filtered-view-list.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiBusyModule, NuiSpinnerModule, NuiSorterModule, NuiSearchModule, NgIf, NuiRepeatModule, NgFor, AsyncPipe, KeyValuePipe],
 })
 export class FilteredViewListComponent
     implements OnInit, AfterViewInit, OnDestroy

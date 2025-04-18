@@ -36,8 +36,8 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [WizardStepHeaderComponent, IconComponent],
-            });
+    imports: [WizardStepHeaderComponent, IconComponent],
+});
 
             fixture = TestBed.createComponent(WizardStepHeaderComponent);
             component = fixture.componentInstance;

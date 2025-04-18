@@ -21,10 +21,13 @@
 import { Component } from "@angular/core";
 import { Subject } from "rxjs";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiPopoverModule } from "../../../../../../src/lib/popover/popover.module";
+
 @Component({
     selector: "nui-popover-open-and-close-programmatically-example",
     templateUrl: "./popover-open-and-close-programmatically.example.component.html",
-    standalone: false
+    imports: [NuiPopoverModule, NuiButtonModule],
 })
 export class PopoverOpenAndCloseProgrammaticallyExampleComponent {
     public closePopoverSubject = new Subject<void>();

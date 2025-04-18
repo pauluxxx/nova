@@ -28,8 +28,8 @@ describe("sheet", () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [SheetComponent],
-        });
+    imports: [SheetComponent],
+});
         fixture = TestBed.createComponent(SheetComponent);
         sheetComponent = fixture.componentInstance;
         fixture.detectChanges();

@@ -18,20 +18,25 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf, AsyncPipe } from "@angular/common";
 import {
     ChangeDetectionStrategy,
     Component,
     SecurityContext,
 } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DomSanitizer } from "@angular/platform-browser";
+
+import { NuiChipsModule } from "../../../../../../src/lib/chips/chips.module";
+import { NuiOverlayAdditionsModule } from "../../../../../../src/lib/overlay/overlay-additions.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
 
 @Component({
     selector: "nui-combobox-v2-create-option-multiselect-example",
     templateUrl: "combobox-v2-create-option-multiselect.example.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ["combobox-v2-create-option-multiselect.example.component.less"],
-    standalone: false
+    imports: [NuiSelectV2Module, FormsModule, ReactiveFormsModule, NgFor, NuiChipsModule, NgIf, NuiOverlayAdditionsModule, AsyncPipe],
 })
 export class ComboboxV2CreateOptionMultiselectExampleComponent {
     public options = Array.from({ length: 3 }).map(

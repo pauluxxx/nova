@@ -41,8 +41,6 @@ import { NuiMenuModule } from "../menu/menu.module";
         NuiMenuModule,
         NuiDividerModule,
         NuiButtonModule,
-    ],
-    declarations: [
         ToolbarComponent,
         ToolbarItemComponent,
         ToolbarMessageComponent,

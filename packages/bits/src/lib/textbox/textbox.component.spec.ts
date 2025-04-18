@@ -35,7 +35,10 @@ import { SpinnerComponent } from "../spinner/spinner.component";
             </nui-form-field>
         </div>
     `,
-    standalone: false
+    imports: [CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NuiFormFieldModule],
 })
 class TextboxFormComponent {
     @ViewChild(TextboxComponent) input: TextboxComponent;
@@ -54,8 +57,8 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [TextboxComponent, SpinnerComponent],
-            }).compileComponents();
+    imports: [TextboxComponent, SpinnerComponent],
+}).compileComponents();
 
             fixture = TestBed.createComponent(TextboxComponent);
             testComponent = fixture.componentInstance;
@@ -85,19 +88,17 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    TextboxComponent,
-                    TextboxFormComponent,
-                    SpinnerComponent,
-                ],
-                imports: [
-                    CommonModule,
-                    FormsModule,
-                    ReactiveFormsModule,
-                    NuiFormFieldModule,
-                ],
-                schemas: [NO_ERRORS_SCHEMA],
-            }).compileComponents();
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NuiFormFieldModule,
+        TextboxComponent,
+        TextboxFormComponent,
+        SpinnerComponent,
+    ],
+    schemas: [NO_ERRORS_SCHEMA],
+}).compileComponents();
 
             fixture = TestBed.createComponent(TextboxFormComponent);
             testComponent = fixture.componentInstance;

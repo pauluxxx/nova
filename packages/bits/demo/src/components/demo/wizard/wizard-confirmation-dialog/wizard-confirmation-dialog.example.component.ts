@@ -22,10 +22,14 @@ import { Component, Inject, TemplateRef } from "@angular/core";
 
 import { DialogService, NuiDialogRef, ToastService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+import { NuiWizardModule } from "../../../../../../src/lib/wizard/wizard.module";
+
 @Component({
     selector: "nui-wizard-confirmation-dialog-example",
     templateUrl: "./wizard-confirmation-dialog.example.component.html",
-    standalone: false
+    imports: [NuiWizardModule, NuiDialogModule, NuiButtonModule],
 })
 export class WizardConfirmationDialogExampleComponent {
     public activeDialog: NuiDialogRef;

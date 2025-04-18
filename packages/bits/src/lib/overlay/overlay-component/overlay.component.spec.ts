@@ -44,7 +44,7 @@ import { NuiOverlayModule } from "../overlay.module";
             </nui-select-v2-option>
         </nui-overlay>
     `,
-    standalone: false
+    imports: [NuiOverlayModule, SelectV2OptionComponent],
 })
 class PopupWrapperComponent implements AfterViewInit {
     public items = Array.from({ length: 50 }).map((_, i) => `Item ${i}`);
@@ -67,22 +67,19 @@ describe("components >", () => {
 
         beforeEach(waitForAsync(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    PopupWrapperComponent,
-                    OverlayComponent,
-                    SelectV2OptionComponent,
-                ],
-                imports: [NuiOverlayModule],
-                providers: [
-                    Overlay,
-                    EventBusService,
-                    {
-                        provide: NUI_SELECT_V2_OPTION_PARENT_COMPONENT,
-                        useClass: PopupWrapperComponent,
-                    },
-                ],
-                schemas: [NO_ERRORS_SCHEMA],
-            }).compileComponents();
+    imports: [NuiOverlayModule, PopupWrapperComponent,
+        OverlayComponent,
+        SelectV2OptionComponent],
+    providers: [
+        Overlay,
+        EventBusService,
+        {
+            provide: NUI_SELECT_V2_OPTION_PARENT_COMPONENT,
+            useClass: PopupWrapperComponent,
+        },
+    ],
+    schemas: [NO_ERRORS_SCHEMA],
+}).compileComponents();
         }));
 
         beforeEach(() => {

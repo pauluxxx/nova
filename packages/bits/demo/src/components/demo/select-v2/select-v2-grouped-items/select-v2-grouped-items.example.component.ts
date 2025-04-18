@@ -18,9 +18,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 
 import { ISelectGroup } from "@nova-ui/bits";
+
+import { NuiDividerModule } from "../../../../../../src/lib/divider/divider.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
 
 const getRandomNumberTo = (max: number) =>
     Math.floor(Math.random() * Math.floor(max) + 1);
@@ -29,7 +33,7 @@ const getRandomNumberTo = (max: number) =>
     selector: "nui-select-v2-grouped-items-example",
     templateUrl: "select-v2-grouped-items.example.component.html",
     host: { class: "select-container" },
-    standalone: false
+    imports: [NuiSelectV2Module, NgFor, NgIf, NuiDividerModule],
 })
 export class SelectV2GroupedItemsExampleComponent {
     public items: ISelectGroup[] = Array.from({ length: 10 }).map((_, i) => ({

@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiPopoverModule } from "../../../../../../src/lib/popover/popover.module";
+
 @Component({
     selector: "nui-popover-with-container-example",
     templateUrl: "./popover-with-container.example.component.html",
-    standalone: false
+    imports: [NuiPopoverModule],
 })
 export class PopoverWithContainerExampleComponent {}

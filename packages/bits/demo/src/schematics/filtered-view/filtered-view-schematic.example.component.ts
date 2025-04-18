@@ -55,11 +55,28 @@ ng g "./schematics/src/collection.json":filtered-view --lint-fix --force --path=
  --name=filtered-view-table-with-custom-virtual-scroll --presentationType=table --dataSource=serverSide  --enableSort=false --enableSearch=false
  --virtualScrollStrategy=custom --selectionMode=none
 */
+import { NgIf } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { FilteredViewListWithPaginationComponent } from "./filtered-view-list-with-pagination/filtered-view-list-with-pagination.component";
+import { FilteredViewListWithVirtualScrollComponent } from "./filtered-view-list-with-virtual-scroll/filtered-view-list-with-virtual-scroll.component";
+import { FilteredViewTableWithCustomVirtualScrollComponent } from "./filtered-view-table-with-custom-virtual-scroll/filtered-view-table-with-custom-virtual-scroll.component";
+import { FilteredViewTableWithPaginationComponent } from "./filtered-view-table-with-pagination/filtered-view-table-with-pagination.component";
+import { FilteredViewTableWithSelectionComponent } from "./filtered-view-table-with-selection/filtered-view-table-with-selection.component";
+import { FilteredViewTableWithVirtualScrollComponent } from "./filtered-view-table-with-virtual-scroll/filtered-view-table-with-virtual-scroll.component";
+import { FilteredViewTableWithVirtualScrollSelectionComponent } from "./filtered-view-table-with-virtual-scroll-selection/filtered-view-table-with-virtual-scroll-selection.component";
+import { FilteredViewWithListComponent } from "./filtered-view-with-list/filtered-view-with-list.component";
+import { FilteredViewWithTableComponent } from "./filtered-view-with-table/filtered-view-with-table.component";
+import { FilteredViewWithTreeComponent } from "./filtered-view-with-tree/filtered-view-with-tree.component";
+import { NuiTabsModule } from "../../../../src/lib/tabgroup/tabs.module";
+import { SchematicsDocsCliOptionComponent } from "../utils/schematic-docs-cli-option/schematic-docs-cli-option.component";
+import { SchematicsDocsCommandComponent } from "../utils/schematic-docs-command/schematic-docs-command.component";
+import { SchematicDocsExampleComponent } from "../utils/schematic-docs-example/schematic-docs-example.component";
+import { SchematicDocsPageComponent } from "../utils/schematic-docs-page/schematic-docs-page.component";
 
 @Component({
     selector: "schematics-docs-example",
     templateUrl: "./filtered-view-schematic.example.component.html",
-    standalone: false
+    imports: [SchematicDocsPageComponent, SchematicsDocsCliOptionComponent, NuiTabsModule, SchematicsDocsCommandComponent, SchematicDocsExampleComponent, FilteredViewWithListComponent, FilteredViewListWithPaginationComponent, FilteredViewListWithVirtualScrollComponent, FilteredViewWithTableComponent, FilteredViewTableWithPaginationComponent, FilteredViewTableWithSelectionComponent, NgIf, FilteredViewTableWithVirtualScrollComponent, FilteredViewTableWithVirtualScrollSelectionComponent, FilteredViewTableWithCustomVirtualScrollComponent, FilteredViewWithTreeComponent],
 })
 export class FilteredViewSchematicExampleComponent {}

@@ -34,6 +34,10 @@ import {
     SearchComponent,
 } from "@nova-ui/bits";
 
+import { NuiPaginatorModule } from "../../../../../../../../src/lib/paginator/paginator.module";
+import { NuiRepeatModule } from "../../../../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../../../../src/lib/search/search.module";
+
 const RANDOM_ARRAY = [
     { color: "regular-blue" },
     { color: "regular-green" },
@@ -67,7 +71,7 @@ interface ExampleItem {
     selector: "nui-deprecated-client-side-basic-data-source-example",
     providers: [LocalFilteringDataSource],
     templateUrl: "./client-side-basic.example.component.html",
-    standalone: false
+    imports: [NuiSearchModule, NuiRepeatModule, NuiPaginatorModule],
 })
 export class DepreacatedDataSourceClientSideBasicExampleComponent
     implements AfterViewInit, OnDestroy

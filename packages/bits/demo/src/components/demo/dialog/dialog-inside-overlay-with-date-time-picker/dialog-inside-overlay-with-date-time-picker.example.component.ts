@@ -23,10 +23,14 @@ import moment, { Moment } from "moment/moment";
 
 import { DialogService, NuiDialogRef } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDateTimePickerModule } from "../../../../../../src/lib/date-time-picker/date-time-picker.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+
 @Component({
     selector: "nui-dialog-inside-overlay-with-date-time-picker-example",
     templateUrl: "./dialog-inside-overlay-with-date-time-picker.example.component.html",
-    standalone: false
+    imports: [NuiButtonModule, NuiDialogModule, NuiDateTimePickerModule],
 })
 export class DialogInsideOverlayWithDateTimePickerExampleComponent {
     public dt: Moment;

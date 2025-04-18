@@ -18,7 +18,11 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { ChangeDetectorRef, Component } from "@angular/core";
+
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiTabsModule } from "../../../../../../src/lib/tabgroup/tabs.module";
 
 @Component({
     selector: "nui-tab-heading-group-horizontal-with-icons-example",
@@ -26,7 +30,7 @@ import { ChangeDetectorRef, Component } from "@angular/core";
     styleUrls: [
         "./tab-heading-group-horizontal-with-icons.example.component.less",
     ],
-    standalone: false
+    imports: [NuiTabsModule, NgFor, NuiIconModule],
 })
 export class TabHeadingGroupHorizontalWithIconsExampleComponent {
     public currentTabId: string;

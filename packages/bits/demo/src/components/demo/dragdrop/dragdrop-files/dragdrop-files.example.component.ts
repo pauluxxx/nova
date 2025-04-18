@@ -18,15 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgFor } from "@angular/common";
 import { Component } from "@angular/core";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { FileDropExampleComponent } from "../file-drop/file-drop.component";
 import { FileDropState } from "../file-drop/public-api";
 
 @Component({
     selector: "nui-dragdrop-files-example",
     templateUrl: "./dragdrop-files.example.component.html",
     styleUrls: ["./dragdrop-files.example.component.less"],
-    standalone: false
+    imports: [FileDropExampleComponent, NgIf, NgFor, NuiButtonModule],
 })
 export class DragdropFilesExampleComponent {
     public gifError = false;

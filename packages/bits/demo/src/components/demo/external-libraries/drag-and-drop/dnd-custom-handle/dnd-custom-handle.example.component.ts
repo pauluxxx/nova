@@ -18,7 +18,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import { CdkDragDrop, moveItemInArray, CdkDropList, CdkDrag, CdkDragHandle } from "@angular/cdk/drag-drop";
+import { NgFor, NgClass, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 
 class IListItem {
@@ -31,7 +32,7 @@ class IListItem {
     selector: "dnd-custom-handle",
     templateUrl: "./dnd-custom-handle.example.component.html",
     styleUrls: ["./dnd-custom-handle.example.component.less"],
-    standalone: false
+    imports: [CdkDropList, NgFor, CdkDrag, NgClass, NgIf, CdkDragHandle],
 })
 export class DndCustomHandleExampleComponent {
     public mousedOver: boolean[] = [];

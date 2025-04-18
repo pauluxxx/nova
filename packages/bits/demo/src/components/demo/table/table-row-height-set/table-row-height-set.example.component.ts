@@ -18,7 +18,11 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
 
 interface IExampleTableModel {
     position: number;
@@ -36,7 +40,7 @@ interface IExampleTableModel {
     templateUrl: "./table-row-height-set.example.component.html",
     styleUrls: ["./table-row-height-set.example.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiTableModule, NgFor, NuiIconModule],
 })
 export class TableRowHeightSetExampleComponent {
     public displayedColumns = [

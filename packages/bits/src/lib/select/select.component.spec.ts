@@ -72,40 +72,37 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [FormsModule, ReactiveFormsModule, NuiOverlayModule],
-                declarations: [
-                    ButtonComponent,
-                    CheckboxComponent,
-                    DividerComponent,
-                    HighlightPipe,
-                    IconComponent,
-                    MenuActionComponent,
-                    MenuComponent,
-                    MenuGroupComponent,
-                    MenuItemComponent,
-                    MenuLinkComponent,
-                    MenuOptionComponent,
-                    MenuPopupComponent,
-                    MenuSwitchComponent,
-                    PopoverComponent,
-                    PopupComponent,
-                    PopupToggleDirective,
-                    RepeatItemComponent,
-                    SelectComponent,
-                    SpinnerComponent,
-                    SwitchComponent,
-                    TextboxComponent,
-                    TooltipDirective,
-                    ValidationMessageComponent,
-                ],
-                providers: [
-                    UtilService,
-                    EdgeDetectionService,
-                    DomUtilService,
-                    LoggerService,
-                    IconService,
-                ],
-            });
+    imports: [FormsModule, ReactiveFormsModule, NuiOverlayModule, ButtonComponent,
+        CheckboxComponent,
+        DividerComponent,
+        HighlightPipe,
+        IconComponent,
+        MenuActionComponent,
+        MenuComponent,
+        MenuGroupComponent,
+        MenuItemComponent,
+        MenuLinkComponent,
+        MenuOptionComponent,
+        MenuPopupComponent,
+        MenuSwitchComponent,
+        PopoverComponent,
+        PopupComponent,
+        PopupToggleDirective,
+        RepeatItemComponent,
+        SelectComponent,
+        SpinnerComponent,
+        SwitchComponent,
+        TextboxComponent,
+        TooltipDirective,
+        ValidationMessageComponent],
+    providers: [
+        UtilService,
+        EdgeDetectionService,
+        DomUtilService,
+        LoggerService,
+        IconService,
+    ],
+});
 
             fixture = TestBed.createComponent(SelectComponent);
             componentInstance = fixture.componentInstance;
@@ -246,15 +243,14 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [FormsModule, ReactiveFormsModule],
-                declarations: [SelectReactiveFormTestComponent],
-                providers: [
-                    ToastService,
-                    ToastContainerService,
-                    NotificationService,
-                ],
-                schemas: [NO_ERRORS_SCHEMA],
-            });
+    imports: [FormsModule, ReactiveFormsModule, SelectReactiveFormTestComponent],
+    providers: [
+        ToastService,
+        ToastContainerService,
+        NotificationService,
+    ],
+    schemas: [NO_ERRORS_SCHEMA],
+});
 
             fixture = TestBed.createComponent(SelectReactiveFormTestComponent);
             componentInstance = fixture.componentInstance;

@@ -66,8 +66,10 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [ReactiveFormsModule, FormsModule, NuiOverlayModule],
-                declarations: [
+                imports: [
+                    ReactiveFormsModule,
+                    FormsModule,
+                    NuiOverlayModule,
                     DatePickerComponent,
                     DatePickerInnerComponent,
                     DayPickerComponent,

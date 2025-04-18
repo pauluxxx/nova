@@ -18,9 +18,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, AsyncPipe } from "@angular/common";
 import { Component } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Subject } from "rxjs";
+
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
 
 interface IExampleItem {
     id: string;
@@ -31,7 +34,7 @@ interface IExampleItem {
     selector: "nui-combobox-v2-custom-typeahead-example",
     templateUrl: "combobox-v2-custom-typeahead.example.component.html",
     host: { class: "combobox-container" },
-    standalone: false
+    imports: [NuiSelectV2Module, FormsModule, ReactiveFormsModule, NgFor, AsyncPipe],
 })
 export class ComboboxV2CustomTypeaheadExampleComponent {
     public items: IExampleItem[] = Array.from({ length: 100 }).map((_, i) => ({

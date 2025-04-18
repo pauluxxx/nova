@@ -20,10 +20,13 @@
 
 import { Component } from "@angular/core";
 
+import { NuiCommonModule } from "../../../../../../../src/common/common.module";
+import { NuiSearchModule } from "../../../../../../../src/lib/search/search.module";
+
 @Component({
     selector: "nui-demo-highlight-pipe",
     templateUrl: "./highlight-pipe.example.component.html",
-    standalone: false
+    imports: [NuiSearchModule, NuiCommonModule],
 })
 export class HighlightPipeExampleComponent {
     term: string = "bar";

@@ -59,7 +59,7 @@ import { LoggerService } from "../../services/log-service";
     templateUrl: "./wizard.component.html",
     styleUrls: ["./wizard.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+
 })
 export class WizardComponent
     implements OnInit, AfterContentInit, AfterViewChecked, OnDestroy
@@ -101,10 +101,12 @@ export class WizardComponent
     /**
      * Evaluated when the user attempts to cancel the wizard.
      */
+    // eslint-disable-next-line @angular-eslint/no-output-native
     @Output() public cancel = new EventEmitter<boolean>();
     /**
      * Evaluated when the user completes the wizard.
      */
+    // eslint-disable-next-line @angular-eslint/no-output-native
     @Output() public finish = new EventEmitter();
     /**
      * Emits when next button is clicked.

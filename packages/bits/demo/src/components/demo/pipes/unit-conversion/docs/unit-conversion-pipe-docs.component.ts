@@ -20,9 +20,13 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../../src/lib/message/message.module";
+import { UnitConversionPipeBasicExampleComponent } from "../unit-conversion-basic/unit-conversion-pipe-basic.example.component";
+
 @Component({
     templateUrl: "./unit-conversion-pipe-docs.component.html",
     styleUrls: ["./unit-conversion-pipe-docs.component.less"],
-    standalone: false
+    imports: [NuiMessageModule, NuiDocsModule, UnitConversionPipeBasicExampleComponent],
 })
 export class UnitConversionPipeDocsComponent {}

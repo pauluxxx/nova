@@ -18,13 +18,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { NuiTextboxModule } from "../../../../../../../src/lib/textbox/textbox.module";
 
 @Component({
     selector: "nui-textbox-number-test",
     templateUrl: "./textbox-number-test.component.html",
-    standalone: false
+    imports: [NuiTextboxModule, FormsModule, ReactiveFormsModule, JsonPipe],
 })
 export class TextboxNumberTestComponent {
     public value = 10;

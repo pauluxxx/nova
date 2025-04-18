@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component, Inject, TemplateRef, ViewChild } from "@angular/core";
 
 import {
@@ -27,10 +28,15 @@ import {
     WizardComponent,
 } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+import { NuiWizardModule } from "../../../../../../src/lib/wizard/wizard.module";
+
 @Component({
     selector: "nui-wizard-dialog-example",
     templateUrl: "./wizard-dialog.example.component.html",
-    standalone: false
+    imports: [NuiCheckboxModule, NgFor, NuiDialogModule, NuiWizardModule, NuiButtonModule],
 })
 export class WizardDialogExampleComponent {
     @ViewChild("wizardComponent") wizardComponent: WizardComponent;

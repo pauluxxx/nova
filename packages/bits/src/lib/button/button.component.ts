@@ -38,6 +38,8 @@ import { filter, takeUntil } from "rxjs/operators";
 import { ButtonSizeType } from "./public-api";
 import { buttonConstants } from "../../constants/button.constants";
 import { LoggerService } from "../../services/log-service";
+import {NgIf, NgStyle} from "@angular/common";
+import {IconComponent} from "../icon/icon.component";
 
 // <example-url>./../examples/index.html#/button</example-url>
 
@@ -51,7 +53,8 @@ import { LoggerService } from "../../services/log-service";
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ["./button.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+
+    imports: [NgIf, NgStyle, IconComponent],
 })
 export class ButtonComponent implements OnInit, OnDestroy, AfterContentChecked {
     /**

@@ -20,6 +20,14 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../../../src/lib/message/message.module";
+import { DepreacatedDataSourceClientSideBasicExampleComponent } from "../client-side-basic/client-side-basic.example.component";
+import { DepreacatedDataSourceClientSideCustomSearchExampleComponent } from "../client-side-custom-search/client-side-custom-search.example.component";
+import { DepreacatedDataSourceClientSideDelayedExampleComponent } from "../client-side-delayed/client-side-delayed.example.component";
+import { DepreacatedDataSourceClientSideFilteringExampleComponent } from "../client-side-filtering/client-side-filtering.example.component";
+import { DepreacatedDataSourceWithSelectionExampleComponent } from "../client-side-with-selection/client-side-with-selection.example.component";
+
 /**
  * TODO: Remove in  - NUI-5835
  * @deprecated
@@ -27,7 +35,7 @@ import { Component } from "@angular/core";
 @Component({
     selector: "nui-data-source-example",
     templateUrl: "./data-source-docs.example.component.html",
-    standalone: false
+    imports: [NuiMessageModule, NuiDocsModule, DepreacatedDataSourceClientSideBasicExampleComponent, DepreacatedDataSourceClientSideCustomSearchExampleComponent, DepreacatedDataSourceClientSideDelayedExampleComponent, DepreacatedDataSourceClientSideFilteringExampleComponent, DepreacatedDataSourceWithSelectionExampleComponent],
 })
 export class DataSourceExampleComponent {
     public subclassCode = `

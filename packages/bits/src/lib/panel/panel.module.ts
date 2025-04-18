@@ -28,8 +28,7 @@ import { NuiButtonModule } from "../button/button.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiButtonModule],
-    declarations: [PanelComponent],
+    imports: [NuiCommonModule, NuiButtonModule, PanelComponent],
     exports: [PanelComponent],
     providers: [],
 })

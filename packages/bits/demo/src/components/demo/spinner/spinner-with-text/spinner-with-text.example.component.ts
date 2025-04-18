@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
+
 @Component({
     selector: "nui-spinner-with-text-example",
     templateUrl: "./spinner-with-text.example.component.html",
-    standalone: false
+    imports: [NuiSpinnerModule],
 })
 export class SpinnerWithTextExampleComponent {}

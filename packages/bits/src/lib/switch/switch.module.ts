@@ -27,8 +27,7 @@ import { NuiCommonModule } from "../../common/common.module";
  * @ignore
  */
 @NgModule({
-    declarations: [SwitchComponent],
-    imports: [NuiCommonModule],
+    imports: [NuiCommonModule, SwitchComponent],
     exports: [SwitchComponent],
     providers: [],
 })

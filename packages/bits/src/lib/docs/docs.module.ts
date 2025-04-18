@@ -57,17 +57,15 @@ import { NuiTooltipModule } from "../tooltip/tooltip.module";
         NuiButtonModule,
         NuiSwitchModule,
         NuiImageModule,
-    ],
-    exports: [
-        CommonModule,
-        RouterModule,
         CopyTextComponent,
         ExampleWrapperComponent,
         SrlcIndicatorComponent,
         ThemeSwitcherComponent,
         ExampleCodeComponent,
     ],
-    declarations: [
+    exports: [
+        CommonModule,
+        RouterModule,
         CopyTextComponent,
         ExampleWrapperComponent,
         SrlcIndicatorComponent,

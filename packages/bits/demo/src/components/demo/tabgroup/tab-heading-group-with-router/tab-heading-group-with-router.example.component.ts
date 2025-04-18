@@ -18,14 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import { Component, Input, OnDestroy } from "@angular/core";
-import { NavigationEnd, Router } from "@angular/router";
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from "@angular/router";
+
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiTabsModule } from "../../../../../../src/lib/tabgroup/tabs.module";
 
 @Component({
     selector: "nui-tab-heading-group-with-router-example",
     templateUrl: "./tab-heading-group-with-router.example.component.html",
     styleUrls: ["./tab-heading-group-with-router.example.component.less"],
-    standalone: false
+    imports: [NuiTabsModule, NgFor, RouterLink, NgIf, NuiIconModule, RouterOutlet],
 })
 export class TabHeadingGroupWithRouterExampleComponent implements OnDestroy {
     public currentTabRoute: string;

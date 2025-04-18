@@ -18,14 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
 
 @Component({
     selector: "nui-select-v2-options-changed-example",
     templateUrl: "select-v2-options-changed.example.component.html",
     host: { class: "select-container" },
-    standalone: false
+    imports: [NuiSelectV2Module, FormsModule, ReactiveFormsModule, NgFor, NuiButtonModule],
 })
 export class SelectV2OptionsChangedExampleComponent implements OnInit {
     public items: string[] = [];

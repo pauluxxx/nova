@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiContentModule } from "../../../../../../../../src/lib/content/content.module";
+
 @Component({
     selector: "nui-content-about-example",
     templateUrl: "./tab-content-about.example.component.html",
-    standalone: false
+    imports: [NuiContentModule],
 })
 export class TabContentAboutExampleComponent {
     public content: string = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed erat eget

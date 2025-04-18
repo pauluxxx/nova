@@ -30,13 +30,12 @@ describe("OverlayItemComponent", () => {
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [OverlayItemComponent],
-            imports: [],
-            schemas: [NO_ERRORS_SCHEMA],
-        }).compileComponents();
+    imports: [OverlayItemComponent],
+    schemas: [NO_ERRORS_SCHEMA],
+}).compileComponents();
         TestBed.configureTestingModule({
-            declarations: [OverlayItemComponent],
-        }).compileComponents();
+    imports: [OverlayItemComponent],
+}).compileComponents();
     }));
 
     beforeEach(() => {

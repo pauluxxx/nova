@@ -18,16 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 
 import layoutSchema from "../../../schematics/src/layout/schema.json";
 import addSchema from "../../../schematics/src/ng-add/schema.json";
 import tableSchema from "../../../schematics/src/table/schema.json";
+import { NuiExpanderModule } from "../../../src/lib/expander/expander.module";
 
 @Component({
     selector: "schematics-docs",
     templateUrl: "./schematics-docs.component.html",
-    standalone: false
+    imports: [NgFor, NuiExpanderModule, NgIf],
 })
 export class SchematicsDocsComponent {
     public layoutJsonScheme: any = {};

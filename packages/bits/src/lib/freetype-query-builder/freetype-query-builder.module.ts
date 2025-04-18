@@ -39,10 +39,6 @@ import { NuiToastModule } from "../toast/toast.module";
  * @ignore
  */
 @NgModule({
-    declarations: [
-        FreetypeQueryBuilderComponent,
-        TextHighlightOverlayComponent,
-    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -55,6 +51,8 @@ import { NuiToastModule } from "../toast/toast.module";
         NuiMenuModule,
         NuiPopupModule,
         NuiSelectV2Module,
+        FreetypeQueryBuilderComponent,
+        TextHighlightOverlayComponent,
     ],
     providers: [
         FreeTypeQueryUtilsService,

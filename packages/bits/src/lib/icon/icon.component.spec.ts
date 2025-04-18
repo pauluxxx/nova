@@ -53,18 +53,18 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [IconComponent],
-                providers: [
-                    IconService,
-                    {
-                        provide: DomSanitizer,
-                        useValue: {
-                            sanitize: (val: any) => val,
-                            bypassSecurityTrustHtml: (val: any) => val,
-                        },
-                    },
-                ],
-            });
+    imports: [IconComponent],
+    providers: [
+        IconService,
+        {
+            provide: DomSanitizer,
+            useValue: {
+                sanitize: (val: any) => val,
+                bypassSecurityTrustHtml: (val: any) => val,
+            },
+        },
+    ],
+});
             fixture = TestBed.createComponent(IconComponent);
             subject = fixture.componentInstance;
             fixture.detectChanges();

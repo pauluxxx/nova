@@ -29,8 +29,8 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [TabHeadingComponent],
-            });
+    imports: [TabHeadingComponent],
+});
             componentFixture = TestBed.createComponent(TabHeadingComponent);
             subject = componentFixture.componentInstance;
         });

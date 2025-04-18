@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+
 @Component({
     selector: "nui-button-visual",
     templateUrl: "./button-visual-test.component.html",
-    standalone: false
+    imports: [NuiButtonModule],
 })
 export class ButtonVisualTestComponent {
     public busy: boolean;

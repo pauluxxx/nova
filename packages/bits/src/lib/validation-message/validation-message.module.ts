@@ -29,11 +29,8 @@ import { NuiIconModule } from "../icon/icon.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiIconModule],
-    declarations: [
-        ValidationMessageComponent,
-        CustomValidationMessageComponent,
-    ],
+    imports: [NuiCommonModule, NuiIconModule, ValidationMessageComponent,
+        CustomValidationMessageComponent],
     exports: [ValidationMessageComponent, CustomValidationMessageComponent],
     providers: [],
 })

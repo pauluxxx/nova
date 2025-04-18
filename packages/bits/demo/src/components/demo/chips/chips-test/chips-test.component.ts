@@ -24,6 +24,9 @@ import _pull from "lodash/pull";
 
 import { IChipsGroup, IChipsItem, IChipsItemsSource } from "@nova-ui/bits";
 
+import { NuiChipsModule } from "../../../../../../src/lib/chips/chips.module";
+import { ChipsOverflowExampleComponent } from "../chips-overflow/chips-overflow.example.component";
+
 const horizontalFlatItems: IChipsItem[] = [
     { id: "flatId1", label: "Down" },
     { id: "flatId2", label: "Critical" },
@@ -66,7 +69,7 @@ const groupedItems: IChipsGroup[] = [
 @Component({
     selector: "chips-test-component",
     templateUrl: "./chips-test.component.html",
-    standalone: false
+    imports: [NuiChipsModule, ChipsOverflowExampleComponent],
 })
 export class ChipsTestComponent {
     public horizontalFlatItemsSource: IChipsItemsSource = {

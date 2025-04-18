@@ -85,8 +85,8 @@ const DECLARATIONS_EXPORTS: Array<Type<any> | any[]> = [
         NuiCheckboxModule,
         NuiIconModule,
         CdkTableModule,
+        ...DECLARATIONS_EXPORTS,
     ],
-    declarations: DECLARATIONS_EXPORTS,
     exports: DECLARATIONS_EXPORTS,
 })
 export class NuiTableModule {}

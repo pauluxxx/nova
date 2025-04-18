@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+
 @Component({
     selector: "nui-button-group-example",
     templateUrl: "./button-group.example.component.html",
-    standalone: false
+    imports: [NuiButtonModule],
 })
 export class ButtonGroupExampleComponent {}

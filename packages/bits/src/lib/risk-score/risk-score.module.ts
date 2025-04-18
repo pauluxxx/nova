@@ -27,8 +27,7 @@ import { NuiCommonModule } from "../../common/common.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule],
-    declarations: [RiskScoreComponent],
+    imports: [NuiCommonModule, RiskScoreComponent],
     exports: [RiskScoreComponent],
     providers: [],
 })

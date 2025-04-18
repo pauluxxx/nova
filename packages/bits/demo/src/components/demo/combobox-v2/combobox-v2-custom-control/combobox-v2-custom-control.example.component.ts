@@ -18,11 +18,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { AfterViewInit, Component, OnDestroy, ViewChild } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Subject } from "rxjs";
 
 import { ComboboxV2Component } from "@nova-ui/bits";
+
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiChipsModule } from "../../../../../../src/lib/chips/chips.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
 
 interface IExampleItem {
     id: string;
@@ -34,7 +40,7 @@ interface IExampleItem {
     templateUrl: "combobox-v2-custom-control.example.component.html",
     styleUrls: ["combobox-v2-custom-control.example.component.less"],
     host: { class: "combobox-container d-flex" },
-    standalone: false
+    imports: [NuiSelectV2Module, FormsModule, ReactiveFormsModule, NgFor, NuiChipsModule, NuiButtonModule, NuiSwitchModule],
 })
 export class ComboboxV2CustomControlExampleComponent
     implements OnDestroy, AfterViewInit

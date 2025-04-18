@@ -29,8 +29,7 @@ import { NuiCommonModule } from "../../common/common.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, DragDropModule],
-    declarations: [DraggableComponent, DroppableComponent],
+    imports: [NuiCommonModule, DragDropModule, DraggableComponent, DroppableComponent],
     exports: [DragDropModule, DraggableComponent, DroppableComponent],
     providers: [],
 })

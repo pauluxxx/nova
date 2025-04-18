@@ -20,10 +20,13 @@
 
 import { Component, OnDestroy } from "@angular/core";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiProgressModule } from "../../../../../../src/lib/progress/progress.module";
+
 @Component({
     selector: "nui-basic-progress-example",
     templateUrl: "./basic-progress.example.component.html",
-    standalone: false
+    imports: [NuiProgressModule, NuiButtonModule],
 })
 export class BasicProgressExampleComponent implements OnDestroy {
     public show = false;

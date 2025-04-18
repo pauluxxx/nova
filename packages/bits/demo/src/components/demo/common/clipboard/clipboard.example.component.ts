@@ -18,12 +18,26 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { Component } from "@angular/core";
+
+import {
+    NuiButtonModule,
+    NuiCommonModule,
+    NuiMessageModule,
+    NuiTextboxModule,
+} from "@nova-ui/bits";
 
 @Component({
     selector: "nui-clipboard-demo",
     templateUrl: "./clipboard.example.component.html",
-    standalone: false
+    imports: [
+        NuiTextboxModule,
+        NuiButtonModule,
+        NuiCommonModule,
+        NgIf,
+        NuiMessageModule,
+    ],
 })
 export class ClipboardExampleComponent {
     public textToCopy: string;

@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiMenuModule } from "../../../../../../src/lib/menu/menu.module";
+
 @Component({
     selector: "nui-menu-item-variations-example",
     templateUrl: "./menu-item-variations.example.component.html",
-    standalone: false
+    imports: [NuiMenuModule],
 })
 export class MenuItemVariationsExampleComponent {
     public onActionDone($event?:   boolean): void {

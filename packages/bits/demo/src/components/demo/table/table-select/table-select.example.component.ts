@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import { AfterViewInit, Component, OnDestroy, ViewChild } from "@angular/core";
 import { Subscription } from "rxjs";
 
@@ -31,6 +32,11 @@ import {
     TableSelectionMode,
 } from "@nova-ui/bits";
 
+import { NuiDividerModule } from "../../../../../../src/lib/divider/divider.module";
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiPaginatorModule } from "../../../../../../src/lib/paginator/paginator.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
+
 interface IExampleTableModel {
     position: number;
     item: string;
@@ -43,7 +49,7 @@ interface IExampleTableModel {
     selector: "nui-table-select",
     providers: [ClientSideDataSource],
     templateUrl: "./table-select.example.component.html",
-    standalone: false
+    imports: [NuiTableModule, NuiIconModule, NuiPaginatorModule, NuiDividerModule, JsonPipe],
 })
 export class TableSelectExampleComponent implements AfterViewInit, OnDestroy {
     public displayedColumns = [

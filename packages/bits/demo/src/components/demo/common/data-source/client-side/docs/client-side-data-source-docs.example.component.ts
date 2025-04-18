@@ -20,10 +20,18 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../../../src/lib/message/message.module";
+import { DataSourceClientSideBasicExampleComponent } from "../client-side-basic/client-side-basic.example.component";
+import { DataSourceClientSideCustomSearchExampleComponent } from "../client-side-custom-search/client-side-custom-search.example.component";
+import { DataSourceClientSideDelayedExampleComponent } from "../client-side-delayed/client-side-delayed.example.component";
+import { DataSourceClientSideFilteringExampleComponent } from "../client-side-filtering/client-side-filtering.example.component";
+import { DataSourceWithSelectionExampleComponent } from "../client-side-with-selection/client-side-with-selection.example.component";
+
 @Component({
     selector: "nui-client-side-data-source-docs",
     templateUrl: "./client-side-data-source-docs.example.component.html",
-    standalone: false
+    imports: [NuiMessageModule, NuiDocsModule, DataSourceClientSideBasicExampleComponent, DataSourceClientSideCustomSearchExampleComponent, DataSourceClientSideDelayedExampleComponent, DataSourceClientSideFilteringExampleComponent, DataSourceWithSelectionExampleComponent],
 })
 export class ClientSideDataSourceDocsComponent {
     public subclassCode = `

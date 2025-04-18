@@ -23,10 +23,14 @@ import moment, { Moment } from "moment/moment";
 
 import { DialogService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDateTimePickerModule } from "../../../../../../src/lib/date-time-picker/date-time-picker.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+
 @Component({
     selector: "nui-date-time-picker-dialog-example",
     templateUrl: "./date-time-picker-dialog.example.component.html",
-    standalone: false
+    imports: [NuiDialogModule, NuiDateTimePickerModule, NuiButtonModule],
 })
 export class DateTimePickerDialogExampleComponent {
     public dt: Moment;

@@ -20,9 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiFormFieldModule } from "../../../../../../src/lib/form-field/form-field.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+
 @Component({
     selector: "nui-form-field-basic-example",
     templateUrl: "./basic-form-field.example.component.html",
-    standalone: false
+    imports: [NuiFormFieldModule, NuiTextboxModule],
 })
 export class FormFieldBasicExampleComponent {}

@@ -35,10 +35,9 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [],
-                providers: [],
-                declarations: [RiskScoreComponent],
-            }).compileComponents();
+    imports: [RiskScoreComponent],
+    providers: [],
+}).compileComponents();
 
             fixture = TestBed.createComponent(RiskScoreComponent);
             el = fixture.debugElement;

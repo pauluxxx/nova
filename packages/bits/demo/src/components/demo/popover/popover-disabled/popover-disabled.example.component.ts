@@ -20,10 +20,13 @@
 
 import { Component } from "@angular/core";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiPopoverModule } from "../../../../../../src/lib/popover/popover.module";
+
 @Component({
     selector: "nui-popover-disabled-example",
     templateUrl: "./popover-disabled.example.component.html",
-    standalone: false
+    imports: [NuiPopoverModule, NuiButtonModule],
 })
 export class PopoverDisabledExampleComponent {
     public disabled = false;

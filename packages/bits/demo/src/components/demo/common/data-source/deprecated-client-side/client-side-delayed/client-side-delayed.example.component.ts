@@ -37,6 +37,10 @@ import {
     SorterComponent,
 } from "@nova-ui/bits";
 
+import { NuiPaginatorModule } from "../../../../../../../../src/lib/paginator/paginator.module";
+import { NuiRepeatModule } from "../../../../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../../../../src/lib/search/search.module";
+
 const INITIAL_ARRAY = [
     { color: "regular-blue" },
     { color: "regular-green" },
@@ -64,7 +68,7 @@ const INITIAL_ARRAY = [
     selector: "nui-deprecated-client-side-delayed-data-source-example",
     providers: [LocalFilteringDataSource],
     templateUrl: "./client-side-delayed.example.component.html",
-    standalone: false
+    imports: [NuiSearchModule, NuiRepeatModule, NuiPaginatorModule],
 })
 export class DepreacatedDataSourceClientSideDelayedExampleComponent
     implements AfterViewInit, OnDestroy

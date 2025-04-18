@@ -30,9 +30,7 @@ describe("services >", () => {
         let fixture: ComponentFixture<DomUtilServiceTestComponent>;
         let sourceElement: HTMLElement;
 
-        @Component({
-    standalone: false
-})
+        @Component({})
         class DomUtilServiceTestComponent {}
 
         const createHtml = () =>
@@ -57,8 +55,8 @@ describe("services >", () => {
         beforeEach(() => {
             domUtilService = new DomUtilService(document);
             TestBed.configureTestingModule({
-                declarations: [DomUtilServiceTestComponent],
-            });
+    imports: [DomUtilServiceTestComponent],
+});
         });
         beforeEach(async () => {
             fixture = await createTestComponent();

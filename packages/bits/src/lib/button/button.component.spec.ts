@@ -40,21 +40,18 @@ import { LoggerService } from "../../services/log-service";
 @Component({
     selector: "nui-button-on-button",
     template: ` <button nui-button type="button">Click me!</button> `,
-    standalone: false
 })
 class TestAppButtonComponent {}
 
 @Component({
     selector: "nui-button-on-button-no-type",
     template: ` <button nui-button>Click me!</button> `,
-    standalone: false
 })
 class TestAppButtonNoTypeComponent {}
 
 @Component({
     selector: "nui-button-on-div-no-type",
     template: ` <div nui-button>Click me!</div> `,
-    standalone: false
 })
 class TestAppButtonOnDivNoTypeComponent {}
 
@@ -67,7 +64,6 @@ class TestAppButtonOnDivNoTypeComponent {}
             </li>
         </ul>
     `,
-    standalone: false
 })
 class TestAppButtonInRepeaterComponent implements OnInit {
     public buttonLabels: string[];
@@ -87,16 +83,14 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    ButtonComponent,
-                    TestAppButtonNoTypeComponent,
-                    TestAppButtonOnDivNoTypeComponent,
-                    TestAppButtonInRepeaterComponent,
-                    TestAppButtonComponent,
-                ],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA],
-                providers: [LoggerService],
-            });
+    imports: [ButtonComponent,
+        TestAppButtonNoTypeComponent,
+        TestAppButtonOnDivNoTypeComponent,
+        TestAppButtonInRepeaterComponent,
+        TestAppButtonComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    providers: [LoggerService],
+});
             logger = TestBed.inject(LoggerService);
         });
 

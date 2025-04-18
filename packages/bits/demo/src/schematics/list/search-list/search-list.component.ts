@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgFor, AsyncPipe, KeyValuePipe } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
@@ -44,6 +45,11 @@ import {
 import { RESULTS_PER_PAGE } from "./search-list-data";
 import { SearchListDataSource } from "./search-list-data-source.service";
 import { IServer, IServerFilters } from "./types";
+import { NuiBusyModule } from "../../../../../src/lib/busy/busy.module";
+import { NuiPaginatorModule } from "../../../../../src/lib/paginator/paginator.module";
+import { NuiRepeatModule } from "../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../src/lib/search/search.module";
+import { NuiSpinnerModule } from "../../../../../src/lib/spinner/spinner.module";
 
 @Component({
     selector: "app-search-list",
@@ -56,7 +62,7 @@ import { IServer, IServerFilters } from "./types";
             useClass: SearchListDataSource,
         },
     ],
-    standalone: false
+    imports: [NuiBusyModule, NuiSpinnerModule, NuiSearchModule, NgIf, NuiRepeatModule, NuiPaginatorModule, NgFor, AsyncPipe, KeyValuePipe],
 })
 export class SearchListComponent implements OnInit, AfterViewInit, OnDestroy {
     public listItems$ = new BehaviorSubject<IServer[]>([]);

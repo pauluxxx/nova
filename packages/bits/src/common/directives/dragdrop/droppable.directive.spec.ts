@@ -49,7 +49,6 @@ const DEFAULT_DRAGOVER_CLASS = "nui-drag--over";
             (dragEnter)="onDragEnter($event)"
             (dragLeave)="onDragLeave($event)"
         ></div>`,
-    standalone: false
 })
 class DroppableTestingComponent {
     public draggableString = "this is a string";
@@ -113,21 +112,19 @@ describe("directives >", () => {
             dragAndDropServiceMock.onDragStateChanged =
                 dragStartSubject.asObservable();
             TestBed.configureTestingModule({
-                declarations: [
-                    DraggableDirective,
-                    DroppableDirective,
-                    DroppableTestingComponent,
-                ],
-                providers: [
-                    UtilService,
-                    {
-                        provide: DragAndDropService,
-                        useValue: dragAndDropServiceMock,
-                    },
-                    { provide: "windowObject", useValue: window },
-                ],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA],
-            });
+    imports: [DraggableDirective,
+        DroppableDirective,
+        DroppableTestingComponent],
+    providers: [
+        UtilService,
+        {
+            provide: DragAndDropService,
+            useValue: dragAndDropServiceMock,
+        },
+        { provide: "windowObject", useValue: window },
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+});
             fixture = TestBed.createComponent(DroppableTestingComponent);
             fixture.autoDetectChanges(true);
             component = fixture.componentInstance;

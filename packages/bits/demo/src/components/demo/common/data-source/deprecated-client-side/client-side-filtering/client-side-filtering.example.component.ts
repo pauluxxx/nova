@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import {
     AfterViewInit,
     Component,
@@ -43,6 +44,16 @@ import {
     SorterComponent,
     SorterDirection,
 } from "@nova-ui/bits";
+
+import { NuiCheckboxModule } from "../../../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiExpanderModule } from "../../../../../../../../src/lib/expander/expander.module";
+import { NuiIconModule } from "../../../../../../../../src/lib/icon/icon.module";
+import { NuiImageModule } from "../../../../../../../../src/lib/image/image.module";
+import { NuiPaginatorModule } from "../../../../../../../../src/lib/paginator/paginator.module";
+import { NuiPanelModule } from "../../../../../../../../src/lib/panel/panel.module";
+import { NuiRepeatModule } from "../../../../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../../../../src/lib/search/search.module";
+import { NuiSorterModule } from "../../../../../../../../src/lib/sorter/sorter.module";
 
 interface ExampleItem {
     color: string;
@@ -112,7 +123,7 @@ const RANDOM_ARRAY = [
             useClass: LocalFilteringDataSource,
         },
     ],
-    standalone: false
+    imports: [NuiImageModule, NuiPanelModule, NuiExpanderModule, NuiCheckboxModule, NgFor, NuiIconModule, NgIf, NuiSorterModule, NuiSearchModule, NuiRepeatModule, NuiPaginatorModule],
 })
 export class DepreacatedDataSourceClientSideFilteringExampleComponent
     implements AfterViewInit, OnDestroy

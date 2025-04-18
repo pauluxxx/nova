@@ -41,10 +41,9 @@ describe("components", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [NuiTooltipModule],
-                declarations: [SpinnerComponent],
-                providers: [LoggerService, Overlay],
-            });
+    imports: [NuiTooltipModule, SpinnerComponent],
+    providers: [LoggerService, Overlay],
+});
             spyOnProperty(
                 TestBed.inject(LoggerService),
                 "warn"

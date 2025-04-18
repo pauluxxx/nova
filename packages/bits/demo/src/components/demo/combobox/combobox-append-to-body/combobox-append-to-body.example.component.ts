@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiSelectModule } from "../../../../../../src/lib/select/select.module";
+
 @Component({
     selector: "nui-combobox-append-to-body-example",
     templateUrl: "./combobox-append-to-body.example.component.html",
-    standalone: false
+    imports: [NuiSelectModule],
 })
 export class ComboboxAppendToBodyExampleComponent {
     public dataset = {

@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { Component, ViewChild } from "@angular/core";
 import _pull from "lodash/pull";
 
@@ -28,6 +29,9 @@ import {
     PopoverComponent,
     PopoverOverlayPosition,
 } from "@nova-ui/bits";
+
+import { NuiChipsModule } from "../../../../../../src/lib/chips/chips.module";
+import { NuiPopoverModule } from "../../../../../../src/lib/popover/popover.module";
 
 const flatItems: IChipsItem[] = [
     { id: "flatId1", label: "Down" },
@@ -95,7 +99,7 @@ const groupedItems: IChipsGroup[] = [
             }
         `,
     ],
-    standalone: false
+    imports: [NuiChipsModule, NgIf, NuiPopoverModule],
 })
 export class ChipsOverflowExampleComponent {
     public horizontalGroupedItemsSource = { flatItems, groupedItems };

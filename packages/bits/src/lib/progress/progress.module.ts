@@ -29,8 +29,7 @@ import { NuiTooltipModule } from "../tooltip/tooltip.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiButtonModule, NuiTooltipModule],
-    declarations: [ProgressComponent],
+    imports: [NuiCommonModule, NuiButtonModule, NuiTooltipModule, ProgressComponent],
     exports: [ProgressComponent],
     providers: [],
 })

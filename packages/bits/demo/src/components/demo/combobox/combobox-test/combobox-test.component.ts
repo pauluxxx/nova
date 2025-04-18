@@ -18,16 +18,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import { Component, Inject, OnInit } from "@angular/core";
-import { FormBuilder, Validators } from "@angular/forms";
+import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import _cloneDeep from "lodash/cloneDeep";
 
 import { ISelectChangedEvent, ISelectGroup, ToastService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiSelectModule } from "../../../../../../src/lib/select/select.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+
 @Component({
     selector: "nui-combobox-test",
     templateUrl: "./combobox-test.component.html",
-    standalone: false
+    imports: [NuiSelectModule, FormsModule, ReactiveFormsModule, NuiButtonModule, NuiTextboxModule, JsonPipe],
 })
 export class ComboboxTestComponent implements OnInit {
     public dataset = [

@@ -18,14 +18,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component, TemplateRef } from "@angular/core";
 
 import { DialogService, NuiDialogRef } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
+
 @Component({
     selector: "nui-dialog-inside-overlay-example",
     templateUrl: "./dialog-inside-overlay.example.component.html",
-    standalone: false
+    imports: [NuiSelectV2Module, NgFor, NuiDialogModule, NuiButtonModule],
 })
 export class DialogInsideOverlayExampleComponent {
     public options1 = Array.from({ length: 25 }).map(

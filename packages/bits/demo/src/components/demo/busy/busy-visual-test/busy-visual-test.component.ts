@@ -20,11 +20,15 @@
 
 import { Component } from "@angular/core";
 
+import { NuiBusyModule } from "../../../../../../src/lib/busy/busy.module";
+import { NuiProgressModule } from "../../../../../../src/lib/progress/progress.module";
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
+
 @Component({
     selector: "nui-busy-visual",
     templateUrl: "./busy-visual-test.component.html",
     styleUrls: ["./busy-visual-test.component.less"],
-    standalone: false
+    imports: [NuiBusyModule, NuiSpinnerModule, NuiProgressModule],
 })
 export class BusyVisualTestComponent {
     public busy: boolean;

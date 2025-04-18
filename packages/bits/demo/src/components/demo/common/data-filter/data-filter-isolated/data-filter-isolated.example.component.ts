@@ -18,16 +18,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import {
-    AfterViewInit,
-    Component,
-    EventEmitter,
-    OnDestroy,
-    OnInit,
-    Output,
-    ViewChild,
-    ViewEncapsulation,
-} from "@angular/core";
+import { DatePipe } from "@angular/common";
+import { AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild, ViewEncapsulation, forwardRef } from "@angular/core";
 import moment from "moment/moment";
 import { Subject, Subscription } from "rxjs";
 
@@ -41,6 +33,14 @@ import {
     SearchComponent,
 } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../../src/lib/dialog/dialog.module";
+import { NuiDividerModule } from "../../../../../../../src/lib/divider/divider.module";
+import { NuiPopoverModule } from "../../../../../../../src/lib/popover/popover.module";
+import { NuiRepeatModule } from "../../../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../../../src/lib/search/search.module";
+import { NuiTableModule } from "../../../../../../../src/lib/table/table.module";
+import { NuiTimeFramePickerModule } from "../../../../../../../src/lib/time-frame-picker/time-frame-picker.module";
 import {
     FilteringTimeFramePickerComponent,
     ListDatasource,
@@ -51,7 +51,7 @@ import {
     selector: "nui-data-filter-isolated-example",
     templateUrl: "data-filter-isolated.example.component.html",
     providers: [DataFilterService],
-    standalone: false
+    imports: [forwardRef(() => FilteringIsolatedTimeFramePickerComponent), NuiDividerModule, forwardRef(() => NuiDataFilterIsolatedTableComponent), forwardRef(() => NuiDataFilterIsolatedListComponent)],
 })
 export class DataFilterIsolatedExampleComponent implements AfterViewInit {
     @ViewChild("timeFramePicker")
@@ -118,7 +118,7 @@ export class DataFilterIsolatedExampleComponent implements AfterViewInit {
         </table>
     `,
     providers: [DataFilterService, TableDatasource],
-    standalone: false
+    imports: [NuiSearchModule, NuiTableModule, DatePipe],
 })
 export class NuiDataFilterIsolatedTableComponent
     implements AfterViewInit, OnDestroy
@@ -188,7 +188,7 @@ export class NuiDataFilterIsolatedTableComponent
         </ng-template>
     `,
     providers: [DataFilterService, ListDatasource],
-    standalone: false
+    imports: [NuiSearchModule, NuiRepeatModule, DatePipe],
 })
 export class NuiDataFilterIsolatedListComponent
     implements AfterViewInit, OnDestroy
@@ -281,7 +281,7 @@ export class NuiDataFilterIsolatedListComponent
         </ng-template>
     `,
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NuiPopoverModule, NuiButtonModule, NuiTimeFramePickerModule, NuiDialogModule],
 })
 export class FilteringIsolatedTimeFramePickerComponent
     implements IFilterPub, OnInit

@@ -18,10 +18,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 
 import { IconStatus, IconCategory } from "@nova-ui/bits";
 
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
 import {
     icons as iconsData,
     ITypedIconData,
@@ -30,7 +32,7 @@ import {
 @Component({
     selector: "nui-icon-visual-test",
     templateUrl: "./icon-visual-test.component.html",
-    standalone: false
+    imports: [NuiIconModule, NgFor],
 })
 export class IconVisualTestComponent implements OnInit {
     public icons: ITypedIconData[];

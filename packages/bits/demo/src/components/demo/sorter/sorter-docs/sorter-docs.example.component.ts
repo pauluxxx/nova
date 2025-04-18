@@ -27,10 +27,14 @@ import {
     SorterComponent,
 } from "@nova-ui/bits";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../src/lib/message/message.module";
+import { SorterBasicExampleComponent } from "../sorter-basic/sorter-basic.example.component";
+
 @Component({
     selector: "nui-sorter-docs-example",
     templateUrl: "./sorter-docs.example.component.html",
-    standalone: false
+    imports: [NuiMessageModule, NuiDocsModule, SorterBasicExampleComponent],
 })
 export class SorterExampleComponent {
     getSorterPropKey(key: keyof SorterComponent): string {

@@ -29,11 +29,13 @@ import { takeUntil, tap } from "rxjs/operators";
 
 import { TextboxComponent } from "@nova-ui/bits";
 
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+
 @Component({
     selector: "nui-textbox-getting-value-example",
     templateUrl: "./textbox-getting-value.example.component.html",
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiTextboxModule],
 })
 export class TextboxGettingValueExampleComponent implements AfterViewInit {
     public textboxValueChangedValue: string | number;

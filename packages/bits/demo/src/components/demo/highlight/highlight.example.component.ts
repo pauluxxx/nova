@@ -18,12 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+
+import { NuiCommonModule } from "../../../../../src/common/common.module";
+import { NuiDividerModule } from "../../../../../src/lib/divider/divider.module";
+import { NuiDocsModule } from "../../../../../src/lib/docs/docs.module";
 
 @Component({
     selector: "nui-highlight",
     templateUrl: "./highlight.example.component.html",
-    standalone: false
+    imports: [NuiDocsModule, NgFor, NuiDividerModule, FormsModule, NuiCommonModule],
 })
 export class HighlightExampleComponent {
     public contentString = $localize`

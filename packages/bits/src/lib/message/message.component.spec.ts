@@ -38,9 +38,9 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [MessageComponent],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA],
-            });
+    imports: [MessageComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+});
 
             componentFixture = TestBed.createComponent(MessageComponent);
             subject = componentFixture.componentInstance;

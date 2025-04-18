@@ -30,9 +30,8 @@ import { OverlayPositionService } from "./overlay-position.service";
  * @ignore
  */
 @NgModule({
-    declarations: [OverlayComponent],
     exports: [OverlayComponent],
-    imports: [OverlayModule, PortalModule, CommonModule],
+    imports: [OverlayModule, PortalModule, CommonModule, OverlayComponent],
     providers: [OverlayPositionService],
 })
 export class NuiOverlayModule {}

@@ -18,12 +18,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiRepeatModule } from "../../../../../../src/lib/repeat/repeat.module";
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
 
 @Component({
     selector: "nui-repeat-single-with-required-selection-mode-example",
     templateUrl: "./repeat-single-with-required-selection-mode.example.component.html",
-    standalone: false
+    imports: [NuiSwitchModule, NuiRepeatModule, JsonPipe],
 })
 export class RepeatSingleWithRequiredSelectionModeExampleComponent {
     public colors = [

@@ -23,10 +23,16 @@ import moment, { Moment } from "moment/moment";
 
 import { ITimeframe } from "@nova-ui/bits";
 
+import { NuiTimeFrameBarModule } from "../../../../../../src/lib/convenience/time-frame-bar/time-frame-bar.module";
+import { NuiDateTimePickerModule } from "../../../../../../src/lib/date-time-picker/date-time-picker.module";
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiTimeFramePickerModule } from "../../../../../../src/lib/time-frame-picker/time-frame-picker.module";
+import { NuiTimePickerModule } from "../../../../../../src/lib/time-picker/time-picker.module";
+
 @Component({
     selector: "nui-time-picker-localized",
     templateUrl: "./time-picker-localized.example.component.html",
-    standalone: false
+    imports: [NuiTimePickerModule, NuiDateTimePickerModule, NuiTimeFrameBarModule, NuiIconModule, NuiTimeFramePickerModule],
 })
 export class TimePickerLocalizedExampleComponent implements OnInit, OnDestroy {
     public minDate: Moment;

@@ -18,15 +18,20 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 import moment, { Moment } from "moment/moment";
 
 import { ITimeframe } from "@nova-ui/bits";
 
+import { NuiTimeFrameBarModule } from "../../../../../../../src/lib/convenience/time-frame-bar/time-frame-bar.module";
+import { NuiIconModule } from "../../../../../../../src/lib/icon/icon.module";
+import { NuiTimeFramePickerModule } from "../../../../../../../src/lib/time-frame-picker/time-frame-picker.module";
+
 @Component({
     selector: "nui-convenience-time-frame-bar-basic-example",
     templateUrl: "./time-frame-bar-basic.example.component.html",
-    standalone: false
+    imports: [NuiTimeFrameBarModule, NuiIconModule, NuiTimeFramePickerModule, JsonPipe],
 })
 export class TimeFrameBarBasicExampleComponent implements OnInit {
     public minDate: Moment;

@@ -29,9 +29,9 @@ describe("WizardOverflowComponent", () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [WizardOverflowComponent],
-            schemas: [NO_ERRORS_SCHEMA],
-        }).compileComponents();
+    imports: [WizardOverflowComponent],
+    schemas: [NO_ERRORS_SCHEMA],
+}).compileComponents();
 
         fixture = TestBed.createComponent(WizardOverflowComponent);
         component = fixture.componentInstance;

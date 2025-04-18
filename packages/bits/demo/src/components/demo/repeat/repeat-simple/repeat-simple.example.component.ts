@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiRepeatModule } from "../../../../../../src/lib/repeat/repeat.module";
+
 @Component({
     selector: "nui-repeat-simple-example",
     templateUrl: "./repeat-simple.example.component.html",
-    standalone: false
+    imports: [NuiRepeatModule],
 })
 export class RepeatSimpleExampleComponent {
     public colors = [

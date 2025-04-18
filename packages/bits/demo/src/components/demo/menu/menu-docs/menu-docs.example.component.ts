@@ -20,9 +20,16 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../src/lib/message/message.module";
+import { BasicMenuExampleComponent } from "../basic-menu/basic-menu.example.component";
+import { MenuAppendToBodyExampleComponent } from "../menu-append-to-body/menu-append-to-body.example.component";
+import { MenuCustomItemExampleComponent } from "../menu-custom-item/menu-custom-item.example.component";
+import { MenuItemVariationsExampleComponent } from "../menu-item-variations/menu-item-variations.example.component";
+
 @Component({
     selector: "nui-menu-docs-example",
     templateUrl: "./menu-docs.example.component.html",
-    standalone: false
+    imports: [NuiMessageModule, NuiDocsModule, BasicMenuExampleComponent, MenuItemVariationsExampleComponent, MenuAppendToBodyExampleComponent, MenuCustomItemExampleComponent],
 })
 export class MenuExampleComponent {}

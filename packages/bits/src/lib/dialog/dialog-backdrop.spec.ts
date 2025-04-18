@@ -26,8 +26,8 @@ describe("components >", () => {
     describe("dialog-backdrop >", () => {
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [DialogBackdropComponent],
-            });
+    imports: [DialogBackdropComponent],
+});
         });
 
         it("should render backdrop with required CSS classes", () => {

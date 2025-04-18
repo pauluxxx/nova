@@ -18,12 +18,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiRadioModule } from "../../../../../../src/lib/radio/radio.module";
 
 @Component({
     selector: "nui-with-hints-radio-group-example",
     templateUrl: "./radio-group-hints.example.component.html",
-    standalone: false
+    imports: [NuiRadioModule, NgFor],
 })
 export class RadioGroupHintsExampleComponent {
     public colors = [$localize`Red`, $localize`Green`, $localize`Blue`];

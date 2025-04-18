@@ -33,16 +33,14 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    WizardStepHeaderComponent,
-                    WizardStepV2Component,
-                    WizardDirective,
-                ],
-                providers: [
-                    { provide: CdkStep, useExisting: WizardStepV2Component },
-                    { provide: CdkStepper, useValue: {} },
-                ],
-            });
+    imports: [WizardStepHeaderComponent,
+        WizardStepV2Component,
+        WizardDirective],
+    providers: [
+        { provide: CdkStep, useExisting: WizardStepV2Component },
+        { provide: CdkStepper, useValue: {} },
+    ],
+});
 
             fixture = TestBed.createComponent(WizardStepV2Component);
             component = fixture.componentInstance;

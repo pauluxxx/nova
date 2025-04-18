@@ -37,7 +37,6 @@ import { LoggerService } from "../../services/log-service";
         <nui-wizard-step [title]="'step2'"></nui-wizard-step>
         <nui-wizard-step [title]="'step3'"></nui-wizard-step>
     </nui-wizard>`,
-    standalone: false
 })
 class TestWrapperComponent {}
 
@@ -47,16 +46,14 @@ describe("components >", () => {
         let fixture: ComponentFixture<TestWrapperComponent>;
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    TestWrapperComponent,
-                    ButtonComponent,
-                    WizardComponent,
-                    WizardStepComponent,
-                    IconComponent,
-                ],
-                schemas: [NO_ERRORS_SCHEMA],
-                providers: [IconService, LoggerService],
-            });
+    imports: [TestWrapperComponent,
+        ButtonComponent,
+        WizardComponent,
+        WizardStepComponent,
+        IconComponent],
+    schemas: [NO_ERRORS_SCHEMA],
+    providers: [IconService, LoggerService],
+});
         });
 
         beforeEach(() => {

@@ -22,10 +22,13 @@ import { Component, Inject } from "@angular/core";
 
 import { ToastService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiWizardModule } from "../../../../../../src/lib/wizard/wizard.module";
+
 @Component({
     selector: "nui-wizard-additional-button-example",
     templateUrl: "./wizard-additional-button.example.component.html",
-    standalone: false
+    imports: [NuiWizardModule, NuiButtonModule],
 })
 export class WizardAdditionalButtonExampleComponent {
     constructor(@Inject(ToastService) private toastService: ToastService) {}

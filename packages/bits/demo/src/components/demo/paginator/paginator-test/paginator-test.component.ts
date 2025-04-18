@@ -20,9 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { PaginatorAdjacentExampleComponent } from "../paginator-adjacent/paginator-adjacent.example.component";
+import { PaginatorBasicExampleComponent } from "../paginator-basic/paginator-basic.example.component";
+
 @Component({
     selector: "nui-paginator-test",
     templateUrl: "./paginator-test.component.html",
-    standalone: false
+    imports: [PaginatorBasicExampleComponent, PaginatorAdjacentExampleComponent],
 })
 export class PaginatorTestComponent {}

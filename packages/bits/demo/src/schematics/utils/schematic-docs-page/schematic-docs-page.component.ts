@@ -18,14 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { TitleCasePipe } from "@angular/common";
 import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
+
+import { NuiDocsModule } from "../../../../../src/lib/docs/docs.module";
+import { SchematicJsonComponent } from "../schematic-json.component";
 
 @Component({
     selector: "nui-schematic-docs-page",
     templateUrl: "schematic-docs-page.component.html",
     styleUrls: ["schematic-docs-page.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NuiDocsModule, SchematicJsonComponent, TitleCasePipe],
 })
 export class SchematicDocsPageComponent implements OnInit {
     @Input() schematicFolderName: string;

@@ -18,14 +18,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgClass } from "@angular/common";
 import { Component, Inject, TemplateRef } from "@angular/core";
 
 import { DialogService, NuiDialogRef } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+import { NuiSelectModule } from "../../../../../../src/lib/select/select.module";
+
 @Component({
     selector: "nui-dialog-visual-test",
     templateUrl: "./dialog-visual-test.component.html",
-    standalone: false
+    imports: [NuiDialogModule, NuiButtonModule, NuiSelectModule, NgClass],
 })
 export class DialogVisualTestComponent {
     public severity: string;

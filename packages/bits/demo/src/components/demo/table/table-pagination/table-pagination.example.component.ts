@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { AfterViewInit, Component, OnDestroy, ViewChild } from "@angular/core";
 import { Subscription } from "rxjs";
 
@@ -26,6 +27,10 @@ import {
     INovaFilteringOutputs,
     PaginatorComponent,
 } from "@nova-ui/bits";
+
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiPaginatorModule } from "../../../../../../src/lib/paginator/paginator.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
 
 interface IExampleTableModel {
     position: number;
@@ -42,7 +47,7 @@ interface IExampleTableModel {
     selector: "nui-table-pagination-example",
     providers: [ClientSideDataSource],
     templateUrl: "./table-pagination.example.component.html",
-    standalone: false
+    imports: [NuiTableModule, NgFor, NuiIconModule, NuiPaginatorModule],
 })
 export class TablePaginationExampleComponent
     implements AfterViewInit, OnDestroy

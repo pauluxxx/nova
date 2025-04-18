@@ -22,10 +22,16 @@ import { Component, ViewChild } from "@angular/core";
 
 import { IBusyConfig, WizardComponent } from "@nova-ui/bits";
 
+import { NuiBusyModule } from "../../../../../../src/lib/busy/busy.module";
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
+import { NuiWizardModule } from "../../../../../../src/lib/wizard/wizard.module";
+
 @Component({
     selector: "nui-wizard-busy-example",
     templateUrl: "./wizard-busy.example.component.html",
-    standalone: false
+    imports: [NuiCheckboxModule, NuiBusyModule, NuiWizardModule, NuiSpinnerModule, NuiButtonModule],
 })
 export class WizardBusyExampleComponent {
     @ViewChild("wizardComponent") wizardComponent: WizardComponent;

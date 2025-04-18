@@ -45,18 +45,16 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [
-                    NuiCommonModule,
-                    NuiMenuModule,
-                    NuiDateTimePickerModule,
-                ],
-                declarations: [
-                    QuickPickerComponent,
-                    TimeFramePickerComponent,
-                    TimeFrameFormatPipe,
-                ],
-                providers: [TimeframeService, ChangeDetectorRef],
-            });
+    imports: [
+        NuiCommonModule,
+        NuiMenuModule,
+        NuiDateTimePickerModule,
+        QuickPickerComponent,
+        TimeFramePickerComponent,
+        TimeFrameFormatPipe,
+    ],
+    providers: [TimeframeService, ChangeDetectorRef],
+});
 
             fixture = TestBed.createComponent(TimeFramePickerComponent);
             componentInstance = fixture.componentInstance;

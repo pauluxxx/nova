@@ -68,31 +68,28 @@ describe("components >", () => {
             componentType: Type<T>
         ): ComponentFixture<T> {
             TestBed.configureTestingModule({
-                imports: [CdkTableModule],
-                declarations: [
-                    componentType,
-                    TableComponent,
-                    TableCellDefDirective,
-                    TableHeaderCellDefDirective,
-                    TableColumnDefDirective,
-                    TableHeaderCellComponent,
-                    TableCellDirective,
-                    TableRowComponent,
-                    TableHeaderRowDefDirective,
-                    TableRowDefDirective,
-                    TableHeaderRowComponent,
-                    TableFooterCellDefDirective,
-                    TableFooterCellDirective,
-                    TableFooterRowDefDirective,
-                    TableFooterRowComponent,
-                ],
-                providers: [
-                    UtilService,
-                    SelectorService,
-                    TableStateHandlerService,
-                ],
-                schemas: [NO_ERRORS_SCHEMA],
-            }).compileComponents();
+    imports: [CdkTableModule, componentType,
+        TableComponent,
+        TableCellDefDirective,
+        TableHeaderCellDefDirective,
+        TableColumnDefDirective,
+        TableHeaderCellComponent,
+        TableCellDirective,
+        TableRowComponent,
+        TableHeaderRowDefDirective,
+        TableRowDefDirective,
+        TableHeaderRowComponent,
+        TableFooterCellDefDirective,
+        TableFooterCellDirective,
+        TableFooterRowDefDirective,
+        TableFooterRowComponent],
+    providers: [
+        UtilService,
+        SelectorService,
+        TableStateHandlerService,
+    ],
+    schemas: [NO_ERRORS_SCHEMA],
+}).compileComponents();
 
             return TestBed.createComponent<T>(componentType);
         }

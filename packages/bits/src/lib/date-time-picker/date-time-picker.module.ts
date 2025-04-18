@@ -29,8 +29,7 @@ import { NuiTimePickerModule } from "../time-picker/time-picker.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiDatePickerModule, NuiTimePickerModule],
-    declarations: [DateTimePickerComponent],
+    imports: [NuiCommonModule, NuiDatePickerModule, NuiTimePickerModule, DateTimePickerComponent],
     exports: [DateTimePickerComponent],
     providers: [],
 })

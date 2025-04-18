@@ -29,14 +29,11 @@ import { NuiCommonModule } from "../../common/common.module";
 
 // Don't ignore this module (component children need to be kept separate in the docs)
 @NgModule({
-    declarations: [
-        SheetComponent,
+    imports: [NuiCommonModule, SheetComponent,
         SheetGroupComponent,
         CardComponent,
         CardGroupComponent,
-        LayoutResizerComponent,
-    ],
-    imports: [NuiCommonModule],
+        LayoutResizerComponent],
     exports: [
         SheetComponent,
         SheetGroupComponent,

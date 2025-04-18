@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiImageModule } from "../../../../../../src/lib/image/image.module";
+
 @Component({
     selector: "nui-image-test",
     templateUrl: "./image-test.component.html",
-    standalone: false
+    imports: [NuiImageModule],
 })
 export class ImageTestComponent {}

@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+
 @Component({
     selector: "nui-button-display-style-primary-example",
     templateUrl: "./button-display-style-primary.example.component.html",
-    standalone: false
+    imports: [NuiButtonModule],
 })
 export class ButtonDisplayStylePrimaryExampleComponent {}

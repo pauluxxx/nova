@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
+
 @Component({
     selector: "nui-spinner-visual",
     templateUrl: "./spinner-visual-test.component.html",
-    standalone: false
+    imports: [NuiSpinnerModule],
 })
 export class SpinnerVisualTestComponent {
     public show: boolean = true;

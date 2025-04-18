@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
 import { Subject } from "rxjs";
 // eslint-disable-next-line import/no-deprecated
@@ -25,11 +26,13 @@ import { takeUntil, tap } from "rxjs/operators";
 
 import { ComboboxV2Component } from "@nova-ui/bits";
 
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
+
 @Component({
     selector: "nui-combobox-v2-getting-value-example",
     templateUrl: "combobox-v2-getting-value.example.component.html",
     host: { class: "combobox-container" },
-    standalone: false
+    imports: [NuiSelectV2Module, NgFor],
 })
 export class ComboboxV2GettingValueExampleComponent implements AfterViewInit {
     public items = Array.from({ length: 50 }).map(

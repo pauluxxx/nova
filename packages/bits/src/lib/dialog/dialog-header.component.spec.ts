@@ -31,13 +31,11 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    DialogHeaderComponent,
-                    ButtonComponent,
-                    IconComponent,
-                ],
-                providers: [LoggerService],
-            });
+    imports: [DialogHeaderComponent,
+        ButtonComponent,
+        IconComponent],
+    providers: [LoggerService],
+});
 
             fixture = TestBed.createComponent(DialogHeaderComponent);
             subject = fixture.componentInstance;

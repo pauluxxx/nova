@@ -18,14 +18,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component, Inject } from "@angular/core";
 
 import { IImagesPresetItem, imagesPresetToken } from "@nova-ui/bits";
 
+import { NuiImageModule } from "../../../../../../src/lib/image/image.module";
+
 @Component({
     selector: "nui-image-visual-test",
     templateUrl: "./image-visual-test.component.html",
-    standalone: false
+    imports: [NuiImageModule, NgFor],
 })
 export class ImageVisualTestComponent {
     constructor(

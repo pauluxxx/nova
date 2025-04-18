@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, JsonPipe } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectorRef,
@@ -47,6 +48,10 @@ import {
 import { RESULTS_PER_PAGE } from "./table-with-selection-data";
 import { TableWithSelectionDataSource } from "./table-with-selection-data-source.service";
 import { IServer } from "./types";
+import { NuiPaginatorModule } from "../../../../../src/lib/paginator/paginator.module";
+import { NuiProgressModule } from "../../../../../src/lib/progress/progress.module";
+import { NuiSearchModule } from "../../../../../src/lib/search/search.module";
+import { NuiTableModule } from "../../../../../src/lib/table/table.module";
 
 @Component({
     selector: "app-table-with-selection",
@@ -59,7 +64,7 @@ import { IServer } from "./types";
             useClass: TableWithSelectionDataSource,
         },
     ],
-    standalone: false
+    imports: [NuiSearchModule, NuiTableModule, NgIf, NuiProgressModule, NuiPaginatorModule, JsonPipe],
 })
 export class TableWithSelectionComponent
     implements OnInit, OnDestroy, AfterViewInit

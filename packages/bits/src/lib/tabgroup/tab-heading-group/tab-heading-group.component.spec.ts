@@ -34,6 +34,9 @@ import { TabHeadingComponent } from "../tab-heading/tab-heading.component";
 /**
  * @ignore
  */
+/**
+ * @ignore
+ */
 @Component({
     selector: "nui-test-tab-heading-group-cmp",
     template: ` <nui-tab-heading-group (selected)="updateContent($event)">
@@ -49,7 +52,6 @@ import { TabHeadingComponent } from "../tab-heading/tab-heading.component";
             </div>
         </nui-tab-heading>
     </nui-tab-heading-group>`,
-    standalone: false
 })
 class TestTabHeadingComponent {
     public currentTabId: string;
@@ -89,13 +91,11 @@ describe("components >", () => {
 
         beforeEach(waitForAsync(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    TabHeadingGroupComponent,
-                    TabHeadingComponent,
-                    TestTabHeadingComponent,
-                    IconComponent,
-                ],
-            })
+    imports: [TabHeadingGroupComponent,
+        TabHeadingComponent,
+        TestTabHeadingComponent,
+        IconComponent],
+})
                 .compileComponents()
                 .then(() => {
                     componentFixture = TestBed.createComponent(

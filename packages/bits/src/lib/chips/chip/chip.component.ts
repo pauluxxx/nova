@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgClass, NgIf, NgTemplateOutlet } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectorRef,
@@ -31,6 +32,8 @@ import {
     ViewEncapsulation,
 } from "@angular/core";
 
+import { IconComponent } from "../../icon/icon.component";
+import { TooltipDirective } from "../../tooltip/tooltip.directive";
 import { IChipsItem } from "../public-api";
 
 /**
@@ -45,7 +48,8 @@ import { IChipsItem } from "../public-api";
         class: "nui-chip",
         role: "listitem",
     },
-    standalone: false
+
+    imports: [NgClass, NgIf, NgTemplateOutlet, IconComponent, TooltipDirective],
 })
 export class ChipComponent implements AfterViewInit {
     /**

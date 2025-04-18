@@ -22,6 +22,8 @@ import { Component, ViewEncapsulation } from "@angular/core";
 
 import { IItemsReorderedEvent, IRepeatItem } from "@nova-ui/bits";
 
+import { NuiRepeatModule } from "../../../../../../src/lib/repeat/repeat.module";
+
 interface IRepeatCompanyItem extends IRepeatItem {
     name: string;
     disabled?: boolean;
@@ -33,7 +35,7 @@ interface IRepeatCompanyItem extends IRepeatItem {
     templateUrl: "./repeat-drag-preview.example.component.html",
     styleUrls: ["./repeat-drag-preview.example.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [NuiRepeatModule],
 })
 export class RepeatDragPreviewExampleComponent {
     public companies: IRepeatCompanyItem[] = [

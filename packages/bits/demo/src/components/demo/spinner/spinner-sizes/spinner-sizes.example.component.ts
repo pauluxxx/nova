@@ -20,9 +20,11 @@
 
 import { Component } from "@angular/core";
 
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
+
 @Component({
     selector: "nui-spinner-sizes-example",
     templateUrl: "./spinner-sizes.example.component.html",
-    standalone: false
+    imports: [NuiSpinnerModule],
 })
 export class SpinnerSizesExampleComponent {}

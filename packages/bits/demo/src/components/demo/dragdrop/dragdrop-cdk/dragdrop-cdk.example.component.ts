@@ -18,12 +18,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { CdkDrag } from "@angular/cdk/drag-drop";
 import { Component } from "@angular/core";
 
 @Component({
     selector: "nui-dragdrop-cdk-example",
     templateUrl: "./dragdrop-cdk.example.component.html",
     styleUrls: ["./dragdrop-cdk.example.component.less"],
-    standalone: false
+    imports: [CdkDrag],
 })
 export class DragdropCdkExampleComponent {}

@@ -18,14 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgClass } from "@angular/common";
 import { Component, Inject, TemplateRef } from "@angular/core";
 
 import { DialogService, NuiDialogRef, ToastService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+
 @Component({
     selector: "nui-dialog-position-example",
     templateUrl: "./dialog-position.example.component.html",
-    standalone: false
+    imports: [NuiDialogModule, NgClass, NuiButtonModule],
 })
 export class DialogPositionExampleComponent {
     public isResponsiveMode = false;

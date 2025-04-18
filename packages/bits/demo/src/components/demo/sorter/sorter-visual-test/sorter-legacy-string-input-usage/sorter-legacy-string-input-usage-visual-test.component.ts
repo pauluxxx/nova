@@ -18,10 +18,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, TitleCasePipe } from "@angular/common";
 import { AfterViewInit, Component } from "@angular/core";
 import _orderBy from "lodash/orderBy";
 
 import { ISorterChanges, SorterDirection } from "@nova-ui/bits";
+
+import { NuiRepeatModule } from "../../../../../../../src/lib/repeat/repeat.module";
+import { NuiSorterModule } from "../../../../../../../src/lib/sorter/sorter.module";
 
 interface IFilm {
     title: string;
@@ -35,7 +39,7 @@ interface IFilm {
     styleUrls: [
         "./sorter-legacy-string-input-usage-visual-test.component.less",
     ],
-    standalone: false
+    imports: [NuiSorterModule, NuiRepeatModule, NgFor, TitleCasePipe],
 })
 export class SorterLegacyStringInputUsageVisualTestComponent
     implements AfterViewInit

@@ -20,9 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { SwitchDisableExampleComponent } from "../switch-disable/switch-disable.example.component";
+import { SwitchSimpleExampleComponent } from "../switch-simple/switch-simple.example.component";
+
 @Component({
     selector: "nui-switch-test",
     templateUrl: "./switch-test.component.html",
-    standalone: false
+    imports: [SwitchSimpleExampleComponent, SwitchDisableExampleComponent],
 })
 export class SwitchTestComponent {}

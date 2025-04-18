@@ -35,9 +35,9 @@ describe("components >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [SwitchComponent],
-                providers: [ChangeDetectorRef],
-            });
+    imports: [SwitchComponent],
+    providers: [ChangeDetectorRef],
+});
 
             switchFixture = TestBed.createComponent(SwitchComponent);
             nuiSwitch = switchFixture.componentInstance;

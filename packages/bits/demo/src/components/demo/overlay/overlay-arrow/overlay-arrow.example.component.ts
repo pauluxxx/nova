@@ -18,10 +18,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { CdkDrag } from "@angular/cdk/drag-drop";
 import {
     FlexibleConnectedPositionStrategy,
     OverlayConfig,
 } from "@angular/cdk/overlay";
+import { NgIf, NgFor } from "@angular/common";
 import {
     AfterViewInit,
     Component,
@@ -29,7 +31,7 @@ import {
     ViewChild,
     ViewEncapsulation,
 } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
@@ -39,6 +41,11 @@ import {
     OverlayPlacement,
 } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiOverlayAdditionsModule } from "../../../../../../src/lib/overlay/overlay-additions.module";
+import { NuiOverlayModule } from "../../../../../../src/lib/overlay/overlay.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
+
 const CUSTOM_OVERLAY_PANEL_CLASS = "custom-overlay-panel-class";
 
 @Component({
@@ -46,7 +53,7 @@ const CUSTOM_OVERLAY_PANEL_CLASS = "custom-overlay-panel-class";
     templateUrl: "./overlay-arrow.example.component.html",
     styleUrls: ["./overlay-arrow.example.component.less"],
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+    imports: [CdkDrag, NuiButtonModule, NuiOverlayModule, NgIf, NuiOverlayAdditionsModule, NuiSelectV2Module, FormsModule, ReactiveFormsModule, NgFor],
 })
 export class OverlayArrowExampleComponent implements AfterViewInit, OnDestroy {
     private readonly destroy$ = new Subject<void>();

@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgTemplateOutlet, NgFor, SlicePipe } from "@angular/common";
 import {
     Component,
     EventEmitter,
@@ -36,12 +37,14 @@ import {
     IFilterGroupMultiFilterMetadata,
     IFilterGroupOption,
 } from "./public-api";
+import { NuiCheckboxModule } from "../../../../../src/lib/checkbox/checkbox.module";
+import { NuiExpanderModule } from "../../../../../src/lib/expander/expander.module";
 
 @Component({
     selector: "app-custom-data-source-filter-group",
     templateUrl: "./custom-data-source-filter-group.component.html",
     styleUrls: ["./custom-data-source-filter-group.component.less"],
-    standalone: false
+    imports: [NgIf, NuiExpanderModule, NgTemplateOutlet, NuiCheckboxModule, NgFor, SlicePipe],
 })
 export class CustomDataSourceFilterGroupCompositeComponent
     implements IFilterPub, OnInit

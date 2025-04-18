@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import { Component, Inject } from "@angular/core";
 
 import {
@@ -26,6 +27,8 @@ import {
     IToastService,
     ToastService,
 } from "@nova-ui/bits";
+
+import { NuiCommonModule } from "../../../../../../src/common/common.module";
 
 class IsStringValidator implements IDropValidator {
     isValidDropTarget(payload: any, isExternal: boolean): boolean {
@@ -45,7 +48,7 @@ class IsObjectValidator implements IDropValidator {
 @Component({
     selector: "nui-dragdrop-validator-example",
     templateUrl: "./dragdrop-basic.example.component.html",
-    standalone: false
+    imports: [NuiCommonModule, JsonPipe],
 })
 export class DragdropBasicExampleComponent {
     public draggableString = "this is a string";

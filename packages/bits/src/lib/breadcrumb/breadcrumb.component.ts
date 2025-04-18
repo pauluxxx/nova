@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgForOf, NgIf } from "@angular/common";
 import {
     Component,
     EventEmitter,
@@ -27,6 +28,7 @@ import {
 } from "@angular/core";
 
 import { BreadcrumbItem } from "./public-api";
+import { IconComponent } from "../icon/icon.component";
 
 // <example-url>./../examples/index.html#/breadcrumb</example-url>
 
@@ -36,7 +38,7 @@ import { BreadcrumbItem } from "./public-api";
     templateUrl: "./breadcrumb.component.html",
     encapsulation: ViewEncapsulation.None,
     host: { "[attr.aria-label]": "ariaLabel" },
-    standalone: false
+    imports: [NgIf, NgForOf, IconComponent],
 })
 export class BreadcrumbComponent {
     @Input() items: BreadcrumbItem[];

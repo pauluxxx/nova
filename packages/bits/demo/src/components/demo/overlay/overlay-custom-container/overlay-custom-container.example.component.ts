@@ -19,6 +19,7 @@
 //  THE SOFTWARE.
 
 import { OverlayConfig } from "@angular/cdk/overlay";
+import { NgFor } from "@angular/common";
 import {
     ChangeDetectionStrategy,
     Component,
@@ -29,12 +30,16 @@ import {
 
 import { OVERLAY_WITH_POPUP_STYLES_CLASS } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiOverlayAdditionsModule } from "../../../../../../src/lib/overlay/overlay-additions.module";
+import { NuiOverlayModule } from "../../../../../../src/lib/overlay/overlay.module";
+
 @Component({
     selector: "nui-overlay-custom-container-example",
     templateUrl: "./overlay-custom-container.example.component.html",
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiButtonModule, NuiOverlayModule, NgFor, NuiOverlayAdditionsModule],
 })
 export class OverlayCustomContainerExampleComponent {
     public itemsSource: string[] = [

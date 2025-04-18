@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgTemplateOutlet, NgIf, NgFor } from "@angular/common";
 import {
     AfterViewInit,
     Component,
@@ -27,6 +28,9 @@ import {
 
 import { ToastService, WizardHorizontalComponent } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiWizardV2Module } from "../../../../../../src/lib/wizard-v2/wizard.module";
+
 interface IWizardStepData {
     title: string;
     templateRef: TemplateRef<string>;
@@ -35,7 +39,7 @@ interface IWizardStepData {
 @Component({
     selector: "nui-wizard-dynamic-example",
     templateUrl: "./wizard-dynamic.example.component.html",
-    standalone: false
+    imports: [NuiWizardV2Module, NuiButtonModule, NgTemplateOutlet, NgIf, NgFor],
 })
 export class WizardDynamicExampleComponent implements AfterViewInit {
     public enableDynamicStepWithButton = false;

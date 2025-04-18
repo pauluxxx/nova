@@ -47,6 +47,7 @@ import {
 } from "../constants";
 import { SelectV2OptionComponent } from "../option/select-v2-option.component";
 import { OptionKeyControlService } from "../option-key-control.service";
+import {CommonModule} from "@angular/common";
 
 const selectedValuesMock: OptionValueType[] = [
     { id: "item-0", name: "Item 0" },
@@ -68,7 +69,15 @@ const nonExistentItem = { id: "item-101", name: "Item 101" };
             </nui-select-v2-option>
         </nui-combobox-v2>
     `,
-    standalone: false
+    imports: [
+        NuiOverlayModule,
+        ReactiveFormsModule,
+        FormsModule,
+        ComboboxV2Component,
+        CommonModule,
+        SelectV2OptionComponent,
+        ComboboxV2OptionHighlightDirective,
+    ],
 })
 class ComboboxV2WrapperComponent {
     public items = Array.from({ length: 10 }).map((_, i) => `Item ${i}`);
@@ -87,19 +96,21 @@ describe("components >", () => {
 
         beforeEach(waitForAsync(() => {
             TestBed.configureTestingModule({
-                declarations: [
-                    ComboboxV2Component,
-                    SelectV2OptionComponent,
-                    ComboboxV2OptionHighlightDirective,
-                    ComboboxV2WrapperComponent,
-                ],
                 providers: [
                     ChangeDetectorRef,
                     OptionKeyControlService,
                     LiveAnnouncer,
                 ],
-                imports: [NuiOverlayModule, ReactiveFormsModule, FormsModule],
-                schemas: [NO_ERRORS_SCHEMA],
+                imports: [
+                    NuiOverlayModule,
+                    ReactiveFormsModule,
+                    FormsModule,
+                    CommonModule,
+                    ComboboxV2Component,
+                    SelectV2OptionComponent,
+                    ComboboxV2OptionHighlightDirective,
+                    ComboboxV2WrapperComponent,
+                ],
             }).compileComponents();
 
             // component

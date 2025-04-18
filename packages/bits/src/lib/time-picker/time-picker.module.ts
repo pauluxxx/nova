@@ -37,8 +37,8 @@ import { NuiTextboxModule } from "../textbox/textbox.module";
         NuiIconModule,
         NuiOverlayModule,
         NuiMenuModule,
+        TimePickerComponent,
     ],
-    declarations: [TimePickerComponent],
     exports: [TimePickerComponent],
     providers: [],
 })

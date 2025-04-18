@@ -23,10 +23,12 @@ import _cloneDeep from "lodash/cloneDeep";
 
 import { ISelectChangedEvent, ISelectGroup } from "@nova-ui/bits";
 
+import { NuiSelectModule } from "../../../../../../src/lib/select/select.module";
+
 @Component({
     selector: "nui-combobox-typeahead-example",
     templateUrl: "./combobox-typeahead.example.component.html",
-    standalone: false
+    imports: [NuiSelectModule],
 })
 export class ComboboxTypeaheadExampleComponent {
     public dataset: ISelectGroup[] = [

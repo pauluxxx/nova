@@ -20,9 +20,18 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { ImageBasicExampleComponent } from "../image-basic/image-basic.example.component";
+import { ImageExternalExampleComponent } from "../image-external/image-external.example.component";
+import { ImageFloatExampleComponent } from "../image-float/image-float.example.component";
+import { ImageListExampleComponent } from "../image-list/image-list.example.component";
+import { ImageMarginExampleComponent } from "../image-margin/image-margin.example.component";
+import { ImageWatermarkedExampleComponent } from "../image-watermarked/image-watermarked.example.component";
+import { ImageWidthHeightAndAutoFillExampleComponent } from "../image-width-height-and-autoFill/image-width-height-and-autoFill.example.component";
+
 @Component({
     selector: "nui-image-docs-example",
     templateUrl: "./image-docs.example.component.html",
-    standalone: false
+    imports: [NuiDocsModule, ImageBasicExampleComponent, ImageWidthHeightAndAutoFillExampleComponent, ImageFloatExampleComponent, ImageMarginExampleComponent, ImageWatermarkedExampleComponent, ImageExternalExampleComponent, ImageListExampleComponent],
 })
 export class ImageDocsExampleComponent {}

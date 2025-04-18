@@ -21,10 +21,15 @@
 import { Component } from "@angular/core";
 import { Subject } from "rxjs";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiPopoverModule } from "../../../../../../src/lib/popover/popover.module";
+import { NuiSelectModule } from "../../../../../../src/lib/select/select.module";
+
 @Component({
     selector: "nui-popover-prevent-close-on-click-example",
     templateUrl: "./popover-prevent-close-on-click.example.component.html",
-    standalone: false
+    imports: [NuiPopoverModule, NuiButtonModule, NuiCheckboxModule, NuiSelectModule],
 })
 export class PopoverPreventCloseOnClickExampleComponent {
     public dataset = {

@@ -18,14 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgTemplateOutlet, NgIf } from "@angular/common";
 import { Component, ViewChild } from "@angular/core";
 
 import { ToastService, WizardHorizontalComponent } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiWizardV2Module } from "../../../../../../src/lib/wizard-v2/wizard.module";
+
 @Component({
     selector: "nui-wizard-responsive-header-example",
     templateUrl: "./wizard-responsive-header.example.component.html",
-    standalone: false
+    imports: [NuiWizardV2Module, NgFor, NgTemplateOutlet, NgIf, NuiButtonModule],
 })
 export class WizardResponsiveHeaderExampleComponent {
     public steps: Array<any> = Array.from({ length: 20 });

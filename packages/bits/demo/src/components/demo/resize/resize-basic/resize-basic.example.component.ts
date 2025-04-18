@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiCommonModule } from "../../../../../../src/common/common.module";
+
 @Component({
     selector: "nui-resize-basic-example",
     templateUrl: "./resize-basic.example.component.html",
-    standalone: false
+    imports: [NuiCommonModule],
 })
 export class ResizeBasicExampleComponent {
     public newSizeText: string = "Size is not changed.";

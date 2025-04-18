@@ -20,9 +20,18 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../src/lib/message/message.module";
+import { QuickPickerBasicExampleComponent } from "../quick-picker-basic/quick-picker-basic.example.component";
+import { TimeFramePickerBasicExampleComponent } from "../time-frame-picker-basic/time-frame-picker-basic.example.component";
+import { TimeFramePickerCustomExampleComponent } from "../time-frame-picker-custom/time-frame-picker-custom.example.component";
+import { TimeFramePickerDateExampleComponent } from "../time-frame-picker-date/time-frame-picker-date.example.component";
+import { TimeFramePickerInlineExampleComponent } from "../time-frame-picker-inline/time-frame-picker-inline.example.component";
+import { TimeFramePickerMultipleCustomPickersExampleComponent } from "../time-frame-picker-multiple-custom-pickers/time-frame-picker-multiple-custom-pickers.example.component";
+
 @Component({
     selector: "nui-time-frame-picker-docs",
     templateUrl: "./time-frame-picker-docs.example.component.html",
-    standalone: false
+    imports: [NuiDocsModule, TimeFramePickerInlineExampleComponent, QuickPickerBasicExampleComponent, TimeFramePickerBasicExampleComponent, NuiMessageModule, TimeFramePickerDateExampleComponent, TimeFramePickerCustomExampleComponent, TimeFramePickerMultipleCustomPickersExampleComponent],
 })
 export class TimeFramePickerDocsExampleComponent {}

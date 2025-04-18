@@ -18,16 +18,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { JsonPipe } from "@angular/common";
 import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import moment, { Moment } from "moment/moment";
 
 import { IDatePickerDisabledDate } from "@nova-ui/bits";
 
+import { NuiDatePickerModule } from "../../../../../../src/lib/date-picker/date-picker.module";
+
 @Component({
     selector: "nui-date-picker-test",
     templateUrl: "./date-picker-test.component.html",
-    standalone: false
+    imports: [NuiDatePickerModule, FormsModule, ReactiveFormsModule, JsonPipe],
 })
 export class DatePickerTestComponent {
     public dt: Moment;

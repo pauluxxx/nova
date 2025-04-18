@@ -22,6 +22,7 @@ import {
     FlexibleConnectedPositionStrategy,
     OverlayRef,
 } from "@angular/cdk/overlay";
+import { NgTemplateOutlet, NgFor, NgIf, NgStyle } from "@angular/common";
 import {
     AfterViewInit,
     Component,
@@ -42,6 +43,14 @@ import {
     WizardStepV2Component,
 } from "@nova-ui/bits";
 
+import { NuiBusyModule } from "../../../../../../src/lib/busy/busy.module";
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiDialogModule } from "../../../../../../src/lib/dialog/dialog.module";
+import { NuiOverlayModule } from "../../../../../../src/lib/overlay/overlay.module";
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+import { NuiWizardV2Module } from "../../../../../../src/lib/wizard-v2/wizard.module";
+
 interface IWizardStepData {
     title: string;
     templateRef: TemplateRef<string>;
@@ -51,7 +60,7 @@ interface IWizardStepData {
     selector: "nui-wizard-test",
     templateUrl: "./wizard-test.component.html",
     styleUrls: ["./wizard-test.less"],
-    standalone: false
+    imports: [NuiWizardV2Module, NgTemplateOutlet, NuiButtonModule, NuiBusyModule, NuiDialogModule, NuiSpinnerModule, NuiOverlayModule, NgFor, NgIf, NgStyle, NuiTextboxModule],
 })
 export class WizardV2TestComponent implements AfterViewInit, OnDestroy {
     public onDestroy$ = new Subject<void>();

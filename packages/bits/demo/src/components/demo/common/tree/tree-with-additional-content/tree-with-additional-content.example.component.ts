@@ -19,10 +19,15 @@
 //  THE SOFTWARE.
 
 import { ArrayDataSource } from "@angular/cdk/collections";
-import { NestedTreeControl } from "@angular/cdk/tree";
+import { NestedTreeControl, CdkTree, CdkTreeNodeDef, CdkNestedTreeNode, CdkTreeNodeToggle, CdkTreeNodeOutlet } from "@angular/cdk/tree";
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
 
 import { DOCUMENT_CLICK_EVENT, EventBusService, expand } from "@nova-ui/bits";
+
+import { NuiButtonModule } from "../../../../../../../src/lib/button/button.module";
+import { NuiIconModule } from "../../../../../../../src/lib/icon/icon.module";
+import { NuiMenuModule } from "../../../../../../../src/lib/menu/menu.module";
 
 interface FoodNode {
     name: string;
@@ -65,7 +70,7 @@ const TREE_DATA: FoodNode[] = [
     styleUrls: ["tree-with-additional-content.example.component.less"],
     host: { id: "tree-with-additional-content-example" },
     animations: [expand],
-    standalone: false
+    imports: [CdkTree, CdkTreeNodeDef, CdkNestedTreeNode, NuiButtonModule, NuiMenuModule, NgFor, CdkTreeNodeToggle, NuiIconModule, CdkTreeNodeOutlet],
 })
 export class TreeWithAdditionalContentExampleComponent {
     treeControl = new NestedTreeControl<FoodNode>((node) => node.children);

@@ -20,9 +20,17 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { NuiMessageModule } from "../../../../../../src/lib/message/message.module";
+import { BasicProgressExampleComponent } from "../basic-progress/basic-progress.example.component";
+import { IndeterminateProgressExampleComponent } from "../indeterminate-progress/indeterminate-progress.example.component";
+import { ProgressCompactExampleComponent } from "../progress-compact/progress-compact.example.component";
+import { ProgressWithHelpTemplateExampleComponent } from "../progress-with-help-template/progress-with-help-template-example.component";
+import { StackedHeaderProgressExampleComponent } from "../stacked-header/stacked-header.example.component";
+
 @Component({
     selector: "nui-progress-docs-example",
     templateUrl: "./progress-docs.example.component.html",
-    standalone: false
+    imports: [NuiDocsModule, BasicProgressExampleComponent, StackedHeaderProgressExampleComponent, IndeterminateProgressExampleComponent, ProgressCompactExampleComponent, NuiMessageModule, ProgressWithHelpTemplateExampleComponent],
 })
 export class ProgressExampleComponent {}

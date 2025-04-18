@@ -66,15 +66,12 @@ describe("components >", () => {
             mockItemsSource = [BLUE_COLOR, GREEN_COLOR, BLACK_COLOR];
 
             TestBed.configureTestingModule({
-                imports: [ScrollingModule, DragDropModule],
-                providers: [LoggerService],
-                declarations: [
-                    RepeatComponent,
-                    RepeatItemComponent,
-                    RadioComponent,
-                    CheckboxComponent,
-                ],
-            });
+    imports: [ScrollingModule, DragDropModule, RepeatComponent,
+        RepeatItemComponent,
+        RadioComponent,
+        CheckboxComponent],
+    providers: [LoggerService],
+});
 
             fixture =
                 TestBed.createComponent<RepeatComponent<IColorRepeatItem>>(

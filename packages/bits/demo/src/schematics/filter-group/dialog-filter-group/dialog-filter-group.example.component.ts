@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import { AfterViewInit, Component, Inject, OnDestroy } from "@angular/core";
 import _get from "lodash/get";
 import _isEmpty from "lodash/isEmpty";
@@ -30,9 +31,14 @@ import {
     LocalFilteringDataSource,
 } from "@nova-ui/bits";
 
+import { DialogFilterGroupCompositeComponent } from "./dialog-filter-group.component";
 import { FilterGroupCompositeDialogComponent } from "./filter-group-dialog/filter-group-dialog.component";
 import { FilterGroupService } from "./filter-group.service";
+import { FilterGroupsWrapperComponent } from "./filter-groups-wrapper/filter-groups-wrapper.component";
 import { IFilterGroupItem } from "./public-api";
+import { NuiImageModule } from "../../../../../src/lib/image/image.module";
+import { NuiPanelModule } from "../../../../../src/lib/panel/panel.module";
+import { NuiRepeatModule } from "../../../../../src/lib/repeat/repeat.module";
 
 interface ExampleItem {
     color: string;
@@ -66,7 +72,7 @@ const RANDOM_ARRAY = [
             useClass: LocalFilteringDataSource,
         },
     ],
-    standalone: false
+    imports: [NuiImageModule, NuiPanelModule, FilterGroupsWrapperComponent, NgFor, DialogFilterGroupCompositeComponent, NgIf, NuiRepeatModule],
 })
 export class DialogFilterGroupExampleComponent
     implements AfterViewInit, OnDestroy

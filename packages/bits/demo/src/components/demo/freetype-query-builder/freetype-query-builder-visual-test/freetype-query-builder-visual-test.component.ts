@@ -20,9 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { ExampleFreetypeQueryBuilderComponent } from "./example-freetype-query-builder.component";
+import { NuiLayoutModule } from "../../../../../../src/lib/layout/layout.module";
+
 @Component({
     selector: "nui-freetype-query-builder-visual-test",
     templateUrl: "freetype-query-builder-visual-test.component.html",
-    standalone: false
+    imports: [NuiLayoutModule, ExampleFreetypeQueryBuilderComponent],
 })
 export class FreetypeQueryBuilderVisualTestComponent {}

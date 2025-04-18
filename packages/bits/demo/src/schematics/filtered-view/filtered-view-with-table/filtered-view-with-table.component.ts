@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
@@ -45,9 +46,14 @@ import {
 } from "@nova-ui/bits";
 
 import { FilterGroupComponent } from "./filter-group/filter-group.component";
+import { FilterGroupsWrapperComponent } from "./filter-group/filter-groups-wrapper/filter-groups-wrapper.component";
 import { IFilterGroupItem } from "./filter-group/public-api";
+import { FilteredViewTableComponent } from "./filtered-view-table/filtered-view-table.component";
 import { LOCAL_DATA } from "./filtered-view-with-table-data";
 import { IFilterable, IServer, ServerStatus } from "./types";
+import { NuiChipsModule } from "../../../../../src/lib/chips/chips.module";
+import { NuiPanelModule } from "../../../../../src/lib/panel/panel.module";
+import { NuiPopoverModule } from "../../../../../src/lib/popover/popover.module";
 
 @Component({
     selector: "app-filtered-view-with-table",
@@ -60,7 +66,7 @@ import { IFilterable, IServer, ServerStatus } from "./types";
         },
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiPanelModule, FilterGroupsWrapperComponent, NgFor, FilterGroupComponent, NuiChipsModule, NgIf, NuiPopoverModule, FilteredViewTableComponent],
 })
 export class FilteredViewWithTableComponent
     implements AfterViewInit, OnDestroy

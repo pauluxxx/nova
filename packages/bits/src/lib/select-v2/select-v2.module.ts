@@ -48,8 +48,6 @@ import { NuiTooltipModule } from "../tooltip/tooltip.module";
         NuiTooltipModule,
         CommonModule,
         NuiOverlayModule,
-    ],
-    declarations: [
         SelectV2Component,
         SelectV2OptionComponent,
         SelectV2OptionGroupComponent,

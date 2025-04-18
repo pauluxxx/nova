@@ -18,11 +18,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
 // eslint-disable-next-line no-restricted-imports
 import { orderBy } from "lodash";
 
 import { IMenuItem, ISorterChanges, SorterDirection } from "@nova-ui/bits";
+
+import { NuiRepeatModule } from "../../../../../../src/lib/repeat/repeat.module";
+import { NuiSorterModule } from "../../../../../../src/lib/sorter/sorter.module";
 
 interface IFilm {
     title: string;
@@ -34,7 +38,7 @@ interface IFilm {
     selector: "nui-sorter-basic-example",
     templateUrl: "./sorter-basic.example.component.html",
     styleUrls: ["./sorter-basic.example.component.less"],
-    standalone: false
+    imports: [NuiSorterModule, NuiRepeatModule, NgFor],
 })
 export class SorterBasicExampleComponent implements OnInit {
     public readonly columns: IMenuItem[] = [

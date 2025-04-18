@@ -22,13 +22,16 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import moment, { Moment } from "moment/moment";
 
 import { DatePickerInnerComponent } from "./date-picker-inner.component";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
+import {ButtonComponent} from "@nova-ui/bits";
 
 /** @ignore */
 @Component({
     selector: "nui-day-picker",
     templateUrl: "./date-picker-day-picker.component.html",
     encapsulation: ViewEncapsulation.None,
-    standalone: false
+
+    imports: [NgIf, ButtonComponent, NgClass, NgForOf],
 })
 export class DayPickerComponent implements OnInit {
     public labels: any[] = [];

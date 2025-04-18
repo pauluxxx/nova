@@ -18,7 +18,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 import {
     IUnitConversionResult,
@@ -26,13 +28,17 @@ import {
     UnitConversionService,
 } from "@nova-ui/bits";
 
+import { NuiFormFieldModule } from "../../../../../../../src/lib/form-field/form-field.module";
+import { NuiTextboxModule } from "../../../../../../../src/lib/textbox/textbox.module";
+
+
 @Component({
     selector: "unit-conversion-service-separate-unit-display-example",
     templateUrl: "./unit-conversion-service-separate-unit-display.example.component.html",
     styleUrls: [
         "./unit-conversion-service-separate-unit-display.example.component.less",
     ],
-    standalone: false
+    imports: [NgIf, NuiFormFieldModule, NuiTextboxModule, FormsModule],
 })
 export class UnitConversionServiceSeparateUnitDisplayExampleComponent
     implements OnInit

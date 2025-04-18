@@ -18,10 +18,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import { Component } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { ISelectGroup } from "@nova-ui/bits";
+
+import { NuiDividerModule } from "../../../../../../src/lib/divider/divider.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
 
 const getRandomNumberTo = (max: number) =>
     Math.floor(Math.random() * Math.floor(max) + 1);
@@ -30,7 +34,7 @@ const getRandomNumberTo = (max: number) =>
     selector: "nui-combobox-v2-grouped-options-example",
     templateUrl: "combobox-v2-grouped-options.example.component.html",
     host: { class: "combobox-container" },
-    standalone: false
+    imports: [NuiSelectV2Module, FormsModule, ReactiveFormsModule, NgFor, NgIf, NuiDividerModule],
 })
 export class ComboboxV2GroupedOptionsExampleComponent {
     public items: ISelectGroup[] = Array.from({ length: 10 }).map((_, i) => ({

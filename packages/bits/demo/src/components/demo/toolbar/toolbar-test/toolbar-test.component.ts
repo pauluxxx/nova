@@ -18,14 +18,22 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { Component } from "@angular/core";
 
 import { IMenuGroup } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiMenuModule } from "../../../../../../src/lib/menu/menu.module";
+import { NuiSearchModule } from "../../../../../../src/lib/search/search.module";
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+import { NuiToolbarModule } from "../../../../../../src/lib/toolbar/toolbar.module";
+
 @Component({
     selector: "nui-toolbar-test",
     templateUrl: "./toolbar-test.component.html",
-    standalone: false
+    imports: [NuiToolbarModule, NuiTextboxModule, NuiSearchModule, NuiMenuModule, NgIf, NuiButtonModule, NuiSwitchModule],
 })
 export class ToolbarTestExampleComponent {
     public width = "800px";

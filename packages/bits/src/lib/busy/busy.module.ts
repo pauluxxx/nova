@@ -28,8 +28,7 @@ import { NuiSpinnerModule } from "../spinner/spinner.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiSpinnerModule],
-    declarations: [BusyComponent],
+    imports: [BusyComponent],
     exports: [BusyComponent],
     providers: [],
 })

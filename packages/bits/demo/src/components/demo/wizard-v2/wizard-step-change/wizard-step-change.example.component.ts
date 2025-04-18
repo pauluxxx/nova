@@ -19,6 +19,7 @@
 //  THE SOFTWARE.
 
 import { StepperSelectionEvent } from "@angular/cdk/stepper";
+import { NgFor, NgTemplateOutlet, NgIf } from "@angular/common";
 import {
     AfterViewInit,
     Component,
@@ -28,6 +29,9 @@ import {
 
 import { ToastService, WizardHorizontalComponent } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiWizardV2Module } from "../../../../../../src/lib/wizard-v2/wizard.module";
+
 interface IWizardStepData {
     title: string;
     templateRef: TemplateRef<string>;
@@ -36,7 +40,7 @@ interface IWizardStepData {
 @Component({
     selector: "nui-wizard-step-change-example",
     templateUrl: "./wizard-step-change.example.component.html",
-    standalone: false
+    imports: [NuiWizardV2Module, NgFor, NgTemplateOutlet, NgIf, NuiButtonModule],
 })
 export class WizardStepChangeExampleComponent implements AfterViewInit {
     public steps: IWizardStepData[] = [];

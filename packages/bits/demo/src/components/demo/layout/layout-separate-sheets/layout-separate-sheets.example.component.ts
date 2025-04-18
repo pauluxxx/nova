@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiLayoutModule } from "../../../../../../src/lib/layout/layout.module";
+
 @Component({
     selector: "nui-layout-separate-sheets-example",
     templateUrl: "./layout-separate-sheets.example.component.html",
     styleUrls: ["./layout-separate-sheets.example.component.less"],
-    standalone: false
+    imports: [NuiLayoutModule],
 })
 export class LayoutSeparateSheetsExampleComponent {}

@@ -30,8 +30,7 @@ describe("components >", () => {
 
         beforeEach(waitForAsync(() => {
             TestBed.configureTestingModule({
-                declarations: [ChipsOverflowComponent],
-                imports: [],
+                imports: [ChipsOverflowComponent],
                 schemas: [NO_ERRORS_SCHEMA],
             }).compileComponents();
         }));

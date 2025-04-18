@@ -18,15 +18,20 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { AfterViewInit, Component, ViewChild } from "@angular/core";
 
 import { SelectV2Component } from "@nova-ui/bits";
+
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiSelectV2Module } from "../../../../../../src/lib/select-v2/select-v2.module";
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
 
 @Component({
     selector: "nui-select-v2-custom-control-example",
     templateUrl: "select-v2-custom-control.example.component.html",
     host: { class: "select-container d-flex justify-content-between" },
-    standalone: false
+    imports: [NuiSelectV2Module, NgFor, NuiButtonModule, NuiSwitchModule],
 })
 export class SelectV2CustomControlExampleComponent implements AfterViewInit {
     public items = Array.from({ length: 100 }).map(

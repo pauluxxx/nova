@@ -47,7 +47,6 @@ import { TooltipDirective } from "../tooltip/tooltip.directive";
             <input type="text" value="empty" />
         </div>
     `,
-    standalone: false
 })
 class TestBusyWithTabNavigatableChildrensComponent {
     public busy: boolean;
@@ -61,17 +60,14 @@ describe("components >", () => {
     describe("busy >", () => {
         beforeEach(async () => {
             TestBed.configureTestingModule({
-                declarations: [
-                    BusyComponent,
-                    SpinnerComponent,
-                    TooltipDirective,
-                    CheckboxComponent,
-
-                    TestBusyWithTabNavigatableChildrensComponent,
-                ],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA],
-                providers: [LoggerService, TabNavigationService],
-            }).compileComponents();
+    imports: [BusyComponent,
+        SpinnerComponent,
+        TooltipDirective,
+        CheckboxComponent,
+        TestBusyWithTabNavigatableChildrensComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    providers: [LoggerService, TabNavigationService],
+}).compileComponents();
         });
 
         describe("basic >", () => {

@@ -29,8 +29,7 @@ import { NuiOverlayModule } from "../overlay/overlay.module";
 
 /** @ignore */
 @NgModule({
-    imports: [A11yModule, CommonModule, OverlayModule, NuiOverlayModule],
+    imports: [A11yModule, CommonModule, OverlayModule, NuiOverlayModule, TooltipDirective, TooltipComponent],
     exports: [TooltipDirective, TooltipComponent],
-    declarations: [TooltipDirective, TooltipComponent],
 })
 export class NuiTooltipModule {}

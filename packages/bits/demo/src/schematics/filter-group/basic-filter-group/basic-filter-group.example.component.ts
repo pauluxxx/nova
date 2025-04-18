@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor, NgIf } from "@angular/common";
 import { AfterViewInit, Component, Inject, OnDestroy } from "@angular/core";
 import _get from "lodash/get";
 import _isEmpty from "lodash/isEmpty";
@@ -27,8 +28,13 @@ import {
     DataSourceService,
     INovaFilteringOutputs,
     LocalFilteringDataSource,
+    NuiPanelModule,
+    NuiImageModule,
+    NuiRepeatModule,
 } from "@nova-ui/bits";
 
+import { BasicFilterGroupCompositeComponent } from "./basic-filter-group.component";
+import { BasicFilterGroupsWrapperComponent } from "./filter-groups-wrapper/filter-groups-wrapper.component";
 import { IFilterGroupItem } from "./public-api";
 
 interface ExampleItem {
@@ -58,7 +64,15 @@ const RANDOM_ARRAY = [
             useClass: LocalFilteringDataSource,
         },
     ],
-    standalone: false
+    imports: [
+        NuiImageModule,
+        NuiPanelModule,
+        BasicFilterGroupsWrapperComponent,
+        NgFor,
+        BasicFilterGroupCompositeComponent,
+        NgIf,
+        NuiRepeatModule,
+    ],
 })
 export class BasicFilterGroupExampleComponent
     implements AfterViewInit, OnDestroy

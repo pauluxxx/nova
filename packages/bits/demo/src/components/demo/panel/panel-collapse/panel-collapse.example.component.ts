@@ -18,12 +18,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiIconModule } from "../../../../../../src/lib/icon/icon.module";
+import { NuiPanelModule } from "../../../../../../src/lib/panel/panel.module";
 
 @Component({
     selector: "nui-panel-collapse-example",
     templateUrl: "./panel-collapse.example.component.html",
-    standalone: false
+    imports: [NuiPanelModule, NgIf, NuiIconModule],
 })
 export class PanelCollapseExampleComponent {
     public isCollapsible = true;

@@ -32,12 +32,9 @@ import { NuiMenuModule } from "../menu/menu.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiMenuModule, NuiDateTimePickerModule],
-    declarations: [
-        QuickPickerComponent,
+    imports: [NuiCommonModule, NuiMenuModule, NuiDateTimePickerModule, QuickPickerComponent,
         TimeFramePickerComponent,
-        TimeFrameFormatPipe,
-    ],
+        TimeFrameFormatPipe],
     exports: [
         QuickPickerComponent,
         TimeFramePickerComponent,

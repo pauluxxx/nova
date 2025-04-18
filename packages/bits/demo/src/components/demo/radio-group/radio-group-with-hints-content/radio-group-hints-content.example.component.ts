@@ -22,6 +22,9 @@ import { Component } from "@angular/core";
 
 import { ToastService } from "@nova-ui/bits";
 
+import { NuiCommonModule } from "../../../../../../src/common/common.module";
+import { NuiRadioModule } from "../../../../../../src/lib/radio/radio.module";
+
 @Component({
     selector: "nui-with-hints-content-radio-group-example",
     templateUrl: "./radio-group-hints-content.example.component.html",
@@ -35,7 +38,7 @@ import { ToastService } from "@nova-ui/bits";
             }
         `,
     ],
-    standalone: false
+    imports: [NuiRadioModule, NuiCommonModule],
 })
 export class RadioGroupHintsContentExampleComponent {
     public colors = [$localize`Red`, $localize`Green`, $localize`Blue`];

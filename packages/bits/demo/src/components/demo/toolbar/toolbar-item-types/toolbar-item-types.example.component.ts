@@ -20,10 +20,12 @@
 
 import { Component } from "@angular/core";
 
+import { NuiToolbarModule } from "../../../../../../src/lib/toolbar/toolbar.module";
+
 @Component({
     selector: "nui-toolbar-item-types-example",
     templateUrl: "./toolbar-item-types.example.component.html",
-    standalone: false
+    imports: [NuiToolbarModule],
 })
 export class ToolbarItemTypesExampleComponent {
     public actionDone(): void {

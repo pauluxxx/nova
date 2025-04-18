@@ -18,12 +18,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
+
+import { NuiMenuModule } from "../../../../../../src/lib/menu/menu.module";
 
 @Component({
     selector: "nui-basic-menu-example",
     templateUrl: "./basic-menu.example.component.html",
-    standalone: false
+    imports: [NuiMenuModule, NgFor],
 })
 export class BasicMenuExampleComponent {
     public items = ["Item 1", "Item 2", "Item 3"];

@@ -18,13 +18,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { NuiFormFieldModule } from "../../../../../../src/lib/form-field/form-field.module";
+import { NuiRadioModule } from "../../../../../../src/lib/radio/radio.module";
+import { RadioGroupInFormExampleComponent } from "../radio-group-in-form/radio-group-in-form.example.component";
 
 @Component({
     selector: "nui-radio-group-visual-test",
     templateUrl: "./radio-group-visual-test.component.html",
-    standalone: false
+    imports: [NuiRadioModule, NgFor, RadioGroupInFormExampleComponent, FormsModule, ReactiveFormsModule, NuiFormFieldModule],
 })
 export class RadioGroupVisualTestComponent {
     public disabledForm;

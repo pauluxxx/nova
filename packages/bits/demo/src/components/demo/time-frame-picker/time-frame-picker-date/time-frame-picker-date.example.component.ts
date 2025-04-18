@@ -26,10 +26,14 @@ import { Subject } from "rxjs";
 
 import { IQuickPickPresetDictionary } from "@nova-ui/bits";
 
+import { NuiDatePickerModule } from "../../../../../../src/lib/date-picker/date-picker.module";
+import { NuiPopoverModule } from "../../../../../../src/lib/popover/popover.module";
+import { NuiTimeFramePickerModule } from "../../../../../../src/lib/time-frame-picker/time-frame-picker.module";
+
 @Component({
     selector: "nui-time-frame-picker-date",
     templateUrl: "./time-frame-picker-date.example.component.html",
-    standalone: false
+    imports: [NuiPopoverModule, NuiTimeFramePickerModule, NuiDatePickerModule],
 })
 export class TimeFramePickerDateExampleComponent {
     public presets: IQuickPickPresetDictionary;

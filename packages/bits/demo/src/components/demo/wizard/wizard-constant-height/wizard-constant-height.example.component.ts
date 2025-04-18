@@ -20,10 +20,16 @@
 
 import { Component } from "@angular/core";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiRadioModule } from "../../../../../../src/lib/radio/radio.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+import { NuiWizardModule } from "../../../../../../src/lib/wizard/wizard.module";
+
 @Component({
     selector: "nui-wizard-constant-height-example",
     templateUrl: "./wizard-constant-height.example.component.html",
-    standalone: false
+    imports: [NuiTextboxModule, NuiButtonModule, NuiCheckboxModule, NuiRadioModule, NuiWizardModule],
 })
 export class WizardConstantHeightExampleComponent {
     public wizardBodyHeight: string = "200px";

@@ -66,7 +66,7 @@ import { IMenuGroup } from "../public-api";
             </body>
         </html>
     `,
-    standalone: false
+    imports: [NuiOverlayModule],
 })
 class TestAppComponent {
     @ViewChild(MenuComponent) menu: MenuComponent;
@@ -101,34 +101,31 @@ describe("components >", () => {
     describe("menu >", () => {
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [NuiOverlayModule],
-                declarations: [
-                    TestAppComponent,
-                    MenuComponent,
-                    MenuActionComponent,
-                    MenuLinkComponent,
-                    MenuOptionComponent,
-                    MenuPopupComponent,
-                    MenuSwitchComponent,
-                    MenuGroupComponent,
-                    MenuItemComponent,
-                    ButtonComponent,
-                    PopupComponent,
-                    PopupToggleDirective,
-                    CheckboxComponent,
-                    IconComponent,
-                    DividerComponent,
-                    SwitchComponent,
-                    ButtonComponent,
-                ],
-                providers: [
-                    IconService,
-                    EdgeDetectionService,
-                    DomUtilService,
-                    LoggerService,
-                ],
-                schemas: [CUSTOM_ELEMENTS_SCHEMA],
-            });
+    imports: [NuiOverlayModule, TestAppComponent,
+        MenuComponent,
+        MenuActionComponent,
+        MenuLinkComponent,
+        MenuOptionComponent,
+        MenuPopupComponent,
+        MenuSwitchComponent,
+        MenuGroupComponent,
+        MenuItemComponent,
+        ButtonComponent,
+        PopupComponent,
+        PopupToggleDirective,
+        CheckboxComponent,
+        IconComponent,
+        DividerComponent,
+        SwitchComponent,
+        ButtonComponent],
+    providers: [
+        IconService,
+        EdgeDetectionService,
+        DomUtilService,
+        LoggerService,
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+});
             fixture = TestBed.createComponent(TestAppComponent);
             fixture.detectChanges();
             testComponent = fixture.componentInstance;

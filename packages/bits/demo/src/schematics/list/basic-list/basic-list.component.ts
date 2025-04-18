@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, NgFor, KeyValuePipe } from "@angular/common";
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
@@ -47,6 +48,10 @@ import {
 
 import { LOCAL_DATA, RESULTS_PER_PAGE } from "./basic-list-data";
 import { IServer, IServerFilters } from "./types";
+import { NuiPaginatorModule } from "../../../../../src/lib/paginator/paginator.module";
+import { NuiRepeatModule } from "../../../../../src/lib/repeat/repeat.module";
+import { NuiSearchModule } from "../../../../../src/lib/search/search.module";
+import { NuiSorterModule } from "../../../../../src/lib/sorter/sorter.module";
 
 @Component({
     selector: "app-basic-list",
@@ -59,7 +64,7 @@ import { IServer, IServerFilters } from "./types";
             useClass: ClientSideDataSource,
         },
     ],
-    standalone: false
+    imports: [NuiSorterModule, NuiSearchModule, NgIf, NuiRepeatModule, NuiPaginatorModule, NgFor, KeyValuePipe],
 })
 export class BasicListComponent implements AfterViewInit, OnDestroy {
     public readonly sorterItems: IMenuItem[] = [

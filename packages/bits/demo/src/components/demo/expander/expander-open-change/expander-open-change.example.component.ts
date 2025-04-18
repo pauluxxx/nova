@@ -20,10 +20,13 @@
 
 import { Component } from "@angular/core";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiExpanderModule } from "../../../../../../src/lib/expander/expander.module";
+
 @Component({
     selector: "nui-expander-open-change-example",
     templateUrl: "expander-open-change.example.component.html",
-    standalone: false
+    imports: [NuiExpanderModule, NuiButtonModule],
 })
 export class ExpanderOpenChangeExampleComponent {
     public bindingExampleOpen: boolean = false;

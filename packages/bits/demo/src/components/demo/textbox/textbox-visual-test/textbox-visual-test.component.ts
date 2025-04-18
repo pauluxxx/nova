@@ -20,10 +20,13 @@
 
 import { Component } from "@angular/core";
 
+import { NuiFormFieldModule } from "../../../../../../src/lib/form-field/form-field.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+
 @Component({
     selector: "textbox-visual-test",
     templateUrl: "./textbox-visual-test.component.html",
-    standalone: false
+    imports: [NuiTextboxModule, NuiFormFieldModule],
 })
 export class TextboxVisualTestComponent {
     public isRequired = true;

@@ -27,8 +27,7 @@ import { NuiCommonModule } from "../../common/common.module";
  * @ignore
  */
 @NgModule({
-    declarations: [DndDropTargetDirective],
-    imports: [NuiCommonModule],
+    imports: [NuiCommonModule, DndDropTargetDirective],
     exports: [DndDropTargetDirective],
 })
 export class NuiDndModule {}

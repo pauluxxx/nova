@@ -18,6 +18,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf, I18nPluralPipe } from "@angular/common";
 import {
     AfterViewInit,
     Component,
@@ -35,7 +36,7 @@ import { BasicFilterGroupCompositeComponent } from "../basic-filter-group.compon
     selector: "app-basic-filter-groups-wrapper",
     templateUrl: "filter-groups-wrapper.component.html",
     styleUrls: ["filter-groups-wrapper.component.less"],
-    standalone: false
+    imports: [NgIf, I18nPluralPipe],
 })
 export class BasicFilterGroupsWrapperComponent implements AfterViewInit {
     @ContentChildren(BasicFilterGroupCompositeComponent)

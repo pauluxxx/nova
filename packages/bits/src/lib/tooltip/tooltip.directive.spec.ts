@@ -40,7 +40,7 @@ import { NuiButtonModule } from "../button/button.module";
         [nuiTooltipDisabled]="isDisabled"
         >Tooltip</span
     >`,
-    standalone: false
+    imports: [NuiTooltipModule, OverlayModule],
 })
 class TooltipTestComponent {
     public tooltipValue? = "test tooltip";
@@ -55,7 +55,7 @@ class TooltipTestComponent {
         [tooltipPlacement]="position"
         >Tooltip</span
     >`,
-    standalone: false
+    imports: [NuiTooltipModule, OverlayModule],
 })
 class TooltipWithPositionTestComponent {
     public tooltipValue = "test tooltip";
@@ -75,7 +75,7 @@ class TooltipWithPositionTestComponent {
     >
         Tooltip
     </button>`,
-    standalone: false
+    imports: [NuiTooltipModule, OverlayModule],
 })
 class TooltipOnButtonTestComponent {
     public tooltipValue = "test tooltip";
@@ -90,7 +90,7 @@ class TooltipOnButtonTestComponent {
             <span nuiTooltip="Tooltip content">Tooltip target</span>
         </div>
     `,
-    standalone: false
+    imports: [NuiTooltipModule, OverlayModule],
 })
 class TooltipInOverlapingScrollContainerComponent {}
 
@@ -98,14 +98,11 @@ describe("directives >", () => {
     describe("tooltip >", () => {
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [NuiTooltipModule, OverlayModule],
-                declarations: [
-                    TooltipTestComponent,
-                    TooltipWithPositionTestComponent,
-                    TooltipOnButtonTestComponent,
-                    TooltipInOverlapingScrollContainerComponent,
-                ],
-            });
+    imports: [NuiTooltipModule, OverlayModule, TooltipTestComponent,
+        TooltipWithPositionTestComponent,
+        TooltipOnButtonTestComponent,
+        TooltipInOverlapingScrollContainerComponent],
+});
 
             TestBed.compileComponents();
         });

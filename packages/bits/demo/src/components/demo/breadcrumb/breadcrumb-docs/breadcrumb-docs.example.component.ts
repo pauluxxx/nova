@@ -20,10 +20,13 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDocsModule } from "../../../../../../src/lib/docs/docs.module";
+import { BreadcrumbBasicExampleComponent } from "../breadcrumb-basic/breadcrumb-basic.example.component";
+
 @Component({
     selector: "nui-breadcrumb-docs-example",
     templateUrl: "./breadcrumb-docs.example.component.html",
-    standalone: false
+    imports: [NuiDocsModule, BreadcrumbBasicExampleComponent],
 })
 export class BreadcrumbDocsExampleComponent {
     public routesExample = `{

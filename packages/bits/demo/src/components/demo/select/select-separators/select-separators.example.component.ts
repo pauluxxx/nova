@@ -22,10 +22,12 @@ import { Component } from "@angular/core";
 
 import { ISelectChangedEvent } from "@nova-ui/bits";
 
+import { NuiSelectModule } from "../../../../../../src/lib/select/select.module";
+
 @Component({
     selector: "nui-select-separators-example",
     templateUrl: "./select-separators.example.component.html",
-    standalone: false
+    imports: [NuiSelectModule],
 })
 export class SelectSeparatorsExampleComponent {
     public dataset = {

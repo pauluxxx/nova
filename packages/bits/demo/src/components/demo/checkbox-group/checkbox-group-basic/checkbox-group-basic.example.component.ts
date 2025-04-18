@@ -18,14 +18,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
 
 import { ToastService } from "@nova-ui/bits";
 
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+
 @Component({
     selector: "nui-checkbox-group-basic-example",
     templateUrl: "./checkbox-group-basic.example.component.html",
-    standalone: false
+    imports: [NuiCheckboxModule, NgFor],
 })
 export class CheckboxGroupBasicExampleComponent {
     public cabbage = $localize`Cabbage`;

@@ -37,7 +37,7 @@ describe("directives >", () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [ClipboardExampleComponent, ClipboardDirective],
+                imports: [ClipboardExampleComponent, ClipboardDirective],
                 providers: [LoggerService],
                 schemas: [CUSTOM_ELEMENTS_SCHEMA],
             });

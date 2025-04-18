@@ -33,8 +33,7 @@ import { NuiIconModule } from "../icon/icon.module";
  * @ignore
  */
 @NgModule({
-    imports: [NuiCommonModule, NuiIconModule, NuiButtonModule],
-    declarations: [ToastComponent, ToastDirective],
+    imports: [NuiCommonModule, NuiIconModule, NuiButtonModule, ToastComponent, ToastDirective],
     exports: [ToastComponent, ToastDirective],
     providers: [
         ToastService,

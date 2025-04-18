@@ -20,10 +20,13 @@
 
 import { Component } from "@angular/core";
 
+import { NuiDividerModule } from "../../../../src/lib/divider/divider.module";
+import { NuiExpanderModule } from "../../../../src/lib/expander/expander.module";
+
 @Component({
     selector: "typography-example",
     templateUrl: "./typography-example.component.html",
     styleUrls: ["./typography-example.component.css"],
-    standalone: false
+    imports: [NuiExpanderModule, NuiDividerModule],
 })
 export class TypographyExampleComponent {}

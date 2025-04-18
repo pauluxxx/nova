@@ -31,10 +31,14 @@ import {
     WizardStepComponent,
 } from "@nova-ui/bits";
 
+import { NuiCheckboxModule } from "../../../../../../src/lib/checkbox/checkbox.module";
+import { NuiTextboxModule } from "../../../../../../src/lib/textbox/textbox.module";
+import { NuiWizardModule } from "../../../../../../src/lib/wizard/wizard.module";
+
 @Component({
     selector: "nui-wizard-simple-example",
     templateUrl: "./wizard-simple.example.component.html",
-    standalone: false
+    imports: [NuiTextboxModule, NuiCheckboxModule, NuiWizardModule],
 })
 export class WizardSimpleExampleComponent {
     @ViewChild("wizardComponent") wizardComponent: WizardComponent;

@@ -28,8 +28,8 @@ describe("DroppableComponent", () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [DroppableComponent],
-        }).compileComponents();
+    imports: [DroppableComponent],
+}).compileComponents();
     });
 
     beforeEach(() => {

@@ -18,14 +18,19 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { NgIf } from "@angular/common";
 import { Component, Inject } from "@angular/core";
 
 import { LoggerService } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiSearchModule } from "../../../../../../src/lib/search/search.module";
+import { NuiToolbarModule } from "../../../../../../src/lib/toolbar/toolbar.module";
+
 @Component({
     selector: "nui-toolbar-selection-example",
     templateUrl: "./toolbar-selection.example.component.html",
-    standalone: false
+    imports: [NuiToolbarModule, NgIf, NuiSearchModule, NuiButtonModule],
 })
 export class ToolbarSelectionExampleComponent {
     public selectionEnabled = true;

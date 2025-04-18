@@ -18,6 +18,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+import { CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, CdkVirtualForOf } from "@angular/cdk/scrolling";
+import { NgIf, NgTemplateOutlet, AsyncPipe } from "@angular/common";
 import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
@@ -33,6 +35,10 @@ import {
     SelectorService,
 } from "@nova-ui/bits";
 
+import { NuiButtonModule } from "../../../../../../src/lib/button/button.module";
+import { NuiSpinnerModule } from "../../../../../../src/lib/spinner/spinner.module";
+import { NuiSwitchModule } from "../../../../../../src/lib/switch/switch.module";
+import { NuiTableModule } from "../../../../../../src/lib/table/table.module";
 import { IRandomUserTableModel } from "../index";
 import { RandomuserTableDataSource1 } from "../table-virtual-scroll-datasource-1";
 
@@ -43,7 +49,7 @@ import { RandomuserTableDataSource1 } from "../table-virtual-scroll-datasource-1
         "./table-virtual-scroll-steps-and-button.example.component.less",
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    imports: [NuiSwitchModule, CdkVirtualScrollViewport, CdkFixedSizeVirtualScroll, NuiTableModule, CdkVirtualForOf, NgIf, NgTemplateOutlet, NuiSpinnerModule, NuiButtonModule, AsyncPipe],
 })
 export class TableVirtualScrollStepsAndButtonExampleComponent
     implements OnDestroy, OnInit
